@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/hijau"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/background1" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/daftarsekarang"
+        android:layout_width="328dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/shapeputih"
+        android:fontFamily="@font/robotoblack"
+        android:text="Masuk"
+        android:textColor="@color/hijau"
+        app:layout_constraintBottom_toTopOf="@+id/masukawal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/masukawal"
+        android:layout_width="328dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="124dp"
+        android:background="@drawable/shapehijau"
+        android:fontFamily="@font/robotoblack"
+        android:text="Daftar Sekarang"
+        android:textColor="@color/sec100"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="122dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/bulatputih"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo1" />
+
+    <TextView
+        android:id="@+id/judul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/nunitoextrabold"
+        android:text="CALORILIN"
+        android:textColor="@color/sec100"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/subjudul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/robotobold"
+        android:text="Awali Harimu\ndengan pola hidup sehat"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/sec100"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/judul" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/robotolight"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit.\nNulla at leo mi. Morbi tempus porta efficitur."
+        android:textColor="@color/sec100"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subjudul" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
