@@ -3,6 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/drawable-anydpi/ic_edit.xml" value="0.146875" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/drawable-anydpi/ic_email.xml" value="0.2703125" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/drawable-anydpi/ic_password.xml" value="0.146875" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/drawable-anydpi/ic_person.xml" value="0.146875" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/drawable/circle.xml" value="0.13645833333333332" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/drawable/hijau_prim_500.xml" value="0.146875" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/drawable/img.xml" value="0.13645833333333332" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/drawable/round_corner_password.xml" value="0.146875" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/drawable/round_corners.xml" value="0.2703125" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/drawable/shapehijau.xml" value="0.146875" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/drawable/shapeputih.xml" value="0.2703125" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/drawable/transparan.xml" value="0.2703125" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/layout/activity_daftar.xml" value="0.264" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/layout/activity_edit_profile.xml" value="0.2" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/layout/activity_masuk.xml" value="0.4" />
         <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/drawable/transparan.xml" value="0.2703125" />
         <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/drawable/transparanbawah.xml" value="0.2703125" />
         <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/layout/activity_daftar.xml" value="0.25416666666666665" />
@@ -24,7 +41,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
