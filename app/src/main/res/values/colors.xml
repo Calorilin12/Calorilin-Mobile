@@ -7,8 +7,13 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="hijau">#006633</color>
-    <color name="sec100">#FEFCF5</color>
+    <color name="red">#E23647</color>
+    <color name="primary">#27AE61</color>
+    <color name="sec100">#858585</color>
     <color name="abu2">#F4F4F4</color>
     <color name="hijaumuda">#C5F7CA</color>
+    <color name="abu21">#DADADA</color>
+    <color name="abutua">#858585</color>
+    <color name="netral">#1E272E</color>
+
 </resources>
