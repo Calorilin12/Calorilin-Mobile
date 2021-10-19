@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/beranda"
+        android:title="Home"
+        android:icon="@drawable/rumah"
+        />
+    <item android:id="@+id/hitung"
+        android:title="Hitung"
+        android:icon="@drawable/calc"
+        />
+    <item android:id="@+id/jadwal"
+        android:title="jadwal"
+        android:icon="@drawable/chart"
+        />
+    <item android:id="@+id/profil"
+        android:title="Profil"
+        android:icon="@drawable/person"
+        />
+</menu>

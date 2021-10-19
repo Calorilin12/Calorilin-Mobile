@@ -11,7 +11,13 @@
     <color name="sec100">#FEFCF5</color>
     <color name="sec300">#DADADA</color>
     <color name="sec500">#858585</color>
-    <color name="prim500">#27AE61</color>
+    <color name="red">#E23647</color>
+    <color name="primary">#27AE61</color>
+    <color name="sec100">#858585</color>
     <color name="abu2">#F4F4F4</color>
     <color name="hijaumuda">#C5F7CA</color>
+    <color name="abu21">#DADADA</color>
+    <color name="abutua">#858585</color>
+    <color name="netral">#1E272E</color>
+
 </resources>

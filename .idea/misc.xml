@@ -3,28 +3,35 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/drawable-anydpi/ic_edit.xml" value="0.146875" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/drawable-anydpi/ic_email.xml" value="0.2703125" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/drawable-anydpi/ic_password.xml" value="0.146875" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/drawable-anydpi/ic_person.xml" value="0.146875" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/drawable/circle.xml" value="0.13645833333333332" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/drawable/hijau_prim_500.xml" value="0.146875" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/drawable/img.xml" value="0.13645833333333332" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/drawable/round_corner_password.xml" value="0.146875" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/drawable/round_corners.xml" value="0.2703125" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/drawable/shapehijau.xml" value="0.146875" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/drawable/shapeputih.xml" value="0.2703125" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/drawable/transparan.xml" value="0.2703125" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/layout/activity_daftar.xml" value="0.264" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/layout/activity_edit_profile.xml" value="0.2" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/layout/activity_main.xml" value="0.4" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/Repositories/Calorilin-Mobile/app/src/main/res/layout/activity_masuk.xml" value="0.4" />
+        <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/drawable/back.xml" value="0.2703125" />
+        <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/drawable/border.xml" value="0.2703125" />
+        <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/drawable/border2.xml" value="0.2703125" />
+        <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/drawable/border3.xml" value="0.2703125" />
+        <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/drawable/cari.xml" value="0.26666666666666666" />
+        <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.2703125" />
+        <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/drawable/ic_baseline_mail_outline_24.xml" value="0.2703125" />
+        <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/drawable/kanan.xml" value="0.2703125" />
+        <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/drawable/logomail.xml" value="0.26666666666666666" />
+        <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/drawable/shapehijau.xml" value="0.2703125" />
+        <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/drawable/shapehijau20.xml" value="0.2703125" />
+        <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/drawable/shapeputih.xml" value="0.2703125" />
         <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/drawable/transparan.xml" value="0.2703125" />
         <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/drawable/transparanbawah.xml" value="0.2703125" />
-        <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/layout/activity_daftar.xml" value="0.25416666666666665" />
-        <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/layout/activity_masuk.xml" value="0.42397914856646396" />
+        <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/drawable/user.xml" value="0.2703125" />
+        <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/layout/activity_daftar.xml" value="0.264" />
+        <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/layout/activity_halaman.xml" value="0.152" />
+        <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/layout/activity_login.xml" value="0.23007246376811594" />
+        <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/layout/activity_main.xml" value="0.3541666666666667" />
+        <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/layout/activity_masuk.xml" value="0.4" />
+        <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/layout/activity_pengaturan.xml" value="0.264" />
+        <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/layout/beranda.xml" value="0.4" />
+        <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/layout/home.xml" value="0.176" />
+        <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/layout/list_catagori.xml" value="0.536" />
+        <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/layout/list_makananhariini.xml" value="0.6" />
+        <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/layout/profileakun.xml" value="0.4" />
+        <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/menu/menubawah.xml" value="0.264" />
+        <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2703125" />
+        <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin-Mobile/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2703125" />
         <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
         <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin/app/src/main/res/drawable/border.xml" value="0.2703125" />
         <entry key="..\:/asyam faiq/semester 5/Pemrograman Perangkat Bergerak/Calorilin/app/src/main/res/drawable/bulatputih.xml" value="0.14635416666666667" />
