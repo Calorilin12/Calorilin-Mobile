@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".EditProfileActivity">
+    tools:context=".EditProfile">
 
     <TextView
         android:id="@+id/judul_Halam_Edit_Akun"
@@ -142,7 +141,6 @@
             android:paddingTop="9dp"
             tools:ignore="TouchTargetSizeCheck" />
 
-
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatButton
@@ -159,5 +157,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

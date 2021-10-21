@@ -15,7 +15,7 @@
         android:textColor="@color/netral"
         android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.148"
+        app:layout_constraintHorizontal_bias="0.063"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,7 +26,7 @@
         android:layout_marginTop="40dp"
         android:background="@drawable/setting"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.811"
+        app:layout_constraintHorizontal_bias="0.875"
         app:layout_constraintStart_toEndOf="@+id/judulprofile"
         app:layout_constraintTop_toTopOf="parent" />
 

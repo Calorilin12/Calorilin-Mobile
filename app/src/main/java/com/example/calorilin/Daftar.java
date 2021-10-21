@@ -7,10 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Daftar extends AppCompatActivity {
 
-    Button back;
+    Button back,daftar;
     TextView masuk;
 
     @Override
@@ -20,6 +21,7 @@ public class Daftar extends AppCompatActivity {
 
         masuk = findViewById(R.id.masuksekarang);
         back = findViewById(R.id.back);
+        daftar = findViewById(R.id.daftar2);
 
         masuk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +33,14 @@ public class Daftar extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                finish();
+            }
+        });
+
+        daftar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Daftar.this, "Berhasil Mendaftar", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
