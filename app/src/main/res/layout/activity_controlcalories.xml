@@ -12,48 +12,9 @@
         android:layout_height="match_parent" />
 
     <TextView
-        android:id="@+id/JudulKontolKalori"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="58dp"
-        android:text="Kontrol Kalori"
-        android:fontFamily="@font/poppinsbold"
-        android:textStyle="bold"
-        android:textSize="24sp"
-        android:textFontWeight="500"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/kalimatTambahan1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:fontFamily="@font/poppinsregular"
-        android:text="Tentukan jadwal"
-        android:textSize="14sp"
-        android:textFontWeight="300"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/JudulKontolKalori" />
-
-    <TextView
-        android:id="@+id/kalimatTambahan2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:fontFamily="@font/poppinsregular"
-        android:text="makananmu saat ini"
-        android:textSize="14sp"
-        android:textFontWeight="300"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/kalimatTambahan1" />
-
-    <TextView
         android:id="@+id/jumlahKalori"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:fontFamily="@font/poppinsbold"
         android:text="1.480"
         android:textFontWeight="500"
@@ -61,13 +22,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.346"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/kalimatTambahan2" />
+        tools:layout_editor_absoluteY="163dp" />
 
     <TextView
         android:id="@+id/satuanKalori"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:fontFamily="@font/poppinsregular"
         android:text="kcal"
         android:textFontWeight="300"
@@ -75,20 +35,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.643"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/kalimatTambahan2" />
+        tools:layout_editor_absoluteY="163dp" />
 
     <TextView
         android:id="@+id/kalimatKeterangan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
         android:fontFamily="@font/poppinsregular"
         android:text="Kalori hari ini"
         android:textFontWeight="400"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/kalimatTambahan2" />
+        tools:layout_editor_absoluteY="219dp" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/jadwalMakanPagi"
@@ -824,14 +783,5 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomnavigasi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:itemTextColor="@color/primary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/menubawah" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
