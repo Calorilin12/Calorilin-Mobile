@@ -5,17 +5,17 @@ import com.google.gson.annotations.SerializedName;
 public class Register{
 
 	@SerializedName("user")
-	private RegisterUser registerUser;
+	private User user;
 
 	@SerializedName("token")
 	private String token;
 
-	public void setUser(RegisterUser registerUser){
-		this.registerUser = registerUser;
+	public void setUser(User user){
+		this.user = user;
 	}
 
-	public RegisterUser getUser(){
-		return registerUser;
+	public User getUser(){
+		return user;
 	}
 
 	public void setToken(String token){

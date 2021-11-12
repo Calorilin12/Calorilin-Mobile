@@ -2,10 +2,10 @@ package com.example.calorilin.model.login;
 
 import com.google.gson.annotations.SerializedName;
 
-public class LoginUser {
+public class User{
 
 	@SerializedName("image")
-	private String image;
+	private Object image;
 
 	@SerializedName("updated_at")
 	private String updatedAt;
@@ -28,17 +28,14 @@ public class LoginUser {
 	@SerializedName("id")
 	private int id;
 
-	@SerializedName("check")
-	private int check;
-
 	@SerializedName("email")
 	private String email;
 
-	public void setImage(String image){
+	public void setImage(Object image){
 		this.image = image;
 	}
 
-	public String getImage(){
+	public Object getImage(){
 		return image;
 	}
 
@@ -96,14 +93,6 @@ public class LoginUser {
 
 	public int getId(){
 		return id;
-	}
-
-	public void setCheck(int check){
-		this.check = check;
-	}
-
-	public int getCheck(){
-		return check;
 	}
 
 	public void setEmail(String email){

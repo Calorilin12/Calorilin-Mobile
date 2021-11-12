@@ -28,7 +28,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.875"
         app:layout_constraintStart_toEndOf="@+id/judulprofile"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <ImageButton
         android:id="@+id/fotoprofile"
@@ -38,7 +39,8 @@
         android:background="@drawable/foto1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/namaAkun"
@@ -67,41 +69,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/namaAkun" />
 
-    <TextView
-        android:id="@+id/resepfav"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+    <ImageView
+        android:id="@+id/lengkapidata"
+        android:layout_width="400dp"
+        android:layout_height="236dp"
+        android:layout_marginTop="36dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/waktugabung"
+        app:srcCompat="@drawable/lengkapidata" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/keluar"
+        android:layout_width="328dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="56dp"
+        android:background="@drawable/shapemerah"
         android:fontFamily="@font/poppinsmedium"
-        android:text="Resep favorit"
-        android:textColor="@color/netral"
-        android:textSize="14dp"
+        android:text="Keluar"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.132"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/waktugabung" />
+        app:layout_constraintTop_toBottomOf="@+id/lengkapidata"
+        app:layout_constraintVertical_bias="0.453" />
 
-    <TextView
-        android:id="@+id/lihatsemua1"
-        android:layout_width="73dp"
-        android:layout_height="13dp"
-        android:layout_marginTop="24dp"
-        android:text="Lihat Semua"
-        android:textColor="@color/primary"
-        android:textSize="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.852"
-        app:layout_constraintStart_toEndOf="@+id/resepfav"
-        app:layout_constraintTop_toBottomOf="@+id/waktugabung" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/resepfaavview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resepfav" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class Pengaturan extends AppCompatActivity {
 
-    Button editakun,logout;
+    Button editakun;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,14 +22,6 @@ public class Pengaturan extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),EditProfile.class));
-            }
-        });
-
-        logout = findViewById(R.id.logout);
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
             }
         });
     }

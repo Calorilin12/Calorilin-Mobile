@@ -72,7 +72,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.105"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/judulpengaturan"
@@ -107,14 +108,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/poppinsregular"
         android:text="Tentang"
         android:textAllCaps="false"
         android:textColor="@color/primary"
         android:textSize="14dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/notifikasi" />
+        app:layout_constraintTop_toBottomOf="@+id/akunpengaturan" />
 
     <TextView
         android:id="@+id/pengaturantentang2"
@@ -145,20 +146,6 @@
         app:layout_constraintTop_toBottomOf="@+id/pengaturanumum" />
 
     <TextView
-        android:id="@+id/notifikasi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/poppinsregular"
-        android:text="Notifikasi"
-        android:textAllCaps="false"
-        android:textColor="@color/sec100"
-        android:textSize="14dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/akunpengaturan" />
-
-    <TextView
         android:id="@+id/namapengaturan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -180,31 +167,8 @@
         android:layout_marginTop="4dp"
         android:background="@drawable/kanan"
         app:layout_constraintStart_toEndOf="@+id/namapengaturan"
-        app:layout_constraintTop_toBottomOf="@+id/pengaturanumum" />
+        app:layout_constraintTop_toBottomOf="@+id/pengaturanumum"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-    <Switch
-        android:id="@+id/notifikasiswitch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textColorLink="@color/primary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.965"
-        app:layout_constraintStart_toEndOf="@+id/notifikasi"
-        app:layout_constraintTop_toBottomOf="@+id/akunmenu" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="124dp"
-        android:text="Log Out"
-        android:background="@drawable/border3"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

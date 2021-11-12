@@ -124,17 +124,18 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:background="@drawable/transparan"
+        android:clickable="true"
         android:fontFamily="@font/poppinslight"
         android:text="Masuk sekarang"
         android:textAlignment="textStart"
         android:textAllCaps="false"
         android:textColor="@color/primary"
         android:textSize="12dp"
-        android:clickable="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.096"
         app:layout_constraintStart_toEndOf="@+id/belumDaftar"
-        app:layout_constraintTop_toBottomOf="@+id/daftar2" />
+        app:layout_constraintTop_toBottomOf="@+id/daftar2"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/back"
@@ -146,7 +147,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.105"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/textView"

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DataTambahan">
+
+    <TextView
+        android:id="@+id/datatambahan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:fontFamily="@font/poppinsmedium"
+        android:text="Data Tambahan"
+        android:textColor="@color/netral"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.208"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/backdatatambahan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrow" />
+
+    <TextView
+        android:id="@+id/beratbadan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/poppinsregular"
+        android:text="Berat Badan"
+        android:textColor="@color/abutua"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.131"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/datatambahan" />
+
+    <TextView
+        android:id="@+id/tinggibadan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:fontFamily="@font/poppinsregular"
+        android:text="Tinggi Badan"
+        android:textColor="@color/abutua"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.133"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/beratbadan" />
+
+    <TextView
+        android:id="@+id/tensi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/poppinsregular"
+        android:text="Tensi tubuh"
+        android:textColor="@color/abutua"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edittinggibadan" />
+
+    <EditText
+        android:id="@+id/editberatbadan"
+        android:layout_width="328dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/border2"
+        android:fontFamily="@font/robotoreguler"
+        android:paddingStart="15dp"
+        android:drawablePadding="10dp"
+        android:hint="Masukkan Berat Badan anda"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/beratbadan" />
+
+    <EditText
+        android:id="@+id/edittinggibadan"
+        android:layout_width="328dp"
+        android:layout_height="52dp"
+        android:background="@drawable/border2"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/robotoreguler"
+        android:hint="Masukkan Tinggi Badan anda"
+        android:paddingStart="15dp"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tinggibadan" />
+
+    <EditText
+        android:id="@+id/edittensi"
+        android:layout_width="328dp"
+        android:layout_height="52dp"
+        android:background="@drawable/border2"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/robotoreguler"
+        android:hint="Masukkan Tekanan Tensi anda"
+        android:paddingStart="15dp"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tensi" />
+
+    <TextView
+        android:id="@+id/penyakitbawaan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppinsregular"
+        android:text="Tensi tubuh"
+        android:textColor="@color/abutua"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.129"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edittensi" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/kolesterollabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border4"
+        android:fontFamily="@font/poppinsmedium"
+        android:gravity="center"
+        android:padding="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text="Kolesterol"
+        android:textAlignment="gravity"
+        android:textAllCaps="false"
+        android:textColor="@color/abutua"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/penyakitbawaan"
+        app:layout_constraintVertical_bias="0.062" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/diabeteslabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/border4"
+        android:fontFamily="@font/poppinsmedium"
+        android:gravity="center"
+        android:padding="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text="Diabetes"
+        android:textAlignment="gravity"
+        android:textAllCaps="false"
+        android:textColor="@color/abutua"
+        app:layout_constraintStart_toEndOf="@+id/kolesterollabel"
+        app:layout_constraintTop_toBottomOf="@+id/penyakitbawaan" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/hipertensilabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/border4"
+        android:fontFamily="@font/poppinsmedium"
+        android:gravity="center"
+        android:padding="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text="Hipertensi"
+        android:textAlignment="gravity"
+        android:textAllCaps="false"
+        android:textColor="@color/abutua"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kolesterollabel" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/asamuratlabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/border4"
+        android:fontFamily="@font/poppinsmedium"
+        android:gravity="center"
+        android:padding="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text="Asam Urat"
+        android:textAlignment="gravity"
+        android:textAllCaps="false"
+        android:textColor="@color/abutua"
+        app:layout_constraintStart_toEndOf="@+id/hipertensilabel"
+        app:layout_constraintTop_toBottomOf="@+id/diabeteslabel" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/asamlambunglabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/border4"
+        android:fontFamily="@font/poppinsmedium"
+        android:gravity="center"
+        android:padding="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text="Asam Lambung"
+        android:textAlignment="gravity"
+        android:textAllCaps="false"
+        android:textColor="@color/abutua"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hipertensilabel" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/simpantambahan"
+        android:layout_width="328dp"
+        android:layout_height="52dp"
+        android:background="@drawable/shapehijau20"
+        android:fontFamily="@font/poppinsmedium"
+        android:text="Simpan"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/asamlambunglabel"
+        app:layout_constraintVertical_bias="0.565" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

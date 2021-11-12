@@ -2,7 +2,7 @@ package com.example.calorilin.model.register;
 
 import com.google.gson.annotations.SerializedName;
 
-public class RegisterUser {
+public class User{
 
 	@SerializedName("image")
 	private String image;
@@ -22,14 +22,11 @@ public class RegisterUser {
 	@SerializedName("created_at")
 	private String createdAt;
 
-	@SerializedName("email_verified_at")
-	private Object emailVerifiedAt;
+	@SerializedName("check")
+	private String check;
 
 	@SerializedName("id")
 	private int id;
-
-	@SerializedName("check")
-	private int check;
 
 	@SerializedName("email")
 	private String email;
@@ -82,12 +79,12 @@ public class RegisterUser {
 		return createdAt;
 	}
 
-	public void setEmailVerifiedAt(Object emailVerifiedAt){
-		this.emailVerifiedAt = emailVerifiedAt;
+	public void setCheck(String check){
+		this.check = check;
 	}
 
-	public Object getEmailVerifiedAt(){
-		return emailVerifiedAt;
+	public String getCheck(){
+		return check;
 	}
 
 	public void setId(int id){
@@ -96,14 +93,6 @@ public class RegisterUser {
 
 	public int getId(){
 		return id;
-	}
-
-	public void setCheck(int check){
-		this.check = check;
-	}
-
-	public int getCheck(){
-		return check;
 	}
 
 	public void setEmail(String email){

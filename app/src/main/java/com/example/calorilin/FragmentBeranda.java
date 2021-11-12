@@ -1,10 +1,12 @@
 package com.example.calorilin;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,11 +21,13 @@ import com.example.calorilin.adapter.MakananHariAdapter;
 
 import java.util.ArrayList;
 
-public class FragmentBeranda extends Fragment {
+public class FragmentBeranda extends Fragment implements View.OnClickListener {
 
     RecyclerView recyclerView, resephariini;
     ArrayList<ObjekKatagori> listkat;
     ArrayList<ObjekResepHari> listresephariini;
+    EditText cari;
+    ImageView rekomendasi;
 
     @Nullable
     @Override
@@ -40,6 +44,11 @@ public class FragmentBeranda extends Fragment {
         MakananHariAdapter adapter2 = new MakananHariAdapter(getActivity().getApplicationContext(), listresephariini);
         resephariini.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
         resephariini.setAdapter(adapter2);
+
+        cari = view.findViewById(R.id.cari);
+        cari.setOnClickListener(this);
+        rekomendasi = view.findViewById(R.id.rekomendasi);
+        rekomendasi.setOnClickListener(this);
 
         return view;
     }
@@ -61,5 +70,14 @@ public class FragmentBeranda extends Fragment {
         listkat.add(new ObjekKatagori(R.drawable.logopizza, "Pizza"));
         listkat.add(new ObjekKatagori(R.drawable.logosayur, "Sayur"));
         listkat.add(new ObjekKatagori(R.drawable.logosup, "Sup"));
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(v == cari){
+            startActivity(new Intent(requireActivity(), SearchActivity.class));
+        }else if(v == rekomendasi){
+            startActivity(new Intent(requireActivity(), RekomendasiMakananActivity.class));
+        }
     }
 }

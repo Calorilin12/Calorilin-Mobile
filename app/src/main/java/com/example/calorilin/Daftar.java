@@ -4,15 +4,27 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.calorilin.api.ApiClient;
+import com.example.calorilin.api.ApiInterface;
+import com.example.calorilin.model.register.Register;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Daftar extends AppCompatActivity {
 
     Button back,daftar;
     TextView masuk;
+    EditText emaildaftar,passdaftar,namadaftar;
+    ApiInterface apiInterface;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +34,9 @@ public class Daftar extends AppCompatActivity {
         masuk = findViewById(R.id.masuksekarang);
         back = findViewById(R.id.back);
         daftar = findViewById(R.id.daftar2);
+        emaildaftar = findViewById(R.id.emailMasuk);
+        passdaftar = findViewById(R.id.passwordMasuk);
+        namadaftar = findViewById(R.id.namaPengguna);
 
         masuk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,8 +55,34 @@ public class Daftar extends AppCompatActivity {
         daftar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Daftar.this, "Berhasil Mendaftar", Toast.LENGTH_SHORT).show();
-                finish();
+                String newEmail = emaildaftar.getText().toString();
+                String newPass = passdaftar.getText().toString();
+                String newName = namadaftar.getText().toString();
+
+                ApiInterface methods = ApiClient.getClient().create(ApiInterface.class);
+                Call<Register> call = methods.registerResponse(newEmail,newPass,newName,"12-10-99","08121212");
+
+                call.enqueue(new Callback<Register>() {
+                    @Override
+                    public void onResponse(Call<Register> call, Response<Register> response) {
+                        if (response.code() == 201) {
+
+                            Log.e("Test", "onResponse: code: " + response.code());
+
+                            Toast.makeText(Daftar.this, "Berhasil daftar", Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(getApplicationContext(), MasukActivity.class));
+                        } else if (response.code() != 201) {
+                            Toast.makeText(Daftar.this, "Bodoh", Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<Register> call, Throwable t) {
+
+                        Log.e("test", "onFailure" + t.getMessage());
+                    }
+                });
             }
         });
     }

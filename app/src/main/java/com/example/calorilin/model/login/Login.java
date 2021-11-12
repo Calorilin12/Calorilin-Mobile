@@ -4,25 +4,25 @@ import com.google.gson.annotations.SerializedName;
 
 public class Login{
 
+	@SerializedName("tokens")
+	private String tokens;
+
 	@SerializedName("user")
-	private LoginUser loginUser;
+	private User user;
 
-	@SerializedName("token")
-	private String token;
-
-	public void setUser(LoginUser loginUser){
-		this.loginUser = loginUser;
+	public void setTokens(String tokens){
+		this.tokens = tokens;
 	}
 
-	public LoginUser getUser(){
-		return loginUser;
+	public String getTokens(){
+		return tokens;
 	}
 
-	public void setToken(String token){
-		this.token = token;
+	public void setUser(User user){
+		this.user = user;
 	}
 
-	public String getToken(){
-		return token;
+	public User getUser(){
+		return user;
 	}
 }

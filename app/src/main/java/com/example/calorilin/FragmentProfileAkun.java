@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,9 +21,8 @@ import java.util.ArrayList;
 
 public class FragmentProfileAkun extends Fragment {
 
-    Button pengaturan;
-    RecyclerView resepfaview;
-    ArrayList<ObjekResepHari> listresepfav;
+    Button pengaturan,keluar;
+    ImageView lengkapidata;
 
 
     @Nullable
@@ -39,17 +39,24 @@ public class FragmentProfileAkun extends Fragment {
             }
         });
 
-        resepfaview = view.findViewById(R.id.resepfaavview);
-        tambahresephariini();
-        MakananHariAdapter adapter2 = new MakananHariAdapter(getActivity().getApplicationContext(), listresepfav);
-        resepfaview.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        resepfaview.setAdapter(adapter2);
+        lengkapidata = view.findViewById(R.id.lengkapidata);
+        lengkapidata.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), DataTambahan.class);
+                startActivity(intent);
+
+            }
+        });
+
+        keluar = view.findViewById(R.id.keluar);
+        keluar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getActivity().finish();
+            }
+        });
 
         return view;
-    }
-    private void tambahresephariini() {
-        listresepfav = new ArrayList<>();
-        listresepfav.add(new ObjekResepHari(R.drawable.makanan, "Nasi ayam panggang", "by Pura Kitchen", "Mudah","20 Mei 2021"));
-        listresepfav.add(new ObjekResepHari(R.drawable.makanan, "Nasi ayam Bakar", "by Nanda Kitchen", "Susah","19 Mei 2021"));
     }
 }
