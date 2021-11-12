@@ -10,7 +10,7 @@
         android:icon="@drawable/calc"
         />
     <item android:id="@+id/jadwal"
-        android:title="jadwal"
+        android:title="Jadwal"
         android:icon="@drawable/chart"
         />
     <item android:id="@+id/profil"
