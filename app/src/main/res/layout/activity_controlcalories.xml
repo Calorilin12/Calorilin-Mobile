@@ -109,7 +109,8 @@
                 android:background="@drawable/ic_baseline_keyboard_arrow_down_24"
                 app:layout_constraintBottom_toBottomOf="@+id/breakfastSection"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/breakfastSection" />
+                app:layout_constraintTop_toTopOf="@+id/breakfastSection"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/expandableViewBreakfast"
