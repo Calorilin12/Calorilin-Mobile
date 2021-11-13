@@ -29,6 +29,14 @@ public class Halaman extends AppCompatActivity {
                 bukafragment(new FragmentProfileAkun());
                 return true;
             }
+            if(item.getItemId()==R.id.jadwal){
+                bukafragment(new FragmentKontrolKalori());
+                return true;
+            }
+            if(item.getItemId()==R.id.hitung){
+                bukafragment(new FragmentHitungKalori());
+                return true;
+            }
             return true;
         });
     }

@@ -10,7 +10,8 @@ import android.transition.TransitionManager;
 import android.view.View;
 import android.widget.Button;
 
-public class ControlCalories extends AppCompatActivity{
+public class ControlCalories extends AppCompatActivity {
+
     ConstraintLayout expandableViewBreakfast, expandableViewLunch, expandableViewDinner;
     Button arrowBtnBreakfast, arrowBtnLunch, arrowBtnDinner;
     CardView cardViewBreakfast, cardViewLunch, cardViewDinner;
@@ -18,7 +19,7 @@ public class ControlCalories extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_control_calories);
 
         expandableViewBreakfast = findViewById(R.id.expandableViewBreakfast);
         arrowBtnBreakfast = findViewById(R.id.buttonBreakfast);
@@ -43,26 +44,6 @@ public class ControlCalories extends AppCompatActivity{
                     TransitionManager.beginDelayedTransition(cardViewBreakfast, new AutoTransition());
                     expandableViewBreakfast.setVisibility(View.GONE);
                     arrowBtnBreakfast.setBackgroundResource(R.drawable.ic_baseline_keyboard_arrow_down_24);
-                }
-
-                if (expandableViewLunch.getVisibility()==View.GONE){
-                    TransitionManager.beginDelayedTransition(cardViewLunch, new AutoTransition());
-                    expandableViewLunch.setVisibility(View.VISIBLE);
-                    arrowBtnLunch.setBackgroundResource(R.drawable.ic_baseline_keyboard_arrow_up_24);
-                } else {
-                    TransitionManager.beginDelayedTransition(cardViewLunch, new AutoTransition());
-                    expandableViewLunch.setVisibility(View.GONE);
-                    arrowBtnLunch.setBackgroundResource(R.drawable.ic_baseline_keyboard_arrow_down_24);
-                }
-
-                if (expandableViewDinner.getVisibility()==View.GONE){
-                    TransitionManager.beginDelayedTransition(cardViewDinner, new AutoTransition());
-                    expandableViewDinner.setVisibility(View.VISIBLE);
-                    arrowBtnDinner.setBackgroundResource(R.drawable.ic_baseline_keyboard_arrow_up_24);
-                } else {
-                    TransitionManager.beginDelayedTransition(cardViewDinner, new AutoTransition());
-                    expandableViewDinner.setVisibility(View.GONE);
-                    arrowBtnDinner.setBackgroundResource(R.drawable.ic_baseline_keyboard_arrow_down_24);
                 }
             }
         });

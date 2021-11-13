@@ -13,6 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Calorilin">
         <activity
+            android:name=".TambahMenu"
+            android:exported="true" />
+        <activity
+            android:name=".ControlCalories"
+            android:exported="true" />
+        <activity
+            android:name=".CountCalories"
+            android:exported="true" />
+        <activity
             android:name=".DataTambahan"
             android:exported="true" />
         <activity
