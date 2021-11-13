@@ -20,8 +20,6 @@ import com.example.calorilin.adapter.MakananHariAdapter;
 import java.util.ArrayList;
 
 public class FragmentHitungKalori extends Fragment{
-    Button pengaturan,keluar;
-    ImageView lengkapidata;
 
     @Nullable
     @Override
