@@ -4,17 +4,8 @@ import com.google.gson.annotations.SerializedName;
 
 public class User{
 
-	@SerializedName("image")
-	private String image;
-
 	@SerializedName("updated_at")
 	private String updatedAt;
-
-	@SerializedName("phone")
-	private String phone;
-
-	@SerializedName("born")
-	private String born;
 
 	@SerializedName("name")
 	private String name;
@@ -23,7 +14,7 @@ public class User{
 	private String createdAt;
 
 	@SerializedName("check")
-	private String check;
+	private int check;
 
 	@SerializedName("id")
 	private int id;
@@ -31,36 +22,12 @@ public class User{
 	@SerializedName("email")
 	private String email;
 
-	public void setImage(String image){
-		this.image = image;
-	}
-
-	public String getImage(){
-		return image;
-	}
-
 	public void setUpdatedAt(String updatedAt){
 		this.updatedAt = updatedAt;
 	}
 
 	public String getUpdatedAt(){
 		return updatedAt;
-	}
-
-	public void setPhone(String phone){
-		this.phone = phone;
-	}
-
-	public String getPhone(){
-		return phone;
-	}
-
-	public void setBorn(String born){
-		this.born = born;
-	}
-
-	public String getBorn(){
-		return born;
 	}
 
 	public void setName(String name){
@@ -79,11 +46,11 @@ public class User{
 		return createdAt;
 	}
 
-	public void setCheck(String check){
+	public void setCheck(int check){
 		this.check = check;
 	}
 
-	public String getCheck(){
+	public int getCheck(){
 		return check;
 	}
 

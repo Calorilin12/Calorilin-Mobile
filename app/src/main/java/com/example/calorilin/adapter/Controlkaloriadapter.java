@@ -5,33 +5,30 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.calorilin.ObjekKontrol;
 import com.example.calorilin.ObjekLabelRekomen;
 import com.example.calorilin.R;
-import com.example.calorilin.listenerpack.LabelRekomListener;
 
 import java.util.ArrayList;
 
-public class LabelRekomAdapter extends RecyclerView.Adapter<LabelRekomAdapter.ViewHolder> {
-    private ArrayList<ObjekLabelRekomen> data = new ArrayList<>();
+public class Controlkaloriadapter extends RecyclerView.Adapter<Controlkaloriadapter.ViewHolder> {
+    private ArrayList<ObjekKontrol> data = new ArrayList<>();
     private RecycleKlik lister;
     private LayoutInflater inflater;
     private Context context;
-    private LabelRekomListener listener;
 
-    public LabelRekomAdapter(Context context, ArrayList<ObjekLabelRekomen> list, LabelRekomListener listener){
+    public Controlkaloriadapter(Context context, ArrayList<ObjekKontrol> list){
         this.context = context;
         this.data = list;
-        this.listener = listener;
         inflater = LayoutInflater.from(context);
     }
 
-    public void setData(ArrayList<ObjekLabelRekomen> items){
+    public void setData(ArrayList<ObjekKontrol> items){
         data.clear();
         data.addAll(items);
         notifyDataSetChanged();
@@ -40,21 +37,17 @@ public class LabelRekomAdapter extends RecyclerView.Adapter<LabelRekomAdapter.Vi
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.list_labelrekomen, null);
+        View view = inflater.inflate(R.layout.list_makanankontrol, null);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        ObjekLabelRekomen labelR = data.get(position);
-        holder.namalabelrekomen.setText(data.get(position).getLabelRekomen());
-        holder.namalabelrekomen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                System.out.println(labelR.getLabelRekomen());
-                listener.onLabel(labelR.getLabelRekomen());
-            }
-        });
+        holder.namamakanan.setText(data.get(position).getNamamakanan());
+        holder.kalorimakanan.setText(data.get(position).getKalorimakanan());
+        holder.kontrol1.setText(data.get(position).getKontrol1());
+        holder.kontrol2.setText(data.get(position).getKontrol2());
+        holder.kontrol3.setText(data.get(position).getKontrol3());
     }
 
     @Override
@@ -72,11 +65,21 @@ public class LabelRekomAdapter extends RecyclerView.Adapter<LabelRekomAdapter.Vi
 
     // stores and recycles views as they are scrolled off screen
     public class ViewHolder extends RecyclerView.ViewHolder {
-        Button namalabelrekomen;
+        TextView namamakanan;
+        TextView kalorimakanan;
+        TextView kontrol1;
+        TextView kontrol2;
+        TextView kontrol3;
+        Button btnHapus;
 
         ViewHolder(View itemView) {
             super(itemView);
-            namalabelrekomen = itemView.findViewById(R.id.namalabel);
+            namamakanan = itemView.findViewById(R.id.namamaknaankontrol);
+            kalorimakanan = itemView.findViewById(R.id.kalorimakanan);
+            kontrol1 = itemView.findViewById(R.id.kandunganmakanankontrol1);
+            kontrol2 = itemView.findViewById(R.id.kandunganmakanankontrol2);
+            kontrol3 = itemView.findViewById(R.id.kandunganmakanankontrol3);
+            btnHapus = itemView.findViewById(R.id.btnhapus);
 
             itemView.setTag(itemView);
 

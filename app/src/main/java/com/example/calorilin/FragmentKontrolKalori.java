@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.calorilin.adapter.Controlkaloriadapter;
 import com.example.calorilin.adapter.KatgoriAdapter;
 import com.example.calorilin.adapter.MakananHariAdapter;
 
@@ -28,11 +29,19 @@ public class FragmentKontrolKalori extends Fragment{
     ConstraintLayout expandableViewBreakfast, expandableViewLunch, expandableViewDinner;
     Button arrowBtnBreakfast, arrowBtnLunch, arrowBtnDinner;
     CardView cardViewBreakfast, cardViewLunch, cardViewDinner;
+    RecyclerView dinner;
+    ArrayList<ObjekKontrol> listkontrol;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_control_calories, container, false);
+
+        dinner = view.findViewById(R.id.viewKontrol);
+        tambahmaknanankalori();
+        Controlkaloriadapter adapter = new Controlkaloriadapter(getActivity().getApplicationContext(), listkontrol);
+        dinner.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        dinner.setAdapter(adapter);
 
         expandableViewBreakfast = view.findViewById(R.id.expandableViewBreakfast);
         arrowBtnBreakfast = view.findViewById(R.id.buttonBreakfast);
@@ -90,5 +99,10 @@ public class FragmentKontrolKalori extends Fragment{
         });
 
         return view;
+    }
+    private void tambahmaknanankalori() {
+        listkontrol = new ArrayList<>();
+        listkontrol.add(new ObjekKontrol("Telor Ceplok","780 Kcal","45 g","45 g", "45 g","test"));
+        listkontrol.add(new ObjekKontrol("Telor Dadar","780 Kcal","45 g","45 g", "45 g",""));
     }
 }

@@ -50,4 +50,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/halo1" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tampilcarimakanan"
+        android:layout_width="409dp"
+        android:layout_height="525dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cari" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

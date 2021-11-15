@@ -2,7 +2,9 @@ package com.example.calorilin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -26,8 +28,7 @@ public class MasukActivity extends AppCompatActivity {
     Button masuk;
     TextView daftar;
     EditText email, password;
-    String etEmail, etPassword;
-    ApiInterface apiInterface;
+    SharedPreferences sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,7 @@ public class MasukActivity extends AppCompatActivity {
         email = findViewById(R.id.emailMasuk);
         password = findViewById(R.id.passwordMasuk);
 
+        sp = getSharedPreferences("sharepre", Context.MODE_PRIVATE);
 
         daftar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,16 +62,19 @@ public class MasukActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<Login> call, Response<Login> response) {
                         if (response.code() == 201) {
-                            String data = response.body().getTokens();
+                            String tokens = response.body().getTokens();
 
                             Log.e("Test", "onResponse: code: " + response.code());
-
                             Toast.makeText(MasukActivity.this, "Selamat Datang", Toast.LENGTH_LONG).show();
+
+                            SharedPreferences.Editor editor = sp.edit();
+                            editor.putString("tokens", tokens);
+                            editor.commit();
+
                             startActivity(new Intent(getApplicationContext(), Halaman.class));
                         } else if (response.code() == 500) {
                             Toast.makeText(MasukActivity.this, "Gagal", Toast.LENGTH_SHORT).show();
                         }
-
                     }
 
                     @Override
@@ -77,7 +82,6 @@ public class MasukActivity extends AppCompatActivity {
                         Log.e("test", "onFailure" + t.getMessage());
                     }
                 });
-                startActivity(new Intent(getApplicationContext(), Halaman.class));
             }
         });
     }

@@ -60,7 +60,7 @@ public class Daftar extends AppCompatActivity {
                 String newName = namadaftar.getText().toString();
 
                 ApiInterface methods = ApiClient.getClient().create(ApiInterface.class);
-                Call<Register> call = methods.registerResponse(newEmail,newPass,newName,"12-10-99","08121212");
+                Call<Register> call = methods.registerResponse(newName,newEmail,newPass);
 
                 call.enqueue(new Callback<Register>() {
                     @Override

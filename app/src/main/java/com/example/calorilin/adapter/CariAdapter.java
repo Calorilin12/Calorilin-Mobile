@@ -4,34 +4,33 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.calorilin.ObjekLabelRekomen;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.calorilin.R;
-import com.example.calorilin.listenerpack.LabelRekomListener;
+import com.example.calorilin.model.recipes.RecipesItem;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class LabelRekomAdapter extends RecyclerView.Adapter<LabelRekomAdapter.ViewHolder> {
-    private ArrayList<ObjekLabelRekomen> data = new ArrayList<>();
+public class CariAdapter extends RecyclerView.Adapter<CariAdapter.ViewHolder> {
+    private List<RecipesItem> data = new ArrayList<>();
     private RecycleKlik lister;
     private LayoutInflater inflater;
     private Context context;
-    private LabelRekomListener listener;
 
-    public LabelRekomAdapter(Context context, ArrayList<ObjekLabelRekomen> list, LabelRekomListener listener){
+    public CariAdapter(Context context, List<RecipesItem> list){
         this.context = context;
         this.data = list;
-        this.listener = listener;
         inflater = LayoutInflater.from(context);
     }
 
-    public void setData(ArrayList<ObjekLabelRekomen> items){
+    public void setData(List<RecipesItem> items){
         data.clear();
         data.addAll(items);
         notifyDataSetChanged();
@@ -40,21 +39,16 @@ public class LabelRekomAdapter extends RecyclerView.Adapter<LabelRekomAdapter.Vi
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.list_labelrekomen, null);
+        View view = inflater.inflate(R.layout.list_carimakanan, null);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        ObjekLabelRekomen labelR = data.get(position);
-        holder.namalabelrekomen.setText(data.get(position).getLabelRekomen());
-        holder.namalabelrekomen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                System.out.println(labelR.getLabelRekomen());
-                listener.onLabel(labelR.getLabelRekomen());
-            }
-        });
+        RecipesItem resepitem = data.get(position);
+        holder.namamakanancari.setText(resepitem.getName());
+        Glide.with(holder.gambarmakanan.getContext())
+                .load("http://192.168.194.60:8000/recipe-detail-images/"+ resepitem.getRecipeImage()).apply(new RequestOptions().override(600, 200)).into(holder.gambarmakanan);
     }
 
     @Override
@@ -72,12 +66,13 @@ public class LabelRekomAdapter extends RecyclerView.Adapter<LabelRekomAdapter.Vi
 
     // stores and recycles views as they are scrolled off screen
     public class ViewHolder extends RecyclerView.ViewHolder {
-        Button namalabelrekomen;
+        TextView namamakanancari;
+        ImageView gambarmakanan;
 
         ViewHolder(View itemView) {
             super(itemView);
-            namalabelrekomen = itemView.findViewById(R.id.namalabel);
-
+            namamakanancari = itemView.findViewById(R.id.namamakanancari);
+            gambarmakanan = itemView.findViewById(R.id.fotogambarcari);
             itemView.setTag(itemView);
 
             itemView.setOnClickListener(view -> {

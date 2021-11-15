@@ -1,16 +1,20 @@
 package com.example.calorilin;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import javax.annotation.Resource;
+
 public class DataTambahan extends AppCompatActivity {
 
-    Button kolesterollabel,diabeteslabel,hipertensilabel,asamuratlabel,asamlambunglabel;
-    static boolean kolesterol =false,diabetes=false,hipertensi=false,asamurat=false,asamlambung=false;
+    Button kolesterollabel, diabeteslabel, hipertensilabel, asamuratlabel, asamlambunglabel;
+    static boolean kolesterol = false, diabetes = false, hipertensi = false, asamurat = false, asamlambung = false;
 
 
     @Override
@@ -21,31 +25,35 @@ public class DataTambahan extends AppCompatActivity {
         kolesterollabel = findViewById(R.id.kolesterollabel);
         kolesterollabel.setOnClickListener(new View.OnClickListener() {
             Drawable background = kolesterollabel.getBackground();
+
             @Override
             public void onClick(View view) {
-                if (!kolesterol){
+
+                if (!kolesterol) {
                     kolesterollabel.setBackgroundResource(R.drawable.shapehijau);
-                    kolesterollabel.setTextColor(R.color.white);
+                    kolesterollabel.setTextColor(Color.WHITE);
                     kolesterol = true;
-                }
-                else{
+                } else {
                     kolesterollabel.setBackground(background);
-                    kolesterol=false;
+                    kolesterollabel.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.abutua));
+                    kolesterol = false;
                 }
             }
         });
         diabeteslabel = findViewById(R.id.diabeteslabel);
         diabeteslabel.setOnClickListener(new View.OnClickListener() {
             Drawable background = diabeteslabel.getBackground();
+
             @Override
             public void onClick(View view) {
-                if (!diabetes){
+                if (!diabetes) {
                     diabeteslabel.setBackgroundResource(R.drawable.shapehijau);
+                    kolesterollabel.setTextColor(Color.WHITE);
                     diabetes = true;
-                }
-                else{
+                } else {
                     diabeteslabel.setBackground(background);
-                    diabetes=false;
+                    kolesterollabel.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.abutua));
+                    diabetes = false;
                 }
             }
         });
@@ -53,15 +61,17 @@ public class DataTambahan extends AppCompatActivity {
         hipertensilabel = findViewById(R.id.hipertensilabel);
         hipertensilabel.setOnClickListener(new View.OnClickListener() {
             Drawable background = hipertensilabel.getBackground();
+
             @Override
             public void onClick(View view) {
-                if (!hipertensi){
+                if (!hipertensi) {
                     hipertensilabel.setBackgroundResource(R.drawable.shapehijau);
+                    kolesterollabel.setTextColor(Color.WHITE);
                     hipertensi = true;
-                }
-                else{
+                } else {
                     hipertensilabel.setBackground(background);
-                    hipertensi=false;
+                    kolesterollabel.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.abutua));
+                    hipertensi = false;
                 }
             }
         });
@@ -69,15 +79,17 @@ public class DataTambahan extends AppCompatActivity {
         asamuratlabel = findViewById(R.id.asamuratlabel);
         asamuratlabel.setOnClickListener(new View.OnClickListener() {
             Drawable background = asamuratlabel.getBackground();
+
             @Override
             public void onClick(View view) {
-                if (!asamurat){
+                if (!asamurat) {
                     asamuratlabel.setBackgroundResource(R.drawable.shapehijau);
+                    kolesterollabel.setTextColor(Color.WHITE);
                     asamurat = true;
-                }
-                else{
+                } else {
                     asamuratlabel.setBackground(background);
-                    asamurat=false;
+                    kolesterollabel.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.abutua));
+                    asamurat = false;
                 }
             }
         });
@@ -85,15 +97,17 @@ public class DataTambahan extends AppCompatActivity {
         asamlambunglabel = findViewById(R.id.asamlambunglabel);
         asamlambunglabel.setOnClickListener(new View.OnClickListener() {
             Drawable background = asamlambunglabel.getBackground();
+
             @Override
             public void onClick(View view) {
-                if (!asamlambung){
+                if (!asamlambung) {
                     asamlambunglabel.setBackgroundResource(R.drawable.shapehijau);
+                    kolesterollabel.setTextColor(Color.WHITE);
                     asamlambung = true;
-                }
-                else{
+                } else {
                     asamlambunglabel.setBackground(background);
-                    asamlambung=false;
+                    kolesterollabel.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.abutua));
+                    asamlambung = false;
                 }
             }
         });

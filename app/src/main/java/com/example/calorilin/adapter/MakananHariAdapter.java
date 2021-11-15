@@ -10,24 +10,28 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.calorilin.ObjekResepHari;
 import com.example.calorilin.R;
+import com.example.calorilin.model.recipes.RecipesItem;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MakananHariAdapter extends RecyclerView.Adapter<MakananHariAdapter.ViewHolder> {
-    private ArrayList<ObjekResepHari> data = new ArrayList<>();
+    private List<RecipesItem> data = new ArrayList<>();
     private RecycleKlik lister;
     private LayoutInflater inflater;
     private Context context;
 
-    public MakananHariAdapter(Context context, ArrayList<ObjekResepHari> list){
+    public MakananHariAdapter(Context context, List<RecipesItem> list){
         this.context = context;
         this.data = list;
         inflater = LayoutInflater.from(context);
     }
 
-    public void setData(ArrayList<ObjekResepHari> items){
+    public void setData(List<RecipesItem> items){
         data.clear();
         data.addAll(items);
         notifyDataSetChanged();
@@ -42,11 +46,14 @@ public class MakananHariAdapter extends RecyclerView.Adapter<MakananHariAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.namamakanan.setText(data.get(position).getNamaresep());
-        holder.resto.setText(data.get(position).getResto());
-        holder.level.setText(data.get(position).getLevel());
-        holder.tanggalresep.setText(data.get(position).getWaktu());
-        holder.gambarmakanan.setImageResource(data.get(position).getGambar());
+        RecipesItem resepitem = data.get(position);
+        holder.namamakanan.setText(resepitem.getName());
+        holder.resto.setText(resepitem.getMadeBy());
+        holder.tanggalresep.setText(resepitem.getCreatedAt());
+        holder.level.setText(resepitem.getLevelOfDifficult());
+
+        Glide.with(holder.gambarmakanan.getContext())
+                .load("http://192.168.194.60:8000/recipe-detail-images/"+ resepitem.getRecipeImage()).apply(new RequestOptions().override(600, 200)).into(holder.gambarmakanan);
     }
 
     @Override

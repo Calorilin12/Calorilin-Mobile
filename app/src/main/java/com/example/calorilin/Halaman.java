@@ -4,8 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -37,8 +40,10 @@ public class Halaman extends AppCompatActivity {
                 bukafragment(new FragmentHitungKalori());
                 return true;
             }
-            return true;
+            return false;
         });
+        SharedPreferences sp = getApplicationContext().getSharedPreferences("sharepre", Context.MODE_PRIVATE);
+        String token = sp.getString("tokens","");
     }
 
     Boolean bukafragment(Fragment fragment)
