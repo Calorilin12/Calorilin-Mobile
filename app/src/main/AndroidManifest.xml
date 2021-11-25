@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Calorilin">
         <activity
+            android:name=".RincianMakanan"
+            android:exported="true" />
+        <activity
             android:name=".TambahMenu"
             android:exported="true" />
         <activity

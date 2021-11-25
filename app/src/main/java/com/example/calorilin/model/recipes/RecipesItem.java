@@ -1,8 +1,11 @@
 package com.example.calorilin.model.recipes;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.SerializedName;
 
-public class RecipesItem{
+public class RecipesItem implements Parcelable {
 
 	@SerializedName("total_calory")
 	private int totalCalory;
@@ -212,4 +215,91 @@ public class RecipesItem{
 	public int getDiabetes(){
 		return diabetes;
 	}
+
+	@Override
+	public int describeContents() {
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		dest.writeInt(this.totalCalory);
+		dest.writeString(this.createdAt);
+		dest.writeString(this.stepsOfMake);
+		dest.writeString(this.compositions);
+		dest.writeInt(this.hyperTension);
+		dest.writeInt(this.totalEater);
+		dest.writeInt(this.idRecipe);
+		dest.writeInt(this.duration);
+		dest.writeInt(this.stomachAcid);
+		dest.writeString(this.updatedAt);
+		dest.writeString(this.recipeImage);
+		dest.writeInt(this.uricAcid);
+		dest.writeString(this.name);
+		dest.writeInt(this.cholesterol);
+		dest.writeString(this.levelOfDifficult);
+		dest.writeInt(this.id);
+		dest.writeString(this.madeBy);
+		dest.writeString(this.publishDate);
+		dest.writeInt(this.diabetes);
+	}
+
+	public void readFromParcel(Parcel source) {
+		this.totalCalory = source.readInt();
+		this.createdAt = source.readString();
+		this.stepsOfMake = source.readString();
+		this.compositions = source.readString();
+		this.hyperTension = source.readInt();
+		this.totalEater = source.readInt();
+		this.idRecipe = source.readInt();
+		this.duration = source.readInt();
+		this.stomachAcid = source.readInt();
+		this.updatedAt = source.readString();
+		this.recipeImage = source.readString();
+		this.uricAcid = source.readInt();
+		this.name = source.readString();
+		this.cholesterol = source.readInt();
+		this.levelOfDifficult = source.readString();
+		this.id = source.readInt();
+		this.madeBy = source.readString();
+		this.publishDate = source.readString();
+		this.diabetes = source.readInt();
+	}
+
+	public RecipesItem() {
+	}
+
+	protected RecipesItem(Parcel in) {
+		this.totalCalory = in.readInt();
+		this.createdAt = in.readString();
+		this.stepsOfMake = in.readString();
+		this.compositions = in.readString();
+		this.hyperTension = in.readInt();
+		this.totalEater = in.readInt();
+		this.idRecipe = in.readInt();
+		this.duration = in.readInt();
+		this.stomachAcid = in.readInt();
+		this.updatedAt = in.readString();
+		this.recipeImage = in.readString();
+		this.uricAcid = in.readInt();
+		this.name = in.readString();
+		this.cholesterol = in.readInt();
+		this.levelOfDifficult = in.readString();
+		this.id = in.readInt();
+		this.madeBy = in.readString();
+		this.publishDate = in.readString();
+		this.diabetes = in.readInt();
+	}
+
+	public static final Creator<RecipesItem> CREATOR = new Creator<RecipesItem>() {
+		@Override
+		public RecipesItem createFromParcel(Parcel source) {
+			return new RecipesItem(source);
+		}
+
+		@Override
+		public RecipesItem[] newArray(int size) {
+			return new RecipesItem[size];
+		}
+	};
 }

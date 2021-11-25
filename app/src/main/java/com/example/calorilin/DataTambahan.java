@@ -48,11 +48,11 @@ public class DataTambahan extends AppCompatActivity {
             public void onClick(View view) {
                 if (!diabetes) {
                     diabeteslabel.setBackgroundResource(R.drawable.shapehijau);
-                    kolesterollabel.setTextColor(Color.WHITE);
+                    diabeteslabel.setTextColor(Color.WHITE);
                     diabetes = true;
                 } else {
                     diabeteslabel.setBackground(background);
-                    kolesterollabel.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.abutua));
+                    diabeteslabel.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.abutua));
                     diabetes = false;
                 }
             }
@@ -66,11 +66,11 @@ public class DataTambahan extends AppCompatActivity {
             public void onClick(View view) {
                 if (!hipertensi) {
                     hipertensilabel.setBackgroundResource(R.drawable.shapehijau);
-                    kolesterollabel.setTextColor(Color.WHITE);
+                    hipertensilabel.setTextColor(Color.WHITE);
                     hipertensi = true;
                 } else {
                     hipertensilabel.setBackground(background);
-                    kolesterollabel.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.abutua));
+                    hipertensilabel.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.abutua));
                     hipertensi = false;
                 }
             }
@@ -84,11 +84,11 @@ public class DataTambahan extends AppCompatActivity {
             public void onClick(View view) {
                 if (!asamurat) {
                     asamuratlabel.setBackgroundResource(R.drawable.shapehijau);
-                    kolesterollabel.setTextColor(Color.WHITE);
+                    asamuratlabel.setTextColor(Color.WHITE);
                     asamurat = true;
                 } else {
                     asamuratlabel.setBackground(background);
-                    kolesterollabel.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.abutua));
+                    asamuratlabel.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.abutua));
                     asamurat = false;
                 }
             }
@@ -102,11 +102,11 @@ public class DataTambahan extends AppCompatActivity {
             public void onClick(View view) {
                 if (!asamlambung) {
                     asamlambunglabel.setBackgroundResource(R.drawable.shapehijau);
-                    kolesterollabel.setTextColor(Color.WHITE);
+                    asamlambunglabel.setTextColor(Color.WHITE);
                     asamlambung = true;
                 } else {
                     asamlambunglabel.setBackground(background);
-                    kolesterollabel.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.abutua));
+                    asamlambunglabel.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.abutua));
                     asamlambung = false;
                 }
             }

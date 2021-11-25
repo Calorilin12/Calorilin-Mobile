@@ -127,7 +127,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppinsregular"
-        android:text="Tensi tubuh"
+        android:text="Penyakit bawaan"
         android:textColor="@color/abutua"
         android:textSize="12dp"
         app:layout_constraintEnd_toEndOf="parent"

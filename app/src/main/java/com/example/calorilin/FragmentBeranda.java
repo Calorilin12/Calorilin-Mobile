@@ -34,7 +34,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class FragmentBeranda extends Fragment implements View.OnClickListener {
+public class FragmentBeranda extends Fragment implements View.OnClickListener{
 
     RecyclerView recyclerView, resephariini;
     ArrayList<ObjekKatagori> listkat;
@@ -123,4 +123,5 @@ public class FragmentBeranda extends Fragment implements View.OnClickListener {
             startActivity(new Intent(requireActivity(), RekomendasiMakananActivity.class));
         }
     }
+
 }

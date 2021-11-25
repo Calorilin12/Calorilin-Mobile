@@ -1,6 +1,7 @@
 package com.example.calorilin.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.example.calorilin.ObjekResepHari;
 import com.example.calorilin.R;
+import com.example.calorilin.RincianMakanan;
 import com.example.calorilin.model.recipes.RecipesItem;
 
 import java.util.ArrayList;
@@ -54,6 +55,17 @@ public class MakananHariAdapter extends RecyclerView.Adapter<MakananHariAdapter.
 
         Glide.with(holder.gambarmakanan.getContext())
                 .load("http://192.168.194.60:8000/recipe-detail-images/"+ resepitem.getRecipeImage()).apply(new RequestOptions().override(600, 200)).into(holder.gambarmakanan);
+
+
+        holder.gambarmakanan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, RincianMakanan.class);
+                intent.putExtra("resepmakanan", resepitem);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -61,7 +73,7 @@ public class MakananHariAdapter extends RecyclerView.Adapter<MakananHariAdapter.
         return data.size();
     }
 
-    interface RecycleKlik{
+    interface   RecycleKlik{
         void onKlikItem(View view, int posisi);
     }
 

@@ -7,7 +7,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.calorilin.adapter.CariAdapter;
@@ -16,6 +19,7 @@ import com.example.calorilin.api.ApiClient;
 import com.example.calorilin.api.ApiInterface;
 import com.example.calorilin.model.recipes.RecipesItem;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -25,11 +29,17 @@ import retrofit2.Response;
 public class SearchActivity extends AppCompatActivity {
 
     RecyclerView carimakanan;
+    EditText cari;
+    String key;
+    ArrayList<RecipesItem> listCari;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+
+        cari = findViewById(R.id.cari);
+        listCari = new ArrayList<>();
 
         SharedPreferences sp = getApplicationContext().getSharedPreferences("sharepre", Context.MODE_PRIVATE);
         String token = sp.getString("tokens", "");
@@ -42,13 +52,35 @@ public class SearchActivity extends AppCompatActivity {
             public void onResponse(Call<List<RecipesItem>> call, Response<List<RecipesItem>> response) {
                 if (response.isSuccessful()) {
                     List<RecipesItem> resep = response.body();
-                    Log.e("Test", "onResponse: code: " + response.code());
                     Toast.makeText(SearchActivity.this, "Berhasil", Toast.LENGTH_LONG).show();
-                    System.out.println("berhasil");
                     carimakanan = findViewById(R.id.tampilcarimakanan);
+
                     CariAdapter adapter2 = new CariAdapter(getApplicationContext(), resep);
                     carimakanan.setLayoutManager(new LinearLayoutManager(SearchActivity.this, LinearLayoutManager.VERTICAL, false));
                     carimakanan.setAdapter(adapter2);
+
+                    cari.addTextChangedListener(new TextWatcher() {
+                        @Override
+                        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                        }
+
+                        @Override
+                        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                        }
+
+                        @Override
+                        public void afterTextChanged(Editable s) {
+                            ArrayList<RecipesItem> filteredlist = new ArrayList<>();
+                            for (RecipesItem recipesItem:resep){
+                                if (recipesItem.getName().toLowerCase().contains(s.toString())){
+                                    filteredlist.add(recipesItem);
+                                }
+                            }
+                            adapter2.filterlist(filteredlist);
+                        }
+                    });
 
                 } else if (response.code() == 500) {
                     Toast.makeText(SearchActivity.this, "Gagal", Toast.LENGTH_SHORT).show();

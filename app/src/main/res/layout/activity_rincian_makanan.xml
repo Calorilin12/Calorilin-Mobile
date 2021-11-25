@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    tools:context=".RincianMakanan"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/gambarrinci"
+            android:layout_width="wrap_content"
+            android:layout_height="275dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.666"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/rincianmakanan" />
+
+        <ImageView
+            android:id="@+id/backdatatambahan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/back2" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutrinci"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="220dp"
+            android:background="@drawable/bulatputih2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/judulrincimakanan"
+                android:layout_width="325dp"
+                android:layout_height="67dp"
+                android:layout_margin="22dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Puding Jeruk \ndengan toping buah"
+                android:textColor="@color/black"
+                android:textSize="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.383"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/layoutrinci" />
+
+            <ImageView
+                android:id="@+id/jam"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/jam"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.06"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/judulrincimakanan" />
+
+            <TextView
+                android:id="@+id/waktupembuatan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="30 Menit"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.02"
+                app:layout_constraintStart_toEndOf="@+id/jam"
+                app:layout_constraintTop_toBottomOf="@+id/judulrincimakanan" />
+            />
+
+            <ImageView
+                android:id="@+id/orang"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/people"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.2"
+                app:layout_constraintStart_toEndOf="@id/waktupembuatan"
+                app:layout_constraintTop_toBottomOf="@+id/judulrincimakanan" />
+
+            <TextView
+                android:id="@+id/porsi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="2 Orang"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.02"
+                app:layout_constraintStart_toEndOf="@+id/orang"
+                app:layout_constraintTop_toBottomOf="@+id/judulrincimakanan" />
+
+            <ImageView
+                android:id="@+id/bukumenu"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bukumenu"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.26"
+                app:layout_constraintStart_toEndOf="@id/porsi"
+                app:layout_constraintTop_toBottomOf="@+id/judulrincimakanan" />
+
+            <TextView
+                android:id="@+id/kalori"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="80 Kalori"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.02"
+                app:layout_constraintStart_toEndOf="@+id/bukumenu"
+                app:layout_constraintTop_toBottomOf="@+id/judulrincimakanan" />
+
+            <TextView
+                android:id="@+id/komposisi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="149dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="Komposisi"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.05"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/layoutrinci" />
+
+            <ImageView
+                android:id="@+id/dot1"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginTop="200dp"
+                android:background="@drawable/dothijau"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.04"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/layoutrinci" />
+
+            <TextView
+                android:id="@+id/komposisidetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="190dp"
+                android:layout_marginLeft="13dp"
+                android:fontFamily="@font/poppinslight"
+                android:text="5 Buah Jeruk sunkist\n200ml Perasan jeruk sunkins\n1 bungkus besar Nutrijel rasa jeruk\n500ml Air\n200ml Perasan jeruk sunkist\n100 gram Gula"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.12"
+                app:layout_constraintStart_toEndOf="@+id/dot1"
+                app:layout_constraintTop_toTopOf="@+id/layoutrinci" />
+
+            <TextView
+                android:id="@+id/langkah2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="Langkah - langkah"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.05"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/komposisidetail" />
+
+            <TextView
+                android:id="@+id/langkah2detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppinslight"
+                android:text="Siapkan semua bahan. Isi jeruk diperas, \n
+ambil sarinya 200ml.\n
+    \n
+Masak air lalu masukkan agar-agar dan gula \n
+sambil diaduk hingga mendidih. Gunakan \n
+api kecil.\n
+\n
+Matikan api kompor. Sesaat sebelum diangkat
+tuang air perasaan air jeruk lalu aduk.\n
+\n
+Masukkan kedalam cetakan lalu letakkan \n
+potongan jeruk dan diamkan hingga set. \n
+Simpan dalam kulkas agar lebih segar. \n
+Puding Jeruk siap disajikan."
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.08"
+                app:layout_constraintStart_toEndOf="@+id/dot1"
+                app:layout_constraintTop_toBottomOf="@+id/langkah2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

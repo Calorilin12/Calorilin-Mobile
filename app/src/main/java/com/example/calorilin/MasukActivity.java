@@ -72,6 +72,7 @@ public class MasukActivity extends AppCompatActivity {
                             editor.commit();
 
                             startActivity(new Intent(getApplicationContext(), Halaman.class));
+
                         } else if (response.code() == 500) {
                             Toast.makeText(MasukActivity.this, "Gagal", Toast.LENGTH_SHORT).show();
                         }

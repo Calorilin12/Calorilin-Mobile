@@ -30,7 +30,6 @@ public class RekomendasiMakananActivity extends AppCompatActivity implements Lab
     ArrayList<ObjekLabelRekomen> labelRekomen;
     ArrayList<RecipesItem> listDiabetes,listKolesterol,listHipertensi;
     RecyclerView recyclerView,daftarrekomendasimakanan;
-    static String flaglabel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
