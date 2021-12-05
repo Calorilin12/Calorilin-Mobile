@@ -13,9 +13,11 @@ import android.widget.Toast;
 
 import com.example.calorilin.adapter.CariAdapter;
 import com.example.calorilin.adapter.LabelRekomAdapter;
+import com.example.calorilin.adapter.ListRekomAdapter;
 import com.example.calorilin.api.ApiClient;
 import com.example.calorilin.api.ApiInterface;
 import com.example.calorilin.listenerpack.LabelRekomListener;
+import com.example.calorilin.model.disease.DiseaseItem;
 import com.example.calorilin.model.recipes.RecipesItem;
 
 import java.util.ArrayList;
@@ -30,6 +32,9 @@ public class RekomendasiMakananActivity extends AppCompatActivity implements Lab
     ArrayList<ObjekLabelRekomen> labelRekomen;
     ArrayList<RecipesItem> listDiabetes,listKolesterol,listHipertensi;
     RecyclerView recyclerView,daftarrekomendasimakanan;
+    String label = "Cholesterol";
+    String token;
+    SharedPreferences sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,23 +51,84 @@ public class RekomendasiMakananActivity extends AppCompatActivity implements Lab
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         recyclerView.setAdapter(adapter);
 
-        SharedPreferences sp = getApplicationContext().getSharedPreferences("sharepre", Context.MODE_PRIVATE);
-        String token = sp.getString("tokens", "");
+        sp = getApplicationContext().getSharedPreferences("sharepre", Context.MODE_PRIVATE);
+        token = sp.getString("tokens", "");
 
-        ApiInterface methods = ApiClient.getClient().create(ApiInterface.class);
-        Call<List<RecipesItem>> call = methods.recipesResponse("Bearer " + token);
-
-        call.enqueue(new Callback<List<RecipesItem>>() {
-            @Override
-            public void onResponse(Call<List<RecipesItem>> call, Response<List<RecipesItem>> response) {
-                if (response.isSuccessful()) {
-                    List<RecipesItem> resep = response.body();
-                    Toast.makeText(RekomendasiMakananActivity.this, "Berhasil", Toast.LENGTH_LONG).show();
-                    filterresep(resep);
+//        ApiInterface methods = ApiClient.getClient().create(ApiInterface.class);
+//        Call<List<DiseaseItem>> call = methods.recipesFindByDiseaseResponse("Bearer " + token,label);
+//
+//
+//        call.enqueue(new Callback<List<DiseaseItem>>() {
+//            @Override
+//            public void onResponse(Call<List<DiseaseItem>> call, Response<List<DiseaseItem>> response) {
+//                if (response.isSuccessful()) {
+//                    List<DiseaseItem> resep = response.body();
+//                    Toast.makeText(RekomendasiMakananActivity.this, "Berhasil", Toast.LENGTH_LONG).show();
+//                    //filterresep(resep);
 //                    daftarrekomendasimakanan = findViewById(R.id.daftarmakananrekomendasi);
-//                    CariAdapter adapter2 = new CariAdapter(getApplicationContext(), resep);
+//                    ListRekomAdapter adapter2 = new ListRekomAdapter(getApplicationContext(), resep);
 //                    daftarrekomendasimakanan.setLayoutManager(new LinearLayoutManager(RekomendasiMakananActivity.this, LinearLayoutManager.VERTICAL, false));
 //                    daftarrekomendasimakanan.setAdapter(adapter2);
+//
+//                } else if (response.code() == 500) {
+//                    Toast.makeText(RekomendasiMakananActivity.this, "Gagal", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<DiseaseItem>> call, Throwable t) {
+//                Log.e("test", "onFailure" + t.getMessage());
+//                Toast.makeText(RekomendasiMakananActivity.this, "Gagal" + t.getMessage(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
+
+    }
+
+    private void tambahlabel() {
+        labelRekomen = new ArrayList<>();
+        labelRekomen.add(new ObjekLabelRekomen("Cholesterol"));
+        labelRekomen.add(new ObjekLabelRekomen("Diabetes"));
+        labelRekomen.add(new ObjekLabelRekomen("Hipertensi"));
+        labelRekomen.add(new ObjekLabelRekomen("Asam Urat"));
+        labelRekomen.add(new ObjekLabelRekomen("Asam Lambung"));
+    }
+
+    @Override
+    public void onLabel(String flag) {
+        System.out.println("test :"+ flag);
+        label = flag;
+//        daftarrekomendasimakanan = findViewById(R.id.daftarmakananrekomendasi);
+//        CariAdapter adapter2 = null;
+//
+//        if (flag.equals("Kolesterol")){
+//            adapter2 = new CariAdapter(getApplicationContext(), listKolesterol);
+//        }
+//        if (flag.equals("Diabetes")){
+//            adapter2 = new CariAdapter(getApplicationContext(), listDiabetes);
+//        }
+//        if (flag.equals("Hipertensi")){
+//            adapter2 = new CariAdapter(getApplicationContext(), listHipertensi);
+//        }
+//        daftarrekomendasimakanan.setLayoutManager(new LinearLayoutManager(RekomendasiMakananActivity.this, LinearLayoutManager.VERTICAL, false));
+//        daftarrekomendasimakanan.setAdapter(adapter2);
+
+        token = sp.getString("tokens", "");
+
+        ApiInterface methods = ApiClient.getClient().create(ApiInterface.class);
+        Call<List<DiseaseItem>> call = methods.recipesFindByDiseaseResponse("Bearer " + token,label);
+
+
+        call.enqueue(new Callback<List<DiseaseItem>>() {
+            @Override
+            public void onResponse(Call<List<DiseaseItem>> call, Response<List<DiseaseItem>> response) {
+                if (response.isSuccessful()) {
+                    List<DiseaseItem> resep = response.body();
+                    Toast.makeText(RekomendasiMakananActivity.this, "Berhasil", Toast.LENGTH_LONG).show();
+                    //filterresep(resep);
+                    daftarrekomendasimakanan = findViewById(R.id.daftarmakananrekomendasi);
+                    ListRekomAdapter adapter2 = new ListRekomAdapter(getApplicationContext(), resep);
+                    daftarrekomendasimakanan.setLayoutManager(new LinearLayoutManager(RekomendasiMakananActivity.this, LinearLayoutManager.VERTICAL, false));
+                    daftarrekomendasimakanan.setAdapter(adapter2);
 
                 } else if (response.code() == 500) {
                     Toast.makeText(RekomendasiMakananActivity.this, "Gagal", Toast.LENGTH_SHORT).show();
@@ -70,52 +136,24 @@ public class RekomendasiMakananActivity extends AppCompatActivity implements Lab
             }
 
             @Override
-            public void onFailure(Call<List<RecipesItem>> call, Throwable t) {
+            public void onFailure(Call<List<DiseaseItem>> call, Throwable t) {
                 Log.e("test", "onFailure" + t.getMessage());
                 Toast.makeText(RekomendasiMakananActivity.this, "Gagal" + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-
     }
-
-    private void tambahlabel() {
-        labelRekomen = new ArrayList<>();
-        labelRekomen.add(new ObjekLabelRekomen("Kolesterol"));
-        labelRekomen.add(new ObjekLabelRekomen("Diabetes"));
-        labelRekomen.add(new ObjekLabelRekomen("Hipertensi"));
-        labelRekomen.add(new ObjekLabelRekomen("Tua"));
-    }
-
-    @Override
-    public void onLabel(String flag) {
-        System.out.println("test :"+ flag);
-        daftarrekomendasimakanan = findViewById(R.id.daftarmakananrekomendasi);
-        CariAdapter adapter2 = null;
-
-        if (flag.equals("Kolesterol")){
-            adapter2 = new CariAdapter(getApplicationContext(), listKolesterol);
-        }
-        if (flag.equals("Diabetes")){
-            adapter2 = new CariAdapter(getApplicationContext(), listDiabetes);
-        }
-        if (flag.equals("Hipertensi")){
-            adapter2 = new CariAdapter(getApplicationContext(), listHipertensi);
-        }
-        daftarrekomendasimakanan.setLayoutManager(new LinearLayoutManager(RekomendasiMakananActivity.this, LinearLayoutManager.VERTICAL, false));
-        daftarrekomendasimakanan.setAdapter(adapter2);
-    }
-    public void filterresep(List<RecipesItem> resep){
-
-        for (RecipesItem recipesItem:resep){
-            if(recipesItem.getCholesterol() == 0){
-                listKolesterol.add(recipesItem);
-            }
-            if (recipesItem.getDiabetes() == 0){
-                listDiabetes.add(recipesItem);
-            }
-            if (recipesItem.getHyperTension() == 0){
-                listHipertensi.add(recipesItem);
-            }
-        }
-    }
+//    public void filterresep(List<RecipesItem> resep){
+//
+//        for (RecipesItem recipesItem:resep){
+//            if(recipesItem.getCholesterol() == 0){
+//                listKolesterol.add(recipesItem);
+//            }
+//            if (recipesItem.getDiabetes() == 0){
+//                listDiabetes.add(recipesItem);
+//            }
+//            if (recipesItem.getHyperTension() == 0){
+//                listHipertensi.add(recipesItem);
+//            }
+//        }
+//    }
 }

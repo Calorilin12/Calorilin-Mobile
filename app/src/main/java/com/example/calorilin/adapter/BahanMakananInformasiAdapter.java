@@ -4,31 +4,33 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.calorilin.ObjekKontrol;
-import com.example.calorilin.ObjekLabelRekomen;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.calorilin.R;
+import com.example.calorilin.model.foodmaterial.FoodMaterialItem;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class Controlkaloriadapter extends RecyclerView.Adapter<Controlkaloriadapter.ViewHolder> {
-    private ArrayList<ObjekKontrol> data = new ArrayList<>();
+public class BahanMakananInformasiAdapter extends RecyclerView.Adapter<BahanMakananInformasiAdapter.ViewHolder> {
+    private List<FoodMaterialItem> data = new ArrayList<>();
     private RecycleKlik lister;
     private LayoutInflater inflater;
     private Context context;
 
-    public Controlkaloriadapter(Context context, ArrayList<ObjekKontrol> list){
+    public BahanMakananInformasiAdapter(Context context, List<FoodMaterialItem> list){
         this.context = context;
         this.data = list;
         inflater = LayoutInflater.from(context);
     }
 
-    public void setData(ArrayList<ObjekKontrol> items){
+    public void setData(List<FoodMaterialItem> items){
         data.clear();
         data.addAll(items);
         notifyDataSetChanged();
@@ -37,23 +39,28 @@ public class Controlkaloriadapter extends RecyclerView.Adapter<Controlkaloriadap
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.list_makanankontrol, null);
+        View view = inflater.inflate(R.layout.list_bahanmakanan, null);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.namamakanan.setText(data.get(position).getNamamakanan());
-        holder.kalorimakanan.setText(data.get(position).getKalorimakanan());
-        holder.kontrol1.setText(data.get(position).getKontrol1());
-        holder.kontrol2.setText(data.get(position).getKontrol2());
-        holder.kontrol3.setText(data.get(position).getKontrol3());
+        FoodMaterialItem bahanmakanan = data.get(position);
+        holder.namabahanmakanan.setText(bahanmakanan.getName());
+        holder.jumlahkaloribahan.setText(String.valueOf(bahanmakanan.getCalory())+"Kcal");
+        Glide.with(holder.gambarbahanmakanan.getContext())
+                .load("http://192.168.194.60:8000/Food-material-images/"+ bahanmakanan.getImage()).apply(new RequestOptions().override(200, 100)).into(holder.gambarbahanmakanan);
 
     }
 
     @Override
     public int getItemCount() {
         return data.size();
+    }
+
+    public void filterlist(ArrayList<FoodMaterialItem> filteredlist) {
+        data = filteredlist;
+        notifyDataSetChanged();
     }
 
     interface RecycleKlik{
@@ -66,22 +73,15 @@ public class Controlkaloriadapter extends RecyclerView.Adapter<Controlkaloriadap
 
     // stores and recycles views as they are scrolled off screen
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView namamakanan;
-        TextView kalorimakanan;
-        TextView kontrol1;
-        TextView kontrol2;
-        TextView kontrol3;
-        Button btnhapus;
+        TextView namabahanmakanan;
+        TextView jumlahkaloribahan;
+        ImageView gambarbahanmakanan;
 
         ViewHolder(View itemView) {
             super(itemView);
-            namamakanan = itemView.findViewById(R.id.namamaknaankontrol);
-            kalorimakanan = itemView.findViewById(R.id.kalorimakanan);
-            kontrol1 = itemView.findViewById(R.id.kandunganmakanankontrol1);
-            kontrol2 = itemView.findViewById(R.id.kandunganmakanankontrol2);
-            kontrol3 = itemView.findViewById(R.id.kandunganmakanankontrol3);
-            btnhapus = itemView.findViewById(R.id.btnhapus);
-
+            namabahanmakanan = itemView.findViewById(R.id.namabahanmakanan);
+            gambarbahanmakanan = itemView.findViewById(R.id.fotobahanmakanan);
+            jumlahkaloribahan = itemView.findViewById(R.id.jumlahkaloribahan);
             itemView.setTag(itemView);
 
             itemView.setOnClickListener(view -> {

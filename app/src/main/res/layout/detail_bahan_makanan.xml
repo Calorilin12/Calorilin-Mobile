@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detailMakananContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/judulBahanMakanan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppinsbold"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="Telur Ceplok"
+        android:textColor="@color/black"
+        android:textFontWeight="500"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/penyajian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="4dp"
+        android:text="Penyajian"
+        android:textSize="14sp"
+        android:textColor="@color/sec500"
+        android:fontFamily="@font/poppinsregular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/judulBahanMakanan" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardPenyajian"
+        android:layout_width="136dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="44dp"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="@color/abu2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/penyajian">
+
+        <TextView
+            android:id="@+id/nilaiPenyajian"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="1 Butir"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:textFontWeight="300"
+            android:fontFamily="@font/poppinsregular" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tipeBahanMakanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="86dp"
+        android:fontFamily="@font/poppinsregular"
+        android:text="Tipe Bahan"
+        android:textColor="@color/sec500"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/penyajian"
+        app:layout_constraintTop_toBottomOf="@+id/judulBahanMakanan" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardTipeBahan"
+        android:layout_width="136dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="18dp"
+        app:cardBackgroundColor="@color/abu2"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintStart_toEndOf="@+id/cardPenyajian"
+        app:layout_constraintTop_toBottomOf="@+id/tipeBahanMakanan">
+
+        <TextView
+            android:id="@+id/isiTipeBahan"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/poppinsregular"
+            android:gravity="center"
+            android:text="Telur Ayam"
+            android:textColor="@color/black"
+            android:textFontWeight="300"
+            android:textSize="14sp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/informasiGizi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="23dp"
+        android:fontFamily="@font/poppinsregular"
+        android:text="Informasi Gizi"
+        android:textColor="@color/sec500"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardPenyajian" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/informasiKalori"
+        android:layout_width="136dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginStart="44dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/informasiGizi">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/hijau_prim_500_corner">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardIconKalori"
+                android:layout_width="29dp"
+                android:layout_height="29dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="16dp"
+                app:cardBackgroundColor="@color/abu2"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/fotoIconKalori"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/kalori"/>
+                
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textKalori"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="18dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="Kalori"
+                android:textColor="@color/sec500"
+                android:textFontWeight="400"
+                android:textSize="10sp"
+                app:layout_constraintStart_toEndOf="@+id/cardIconKalori"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/nilaiKalori"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="400"
+                android:textColor="@color/netral"
+                android:textFontWeight="400"
+                android:textSize="10sp"
+                app:layout_constraintStart_toEndOf="@+id/cardIconKalori"
+                app:layout_constraintTop_toBottomOf="@+id/textKalori" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/informasiKarbo"
+        android:layout_width="136dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginStart="18dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintStart_toEndOf="@+id/informasiKalori"
+        app:layout_constraintTop_toBottomOf="@+id/informasiGizi">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/hijau_prim_500_corner">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardIconKarbo"
+                android:layout_width="29dp"
+                android:layout_height="29dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/abu2"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/fotoIconCarbo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/karbo" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textKarbo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="Karbohidrat"
+                android:textColor="@color/sec500"
+                android:textFontWeight="400"
+                android:textSize="10sp"
+                app:layout_constraintStart_toEndOf="@+id/cardIconKarbo"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/nilaiKarbo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="1.2 g"
+                android:textColor="@color/netral"
+                android:textFontWeight="400"
+                android:textSize="10sp"
+                app:layout_constraintStart_toEndOf="@+id/cardIconKarbo"
+                app:layout_constraintTop_toBottomOf="@+id/textKarbo" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/informasiLemak"
+        android:layout_width="136dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginStart="44dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/informasiKalori">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/hijau_prim_500_corner">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardIconLemak"
+                android:layout_width="29dp"
+                android:layout_height="29dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/abu2"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/fotoIconLemak"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/lemak" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textLemak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="Lemak"
+                android:textColor="@color/sec500"
+                android:textFontWeight="400"
+                android:textSize="10sp"
+                app:layout_constraintStart_toEndOf="@+id/cardIconLemak"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/nilaiLemak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="28.5 g"
+                android:textColor="@color/netral"
+                android:textFontWeight="400"
+                android:textSize="10sp"
+                app:layout_constraintStart_toEndOf="@+id/cardIconLemak"
+                app:layout_constraintTop_toBottomOf="@+id/textLemak" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/informasiProtein"
+        android:layout_width="136dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginStart="18dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintStart_toEndOf="@+id/informasiLemak"
+        app:layout_constraintTop_toBottomOf="@+id/informasiKarbo">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/hijau_prim_500_corner">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardIconProtein"
+                android:layout_width="29dp"
+                android:layout_height="29dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/abu2"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/fotoIconProtein"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/protein" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textProtein"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="Protein"
+                android:textColor="@color/sec500"
+                android:textFontWeight="400"
+                android:textSize="10sp"
+                app:layout_constraintStart_toEndOf="@+id/cardIconProtein"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/nilaiProtein"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="6.5 g"
+                android:textColor="@color/netral"
+                android:textFontWeight="400"
+                android:textSize="10sp"
+                app:layout_constraintStart_toEndOf="@+id/cardIconProtein"
+                app:layout_constraintTop_toBottomOf="@+id/textProtein" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/buttonSimpan"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="345dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Simpan"
+        android:textSize="18dp"
+        android:textFontWeight="500"
+        android:fontFamily="@font/poppinsbold"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

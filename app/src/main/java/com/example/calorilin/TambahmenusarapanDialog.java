@@ -1,22 +1,32 @@
 package com.example.calorilin;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatDialogFragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.calorilin.adapter.BahanMakananAdapter;
+import com.example.calorilin.adapter.CariAdapter;
 import com.example.calorilin.api.ApiClient;
 import com.example.calorilin.api.ApiInterface;
 import com.example.calorilin.model.foodmaterial.FoodMaterialItem;
+import com.example.calorilin.model.recipes.RecipesItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,20 +35,27 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class TambahMenu extends AppCompatActivity {
-    EditText caribahan;
-    RecyclerView menubahanmakanan;
-
+public class TambahmenusarapanDialog extends AppCompatDialogFragment {
+    RecyclerView bahanmakanan;
+    EditText cari;
+    @NonNull
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tambah_menu);
+    public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
-        SharedPreferences sp = getApplicationContext().getSharedPreferences("sharepre", Context.MODE_PRIVATE);
+        LayoutInflater inflater = getActivity().getLayoutInflater();
+        View view = inflater.inflate(R.layout.tambahmenu_dialog,null);
+
+        builder.setView(view).setTitle("Tambah Menu").setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        SharedPreferences sp = getActivity().getApplicationContext().getSharedPreferences("sharepre", Context.MODE_PRIVATE);
         String token = sp.getString("tokens", "");
 
-        caribahan = findViewById(R.id.cariMenuTambahan);
-        menubahanmakanan = findViewById(R.id.menubahan);
+        cari = view.findViewById(R.id.caridialog);
 
         ApiInterface methods = ApiClient.getClient().create(ApiInterface.class);
         Call<List<FoodMaterialItem>> call = methods.foodMaterialResponse("Bearer " + token);
@@ -48,12 +65,14 @@ public class TambahMenu extends AppCompatActivity {
             public void onResponse(Call<List<FoodMaterialItem>> call, Response<List<FoodMaterialItem>> response) {
                 if (response.isSuccessful()) {
                     List<FoodMaterialItem> resep = response.body();
-                    Toast.makeText(TambahMenu.this, "Berhasil", Toast.LENGTH_LONG).show();
+                    Toast.makeText(requireContext(), "Berhasil", Toast.LENGTH_LONG).show();
+                    bahanmakanan = view.findViewById(R.id.bahanmakananrecycle);
 
-                    BahanMakananAdapter adapter2 = new BahanMakananAdapter(getApplicationContext(), resep);
-                    menubahanmakanan.setLayoutManager(new LinearLayoutManager(TambahMenu.this, LinearLayoutManager.VERTICAL, false));
+                    BahanMakananAdapter adapter2 = new BahanMakananAdapter(getActivity().getApplicationContext(), resep);
+                    bahanmakanan.setLayoutManager(new LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false));
+                    bahanmakanan.setAdapter(adapter2);
 
-                    caribahan.addTextChangedListener(new TextWatcher() {
+                    cari.addTextChangedListener(new TextWatcher() {
                         @Override
                         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -66,7 +85,6 @@ public class TambahMenu extends AppCompatActivity {
 
                         @Override
                         public void afterTextChanged(Editable s) {
-                            menubahanmakanan.setAdapter(adapter2);
                             ArrayList<FoodMaterialItem> filteredlist = new ArrayList<>();
                             for (FoodMaterialItem foodMaterialItem:resep){
                                 if (foodMaterialItem.getName().toLowerCase().contains(s.toString())){
@@ -78,15 +96,16 @@ public class TambahMenu extends AppCompatActivity {
                     });
 
                 } else if (response.code() == 500) {
-                    Toast.makeText(TambahMenu.this, "Gagal", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(requireContext(), "Gagal", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<List<FoodMaterialItem>> call, Throwable t) {
                 Log.e("test", "onFailure" + t.getMessage());
-                Toast.makeText(TambahMenu.this, "Gagal" + t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), "Gagal" + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+        return builder.create();
     }
 }

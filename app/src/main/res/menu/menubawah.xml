@@ -6,7 +6,7 @@
         android:icon="@drawable/rumah"
         />
     <item android:id="@+id/hitung"
-        android:title="Hitung"
+        android:title="Informasi"
         android:icon="@drawable/calc"
         />
     <item android:id="@+id/jadwal"

@@ -31,6 +31,7 @@ public class FragmentKontrolKalori extends Fragment{
     CardView cardViewBreakfast, cardViewLunch, cardViewDinner;
     RecyclerView dinner;
     ArrayList<ObjekKontrol> listkontrol;
+    Button tambahmenusarapan;
 
     @Nullable
     @Override
@@ -97,12 +98,24 @@ public class FragmentKontrolKalori extends Fragment{
                 }
             }
         });
+        tambahmenusarapan = view.findViewById(R.id.addMenuBreakfast);
+        tambahmenusarapan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), TambahMenu.class);
+                startActivity(intent);
+            }
+        });
 
         return view;
     }
     private void tambahmaknanankalori() {
         listkontrol = new ArrayList<>();
-        listkontrol.add(new ObjekKontrol("Telor Ceplok","780 Kcal","45 g","45 g", "45 g","test"));
-        listkontrol.add(new ObjekKontrol("Telor Dadar","780 Kcal","45 g","45 g", "45 g",""));
+        listkontrol.add(new ObjekKontrol("Telor Ceplok","780 Kcal","45 g","45 g", "45 g"));
+        listkontrol.add(new ObjekKontrol("Telor Dadar","780 Kcal","45 g","45 g", "45 g"));
+    }
+    public  void openDialog(){
+        TambahmenusarapanDialog tambahmenusarapanDialog = new TambahmenusarapanDialog();
+        tambahmenusarapanDialog.show(getActivity().getSupportFragmentManager(), "menu sarapan");
     }
 }
