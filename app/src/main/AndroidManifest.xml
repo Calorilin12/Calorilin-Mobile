@@ -1,61 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.calorilin">
+    package="com.calorilin.calorilin_mobile">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:screenOrientation="portrait"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/calorilin_icon"
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/network_config"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/calorilin_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.Calorilin">
         <activity
-            android:name=".RekomendasiDataKosong"
+            android:name="com.calorilin.calorilin_mobile.RekomendasiDataKosong"
             android:exported="false" />
         <activity
-            android:name=".RincianMakanan"
+            android:name="com.calorilin.calorilin_mobile.RincianMakanan"
             android:exported="true" />
         <activity
-            android:name=".TambahMenu"
+            android:name="com.calorilin.calorilin_mobile.TambahMenu"
             android:exported="true" />
         <activity
-            android:name=".ControlCalories"
+            android:name="com.calorilin.calorilin_mobile.ControlCalories"
             android:exported="true" />
         <activity
-            android:name=".CountCalories"
+            android:name="com.calorilin.calorilin_mobile.CountCalories"
             android:exported="true" />
         <activity
-            android:name=".DataTambahan"
+            android:name="com.calorilin.calorilin_mobile.DataTambahan"
             android:exported="true" />
         <activity
-            android:name=".RekomendasiMakananActivity"
+            android:name="com.calorilin.calorilin_mobile.RekomendasiMakananActivity"
             android:exported="true" />
         <activity
-            android:name=".SearchActivity"
+            android:name="com.calorilin.calorilin_mobile.SearchActivity"
             android:exported="true" />
         <activity
-            android:name=".EditProfile"
+            android:name="com.calorilin.calorilin_mobile.EditProfile"
             android:exported="true" />
         <activity
-            android:name=".Pengaturan"
+            android:name="com.calorilin.calorilin_mobile.Pengaturan"
             android:exported="true" />
         <activity
-            android:name=".Halaman"
+            android:name="com.calorilin.calorilin_mobile.Halaman"
             android:exported="true" />
         <activity
-            android:name=".Daftar"
+            android:name="com.calorilin.calorilin_mobile.Daftar"
             android:exported="true" />
         <activity
-            android:name=".MasukActivity"
+            android:name="com.calorilin.calorilin_mobile.MasukActivity"
             android:exported="true" />
         <activity
-            android:name=".Login"
+            android:name="com.calorilin.calorilin_mobile.Login"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.calorilin.calorilin_mobile.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
