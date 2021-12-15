@@ -63,12 +63,14 @@ public class MasukActivity extends AppCompatActivity {
                     public void onResponse(Call<Login> call, Response<Login> response) {
                         if (response.code() == 201) {
                             String tokens = response.body().getTokens();
+                            String iduser = String.valueOf(response.body().getUser().getId());
 
                             Log.e("Test", "onResponse: code: " + response.code());
                             Toast.makeText(MasukActivity.this, "Selamat Datang", Toast.LENGTH_LONG).show();
 
                             SharedPreferences.Editor editor = sp.edit();
                             editor.putString("tokens", tokens);
+                            editor.putString("id", iduser);
                             editor.commit();
 
                             startActivity(new Intent(getApplicationContext(), Halaman.class));

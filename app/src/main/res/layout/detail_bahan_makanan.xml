@@ -2,13 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/detailMakananContainer"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/judulBahanMakanan"
+        android:id="@+id/judulBahanMakananfav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppinsbold"
@@ -33,7 +32,7 @@
         android:textColor="@color/sec500"
         android:fontFamily="@font/poppinsregular"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/judulBahanMakanan" />
+        app:layout_constraintTop_toBottomOf="@+id/judulBahanMakananfav" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardPenyajian"
@@ -69,7 +68,7 @@
         android:textColor="@color/sec500"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/penyajian"
-        app:layout_constraintTop_toBottomOf="@+id/judulBahanMakanan" />
+        app:layout_constraintTop_toBottomOf="@+id/judulBahanMakananfav" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardTipeBahan"

@@ -1,12 +1,15 @@
 package com.example.calorilin.api;
 
 import com.example.calorilin.model.disease.DiseaseItem;
+import com.example.calorilin.model.favoriteget.FavMaterialItem;
 import com.example.calorilin.model.foodmaterial.FoodMaterialItem;
 import com.example.calorilin.model.foodmaterialfavpost.Materialfavpost;
 import com.example.calorilin.model.login.Login;
-import com.example.calorilin.model.recipes.Recipes;
+import com.example.calorilin.model.materialfavtimeshow.MaterialfavtimeshowItem;
 import com.example.calorilin.model.recipes.RecipesItem;
 import com.example.calorilin.model.register.Register;
+import com.example.calorilin.model.user.UserData;
+import com.example.calorilin.model.userpost.UserEdit;
 
 import java.util.List;
 
@@ -16,6 +19,7 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface ApiInterface {
@@ -51,13 +55,40 @@ public interface ApiInterface {
     );
 
     @FormUrlEncoded
-    @POST("food-material-favorites")
+    @POST("food-material-favorites/{id_user}/{id_food_material}")
     Call<Materialfavpost> foodmaterialfavoritesResponse(
-            @Field("time_show") String time_show
+            @Path("id_user") String idUser,
+            @Path("id_food_material") String idFoodMaterial,
+            @Header("Authorization") String token,
+            @Field("time_show") String timeShow
     );
 
-//    @GET("User")
-//    Call<List<RecipesItem>> recipesResponse(
-//            @Header("Authorization") String token
-//    );
+    @GET("food-material-favorites/{id}")
+    Call<List<FavMaterialItem>> foodmaterialgetResponse(
+            @Header("Authorization") String token,
+            @Path("id") String idUser
+    );
+
+    @GET("users/{id}")
+    Call<UserData> userResponse(
+            @Header("Authorization") String token,
+            @Path("id") String idUser
+    );
+
+    @FormUrlEncoded
+    @POST("users/{id}?_method=PUT")
+    Call<UserEdit> usereditResponse(
+            @Path("id") String id,
+            @Query("_method") String method,
+            @Field("name") String name,
+            @Field("email") String email,
+            @Field("password") String password
+    );
+
+    @GET("food-material-favorites-by-time-show/{id_user}?time_show=Pagi")
+    Call<List<MaterialfavtimeshowItem>> favShowTimeResponse(
+            @Header("Authorization") String token,
+            @Path("id_user") String idUser,
+            @Query("time_show") String timeShow
+    );
 }

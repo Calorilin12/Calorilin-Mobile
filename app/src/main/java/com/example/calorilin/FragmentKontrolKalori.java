@@ -102,6 +102,8 @@ public class FragmentKontrolKalori extends Fragment{
         tambahmenusarapan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                FlagTimeShow flagTimeShow = new FlagTimeShow();
+                flagTimeShow.setTimeshownow("Pagi");
                 Intent intent = new Intent(getActivity(), TambahMenu.class);
                 startActivity(intent);
             }

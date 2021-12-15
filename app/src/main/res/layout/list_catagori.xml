@@ -5,6 +5,8 @@
     android:orientation="vertical"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_marginEnd="10dp"
+    android:background="@drawable/menusec500"
     android:padding="20dp">
 
     <ImageView
@@ -22,6 +24,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Aiskrim"
+        android:textColor="@color/netral"
+        android:fontFamily="@font/poppinsregular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logoka" />

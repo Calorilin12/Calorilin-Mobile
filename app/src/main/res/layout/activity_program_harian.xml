@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProgramHarian">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/backButtonIMT"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/transparan"
+        android:drawableLeft="@drawable/back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.105"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/judulProgramHarian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/poppinsregular"
+        android:text="Program Kesehatan Harian"
+        android:textFontWeight="400"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backButtonIMT" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardStatusIMT"
+        android:layout_width="0dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="@color/abu2"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/judulProgramHarian">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/fotoFitness"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pana"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iconTinggiBadan"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="96dp"
+                android:layout_marginTop="24dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/height"
+                app:layout_constraintStart_toEndOf="@+id/fotoFitness"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/nilaiTinggiBadan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="189 Cm"
+                android:textColor="@color/netral"
+                android:textFontWeight="400"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/iconTinggiBadan"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iconBeratBadan"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="96dp"
+                android:layout_marginTop="12dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/weight"
+                app:layout_constraintStart_toEndOf="@+id/fotoFitness"
+                app:layout_constraintTop_toBottomOf="@+id/iconTinggiBadan" />
+
+            <TextView
+                android:id="@+id/nilaiBeratBadan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="85 Kg"
+                android:textColor="@color/netral"
+                android:textFontWeight="400"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/iconBeratBadan"
+                app:layout_constraintTop_toBottomOf="@+id/nilaiTinggiBadan" />
+
+            <TextView
+                android:id="@+id/judulStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="96dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppinslight"
+                android:text="Status"
+                android:textColor="@color/netral"
+                android:textFontWeight="400"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/fotoFitness"
+                app:layout_constraintTop_toBottomOf="@+id/iconBeratBadan" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardHasilIMT"
+                android:layout_width="94dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="96dp"
+                android:layout_marginTop="2dp"
+                app:cardBackgroundColor="@color/primary"
+                app:cardCornerRadius="300dp"
+                app:layout_constraintStart_toEndOf="@+id/fotoFitness"
+                app:layout_constraintTop_toBottomOf="@+id/judulStatus">
+
+                <TextView
+                    android:id="@+id/hasilIMT"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/poppinsregular"
+                    android:gravity="center"
+                    android:text="IDEAL"
+                    android:textColor="@color/white"
+                    android:textFontWeight="500"
+                    android:textSize="14sp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/workOut1"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="16dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardStatusIMT">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/hijau_prim_500">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardiconWorkout1"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="16dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/fotoPushUp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/push_up" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textProgramHarian1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="Program Harian"
+                android:textColor="@color/white"
+                android:textFontWeight="400"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/cardiconWorkout1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/nilaiProgramHarian1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="20 Push Up"
+                android:textColor="@color/white"
+                android:textFontWeight="400"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/cardiconWorkout1"
+                app:layout_constraintTop_toBottomOf="@+id/textProgramHarian1" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonWorkout1"
+                android:layout_width="82dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bulatputih"
+                android:fontFamily="@font/poppinsregular"
+                android:text="DONE"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textFontWeight="500"
+                android:textAllCaps="false"
+                android:textColor="@color/primary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/workOut2"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/workOut1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shapeputih">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardiconWorkout2"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="16dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/fotoSitUp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/sit_up" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textProgramHarian2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="Program Harian"
+                android:textColor="@color/sec500"
+                android:textFontWeight="400"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/cardiconWorkout2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/nilaiProgramHarian2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="15 Push Up"
+                android:textColor="@color/black"
+                android:textFontWeight="400"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/cardiconWorkout2"
+                app:layout_constraintTop_toBottomOf="@+id/textProgramHarian2" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonWorkout2"
+                android:layout_width="82dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/shapehijau20"
+                android:fontFamily="@font/poppinsregular"
+                android:text="START"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textFontWeight="500"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/workOut3"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/workOut2">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shapeputih">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardiconWorkout3"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="16dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/fotoJogging"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/jogging" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textProgramHarian3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="Program Harian"
+                android:textColor="@color/sec500"
+                android:textFontWeight="400"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/cardiconWorkout3"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/nilaiProgramHarian3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="15 Push Up"
+                android:textColor="@color/black"
+                android:textFontWeight="400"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/cardiconWorkout3"
+                app:layout_constraintTop_toBottomOf="@+id/textProgramHarian3" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonWorkout3"
+                android:layout_width="82dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/shapehijau20"
+                android:fontFamily="@font/poppinsregular"
+                android:text="START"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textFontWeight="500"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/judulPolaMakan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="14dp"
+        android:fontFamily="@font/poppinsregular"
+        android:text="Kontrol Pola Minum"
+        android:textColor="@color/black"
+        android:textFontWeight="400"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/workOut3" />
+
+    <TextView
+        android:id="@+id/taskMinum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/poppinsregular"
+        android:text="2 / 8"
+        android:textColor="@color/primary"
+        android:textFontWeight="400"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/workOut3" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

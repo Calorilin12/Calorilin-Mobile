@@ -15,7 +15,7 @@
         android:fontFamily="@font/poppinsregular"
         android:text="Laporan bug"
         android:textAllCaps="false"
-        android:textColor="@color/sec100"
+        android:textColor="@color/sec500"
         android:textSize="14dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/kritiksaran" />
@@ -29,7 +29,7 @@
         android:fontFamily="@font/poppinsregular"
         android:text="Kritik dan saran"
         android:textAllCaps="false"
-        android:textColor="@color/sec100"
+        android:textColor="@color/sec500"
         android:textSize="14dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pengaturantentang2" />
@@ -43,7 +43,7 @@
         android:fontFamily="@font/poppinsregular"
         android:text="Kebijakan privasi"
         android:textAllCaps="false"
-        android:textColor="@color/sec100"
+        android:textColor="@color/sec500"
         android:textSize="14dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pengaturantentang" />
@@ -57,7 +57,7 @@
         android:fontFamily="@font/poppinsregular"
         android:text="persyaratan pengguna"
         android:textAllCaps="false"
-        android:textColor="@color/sec100"
+        android:textColor="@color/sec500"
         android:textSize="14dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pengaturantentang" />
@@ -140,7 +140,7 @@
         android:fontFamily="@font/poppinsregular"
         android:text="Akun"
         android:textAllCaps="false"
-        android:textColor="@color/sec100"
+        android:textColor="@color/sec500"
         android:textSize="14dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pengaturanumum" />
@@ -154,7 +154,7 @@
         android:fontFamily="@font/poppinsregular"
         android:text="Stefanus Irgy"
         android:textAllCaps="false"
-        android:textColor="@color/abu21"
+        android:textColor="@color/sec500"
         android:textSize="14dp"
         app:layout_constraintStart_toEndOf="@+id/akunpengaturan"
         app:layout_constraintTop_toBottomOf="@+id/pengaturanumum" />

@@ -1,11 +1,8 @@
 package com.example.calorilin.model.user;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 import com.google.gson.annotations.SerializedName;
 
-public class User implements Parcelable {
+public class UserData {
 
 	@SerializedName("image")
 	private String image;
@@ -171,79 +168,4 @@ public class User implements Parcelable {
 	public int getHeight(){
 		return height;
 	}
-
-	@Override
-	public int describeContents() {
-		return 0;
-	}
-
-	@Override
-	public void writeToParcel(Parcel dest, int flags) {
-		dest.writeString(this.image);
-		dest.writeString(this.tension);
-		dest.writeInt(this.weight);
-		dest.writeInt(this.check);
-		dest.writeInt(this.hyperTension);
-		dest.writeInt(this.stomachAcid);
-		dest.writeInt(this.uricAcid);
-		dest.writeString(this.name);
-		dest.writeInt(this.cholesterol);
-		dest.writeString(this.phoneNumber);
-		dest.writeInt(this.id);
-		dest.writeInt(this.diabetes);
-		dest.writeString(this.email);
-		dest.writeString(this.bornDate);
-		dest.writeInt(this.height);
-	}
-
-	public void readFromParcel(Parcel source) {
-		this.image = source.readString();
-		this.tension = source.readString();
-		this.weight = source.readInt();
-		this.check = source.readInt();
-		this.hyperTension = source.readInt();
-		this.stomachAcid = source.readInt();
-		this.uricAcid = source.readInt();
-		this.name = source.readString();
-		this.cholesterol = source.readInt();
-		this.phoneNumber = source.readString();
-		this.id = source.readInt();
-		this.diabetes = source.readInt();
-		this.email = source.readString();
-		this.bornDate = source.readString();
-		this.height = source.readInt();
-	}
-
-	public User() {
-	}
-
-	protected User(Parcel in) {
-		this.image = in.readString();
-		this.tension = in.readString();
-		this.weight = in.readInt();
-		this.check = in.readInt();
-		this.hyperTension = in.readInt();
-		this.stomachAcid = in.readInt();
-		this.uricAcid = in.readInt();
-		this.name = in.readString();
-		this.cholesterol = in.readInt();
-		this.phoneNumber = in.readString();
-		this.id = in.readInt();
-		this.diabetes = in.readInt();
-		this.email = in.readString();
-		this.bornDate = in.readString();
-		this.height = in.readInt();
-	}
-
-	public static final Parcelable.Creator<User> CREATOR = new Parcelable.Creator<User>() {
-		@Override
-		public User createFromParcel(Parcel source) {
-			return new User(source);
-		}
-
-		@Override
-		public User[] newArray(int size) {
-			return new User[size];
-		}
-	};
 }

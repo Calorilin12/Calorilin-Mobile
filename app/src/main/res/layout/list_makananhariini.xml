@@ -5,6 +5,7 @@
     android:orientation="vertical"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:background="@drawable/menusec500"
     android:padding="20dp">
 
     <ImageView
@@ -18,8 +19,8 @@
 
     <TextView
         android:id="@+id/namamakanan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="158dp"
+        android:layout_height="25dp"
         android:layout_marginTop="4dp"
         android:fontFamily="@font/poppinsmedium"
         android:text="Nasi Ayam Panggang"
@@ -38,7 +39,7 @@
         android:fontFamily="@font/poppinslight"
         android:text="by Pura Kitchen"
         android:textSize="10dp"
-        android:textColor="@color/sec100"
+        android:textColor="@color/sec500"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,7 +63,7 @@
         android:layout_marginTop="24dp"
         android:fontFamily="@font/poppinslight"
         android:text="Mudah"
-        android:textColor="@color/sec100"
+        android:textColor="@color/sec500"
         android:textSize="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.059"
@@ -88,7 +89,7 @@
         android:layout_marginTop="4dp"
         android:fontFamily="@font/poppinslight"
         android:text="20 Mei 2021"
-        android:textColor="@color/sec100"
+        android:textColor="@color/sec500"
         android:textSize="10dp"
         app:layout_constraintStart_toEndOf="@+id/logokalender"
         app:layout_constraintStart_toStartOf="@+id/logokalender"

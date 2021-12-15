@@ -23,9 +23,11 @@ import com.example.calorilin.adapter.KatgoriAdapter;
 import com.example.calorilin.adapter.MakananHariAdapter;
 import com.example.calorilin.api.ApiClient;
 import com.example.calorilin.api.ApiInterface;
+import com.example.calorilin.model.foodmaterialfavpost.Materialfavpost;
 import com.example.calorilin.model.login.Login;
 import com.example.calorilin.model.recipes.Recipes;
 import com.example.calorilin.model.recipes.RecipesItem;
+import com.example.calorilin.model.user.UserData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,8 +41,9 @@ public class FragmentBeranda extends Fragment implements View.OnClickListener{
     RecyclerView recyclerView, resephariini;
     ArrayList<ObjekKatagori> listkat;
     ArrayList<ObjekResepHari> listresephariini;
+    TextView halouser;
     EditText cari;
-    ImageView rekomendasi;
+    ImageView rekomendasi,programharian;
 
     @Nullable
     @Override
@@ -49,6 +52,28 @@ public class FragmentBeranda extends Fragment implements View.OnClickListener{
 
         SharedPreferences sp = getActivity().getApplicationContext().getSharedPreferences("sharepre", Context.MODE_PRIVATE);
         String token = sp.getString("tokens", "");
+        String id = sp.getString("id","");
+
+        halouser = view.findViewById(R.id.halo1);
+        ApiInterface methods2 = ApiClient.getClient().create(ApiInterface.class);
+        Call<UserData> call2 = methods2.userResponse("Bearer " + token, id);
+
+        call2.enqueue(new Callback<UserData>() {
+            @Override
+            public void onResponse(Call<UserData> call2, Response<UserData> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(requireContext(), "berhasil", Toast.LENGTH_SHORT).show();
+                    halouser.setText("Halo " + response.body().getName());
+                } else if (response.code() == 500) {
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UserData> call2, Throwable t) {
+                Toast.makeText(requireContext(), "Gagal" + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
         recyclerView = view.findViewById(R.id.katgori);
         tambahkatagori();
@@ -93,6 +118,10 @@ public class FragmentBeranda extends Fragment implements View.OnClickListener{
                 Toast.makeText(requireContext(), "Gagal" + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+
+        programharian = view.findViewById(R.id.programsehat);
+        programharian.setOnClickListener(this);
+
         return view;
     }
 
@@ -121,7 +150,8 @@ public class FragmentBeranda extends Fragment implements View.OnClickListener{
             startActivity(new Intent(requireActivity(), SearchActivity.class));
         } else if (v == rekomendasi) {
             startActivity(new Intent(requireActivity(), RekomendasiMakananActivity.class));
+        }else if (v == programharian) {
+            startActivity(new Intent(requireActivity(), ProgramHarian.class));
         }
     }
-
 }

@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Calorilin">
         <activity
+            android:name=".ProgramHarian"
+            android:exported="false" />
+        <activity
             android:name=".RekomendasiDataKosong"
             android:exported="false" />
         <activity
