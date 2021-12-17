@@ -63,7 +63,6 @@ public class FragmentBeranda extends Fragment implements View.OnClickListener {
             @Override
             public void onResponse(Call<UserData> call2, Response<UserData> response) {
                 if (response.isSuccessful()) {
-                    Toast.makeText(requireContext(), "berhasil", Toast.LENGTH_SHORT).show();
                     halouser.setText("Halo, " + response.body().getName());
                     DataPenyakit dataPenyakit = new DataPenyakit(response.body().getCholesterol(), response.body().getDiabetes(),
                             response.body().getHyperTension(),response.body().getUricAcid(),response.body().getStomachAcid());
@@ -104,7 +103,6 @@ public class FragmentBeranda extends Fragment implements View.OnClickListener {
                 if (response.isSuccessful()) {
                     List<RecipesItem> resep = response.body();
                     Log.e("Test", "onResponse: code: " + response.code());
-                    Toast.makeText(requireContext(), "Berhasil", Toast.LENGTH_LONG).show();
                     System.out.println("berhasil");
                     resephariini = view.findViewById(R.id.makananhari);
                     MakananHariAdapter adapter2 = new MakananHariAdapter(getActivity().getApplicationContext(), resep);

@@ -422,33 +422,5 @@
 
     </androidx.cardview.widget.CardView>
 
-    <TextView
-        android:id="@+id/judulPolaMakan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="14dp"
-        android:fontFamily="@font/poppinsregular"
-        android:text="Kontrol Pola Minum"
-        android:textColor="@color/black"
-        android:textFontWeight="400"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/workOut3" />
-
-    <TextView
-        android:id="@+id/taskMinum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/poppinsregular"
-        android:text="2 / 8"
-        android:textColor="@color/primary"
-        android:textFontWeight="400"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/workOut3" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

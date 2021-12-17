@@ -33,7 +33,7 @@
         android:hint="Cari menu pilihanmu..."
         android:paddingStart="15dp"
         android:paddingRight="20dp"
-        android:textColor="@color/abu21"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/judulCariMenuMakanan"

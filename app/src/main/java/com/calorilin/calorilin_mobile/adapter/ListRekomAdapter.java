@@ -52,15 +52,15 @@ public class ListRekomAdapter extends RecyclerView.Adapter<ListRekomAdapter.View
         Glide.with(holder.gambarmakanan.getContext())
                 .load("https://api.calorilin.me/recipe-detail-images/"+ resepitem.getRecipeImage()).apply(new RequestOptions().override(600, 200)).into(holder.gambarmakanan);
 
-        holder.gambarmakanan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, RincianMakanan.class);
-                intent.putExtra("rekomendasi", resepitem);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(intent);
-            }
-        });
+//        holder.gambarmakanan.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(context, RincianMakanan.class);
+//                intent.putExtra("rekomendasi", resepitem);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                context.startActivity(intent);
+//            }
+//        });
     }
 
     @Override
