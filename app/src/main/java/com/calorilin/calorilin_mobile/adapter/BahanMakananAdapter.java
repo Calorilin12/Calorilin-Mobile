@@ -67,7 +67,7 @@ public class BahanMakananAdapter extends RecyclerView.Adapter<BahanMakananAdapte
         holder.namabahanmakanan.setText(bahanmakanan.getName());
         holder.jumlahkaloribahan.setText(String.valueOf(bahanmakanan.getCalory())+"Kcal");
         Glide.with(holder.gambarbahanmakanan.getContext())
-                .load("http://192.168.194.60:8000/Food-material-images/"+ bahanmakanan.getImage()).apply(new RequestOptions().override(200, 100)).into(holder.gambarbahanmakanan);
+                .load("https://api.calorilin.me/food-material-images/"+ bahanmakanan.getImage()).apply(new RequestOptions().override(200, 100)).into(holder.gambarbahanmakanan);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,7 +84,6 @@ public class BahanMakananAdapter extends RecyclerView.Adapter<BahanMakananAdapte
                     public void onResponse(Call<Materialfavpost> call, Response<Materialfavpost> response) {
                         if (response.isSuccessful()) {
                             Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                            ((Activity)context).finish();
                         } else if (response.code() == 500) {
 
                         }

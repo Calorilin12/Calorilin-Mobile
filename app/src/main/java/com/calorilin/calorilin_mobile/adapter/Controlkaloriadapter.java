@@ -70,7 +70,6 @@ public class Controlkaloriadapter extends RecyclerView.Adapter<Controlkaloriadap
         TextView kontrol1;
         TextView kontrol2;
         TextView kontrol3;
-        Button btnhapus;
 
         ViewHolder(View itemView) {
             super(itemView);
@@ -79,7 +78,6 @@ public class Controlkaloriadapter extends RecyclerView.Adapter<Controlkaloriadap
             kontrol1 = itemView.findViewById(R.id.kandunganmakanankontrol1);
             kontrol2 = itemView.findViewById(R.id.kandunganmakanankontrol2);
             kontrol3 = itemView.findViewById(R.id.kandunganmakanankontrol3);
-            btnhapus = itemView.findViewById(R.id.btnhapus);
 
             itemView.setTag(itemView);
 

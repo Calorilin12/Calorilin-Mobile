@@ -54,10 +54,10 @@ public class MakananHariAdapter extends RecyclerView.Adapter<MakananHariAdapter.
         holder.level.setText(resepitem.getLevelOfDifficult());
 
         Glide.with(holder.gambarmakanan.getContext())
-                .load("https://api.calorilin.me/api/"+ resepitem.getRecipeImage()).apply(new RequestOptions().override(600, 200)).into(holder.gambarmakanan);
+                .load("https://api.calorilin.me/recipe-detail-images/"+ resepitem.getRecipeImage()).apply(new RequestOptions().override(600, 200)).into(holder.gambarmakanan);
 
 
-        holder.gambarmakanan.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, RincianMakanan.class);

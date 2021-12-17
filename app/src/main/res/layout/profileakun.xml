@@ -56,29 +56,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fotoprofile" />
 
-    <TextView
-        android:id="@+id/waktugabung"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/poppinslight"
-        android:textColor="@color/netral"
-        android:text="bergabung pada maret 2021"
-        android:textSize="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/namaAkun" />
-
     <ImageView
         android:id="@+id/lengkapidata"
         android:layout_width="400dp"
         android:layout_height="236dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="92dp"
         android:clickable="true"
         android:focusable="true"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/waktugabung"
+        app:layout_constraintTop_toBottomOf="@+id/namaAkun"
         app:srcCompat="@drawable/lengkapidata" />
 
     <androidx.appcompat.widget.AppCompatButton

@@ -17,6 +17,7 @@ import com.calorilin.calorilin_mobile.api.ApiInterface;
 import com.calorilin.calorilin_mobile.listenerpack.LabelRekomListener;
 import com.calorilin.calorilin_mobile.model.disease.DiseaseItem;
 import com.calorilin.calorilin_mobile.model.recipes.RecipesItem;
+import com.calorilin.calorilin_mobile.model.user.UserData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -84,11 +85,24 @@ public class RekomendasiMakananActivity extends AppCompatActivity implements Lab
 
     private void tambahlabel() {
         labelRekomen = new ArrayList<>();
-        labelRekomen.add(new ObjekLabelRekomen("Cholesterol"));
-        labelRekomen.add(new ObjekLabelRekomen("Diabetes"));
-        labelRekomen.add(new ObjekLabelRekomen("Hipertensi"));
-        labelRekomen.add(new ObjekLabelRekomen("Asam Urat"));
-        labelRekomen.add(new ObjekLabelRekomen("Asam Lambung"));
+        DataPenyakit dataPenyakit =new DataPenyakit();
+        System.out.println(dataPenyakit.diabetes);
+        if(dataPenyakit.cholesterol == 1){
+            labelRekomen.add(new ObjekLabelRekomen("Cholesterol"));
+        }
+        if(dataPenyakit.diabetes == 1){
+            labelRekomen.add(new ObjekLabelRekomen("Diabetes"));
+        }
+        if(dataPenyakit.hipertensi == 1){
+            labelRekomen.add(new ObjekLabelRekomen("Hipertensi"));
+        }
+        if(dataPenyakit.asamUrat == 1){
+            labelRekomen.add(new ObjekLabelRekomen("Asam Urat"));
+        }
+        if(dataPenyakit.asamLambung == 1){
+            labelRekomen.add(new ObjekLabelRekomen("Asam Lambung"));
+        }
+
     }
 
     @Override
@@ -114,7 +128,6 @@ public class RekomendasiMakananActivity extends AppCompatActivity implements Lab
 
         ApiInterface methods = ApiClient.getClient().create(ApiInterface.class);
         Call<List<DiseaseItem>> call = methods.recipesFindByDiseaseResponse("Bearer " + token,label);
-
 
         call.enqueue(new Callback<List<DiseaseItem>>() {
             @Override

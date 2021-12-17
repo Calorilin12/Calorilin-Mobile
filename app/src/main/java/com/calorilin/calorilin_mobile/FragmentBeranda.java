@@ -37,14 +37,14 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class FragmentBeranda extends Fragment implements View.OnClickListener{
+public class FragmentBeranda extends Fragment implements View.OnClickListener {
 
     RecyclerView recyclerView, resephariini;
     ArrayList<ObjekKatagori> listkat;
     ArrayList<ObjekResepHari> listresephariini;
     TextView halouser;
     EditText cari;
-    ImageView rekomendasi,programharian;
+    ImageView rekomendasi, programharian;
 
     @Nullable
     @Override
@@ -53,7 +53,7 @@ public class FragmentBeranda extends Fragment implements View.OnClickListener{
 
         SharedPreferences sp = getActivity().getApplicationContext().getSharedPreferences("sharepre", Context.MODE_PRIVATE);
         String token = sp.getString("tokens", "");
-        String id = sp.getString("id","");
+        String id = sp.getString("id", "");
 
         halouser = view.findViewById(R.id.halo1);
         ApiInterface methods2 = ApiClient.getClient().create(ApiInterface.class);
@@ -64,7 +64,9 @@ public class FragmentBeranda extends Fragment implements View.OnClickListener{
             public void onResponse(Call<UserData> call2, Response<UserData> response) {
                 if (response.isSuccessful()) {
                     Toast.makeText(requireContext(), "berhasil", Toast.LENGTH_SHORT).show();
-                    halouser.setText("Halo " + response.body().getName());
+                    halouser.setText("Halo, " + response.body().getName());
+                    DataPenyakit dataPenyakit = new DataPenyakit(response.body().getCholesterol(), response.body().getDiabetes(),
+                            response.body().getHyperTension(),response.body().getUricAcid(),response.body().getStomachAcid());
                 } else if (response.code() == 500) {
 
                 }
@@ -151,7 +153,7 @@ public class FragmentBeranda extends Fragment implements View.OnClickListener{
             startActivity(new Intent(requireActivity(), SearchActivity.class));
         } else if (v == rekomendasi) {
             startActivity(new Intent(requireActivity(), RekomendasiMakananActivity.class));
-        }else if (v == programharian) {
+        } else if (v == programharian) {
             startActivity(new Intent(requireActivity(), ProgramHarian.class));
         }
     }

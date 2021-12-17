@@ -20,8 +20,8 @@
 
     <TextView
         android:id="@+id/kalorimakanan"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/poppinsregular"
@@ -35,8 +35,8 @@
 
     <TextView
         android:id="@+id/kandunganmakanankontrol1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/poppinsregular"
@@ -49,8 +49,8 @@
 
     <TextView
         android:id="@+id/kandunganmakanankontrol2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/poppinsregular"
@@ -63,8 +63,8 @@
 
     <TextView
         android:id="@+id/kandunganmakanankontrol3"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/poppinsregular"
@@ -75,13 +75,14 @@
         app:layout_constraintStart_toEndOf="@+id/kandunganmakanankontrol2"
         app:layout_constraintTop_toBottomOf="@+id/namamaknaankontrol" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <ImageView
         android:id="@+id/btnhapus"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
         android:background="@drawable/ic_baseline_close_24"
+        android:clickable="true"
         app:layout_constraintStart_toEndOf="@+id/kandunganmakanankontrol3"
         app:layout_constraintTop_toBottomOf="@+id/namamaknaankontrol"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />

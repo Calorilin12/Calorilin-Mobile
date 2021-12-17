@@ -28,6 +28,7 @@ import retrofit2.Response;
 public class TambahMenu extends AppCompatActivity {
     EditText caribahan;
     RecyclerView menubahanmakanan;
+    FlagTimeShow flagTimeShow = new FlagTimeShow();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,7 @@ public class TambahMenu extends AppCompatActivity {
 
         caribahan = findViewById(R.id.cariMenuTambahan);
         menubahanmakanan = findViewById(R.id.menubahan);
+        System.out.println(flagTimeShow.getTimeshownow());
 
         ApiInterface methods = ApiClient.getClient().create(ApiInterface.class);
         Call<List<FoodMaterialItem>> call = methods.foodMaterialResponse("Bearer " + token);

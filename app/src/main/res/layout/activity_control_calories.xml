@@ -17,7 +17,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="58dp"
-            android:fontFamily="@font/poppinsbold"
+            android:fontFamily="@font/poppinsregular"
+            android:textColor="@color/netral"
             android:text="Kontrol Kalori"
             android:textFontWeight="500"
             android:textSize="24sp"
@@ -31,6 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:fontFamily="@font/poppinsregular"
+            android:textColor="@color/sec500"
             android:text="Tentukan jadwal"
             android:textFontWeight="300"
             android:textSize="14sp"
@@ -43,6 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:fontFamily="@font/poppinsregular"
+            android:textColor="@color/sec500"
             android:text="makananmu saat ini"
             android:textFontWeight="300"
             android:textSize="14sp"
@@ -54,9 +57,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:fontFamily="@font/poppinsbold"
+            android:fontFamily="@font/poppinsregular"
             android:text="3120"
             android:textFontWeight="500"
+            android:textColor="@color/netral"
             android:textSize="36sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.346"
@@ -70,8 +74,9 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/poppinsregular"
-            android:text="kcal"
+            android:text="Kcal"
             android:textFontWeight="300"
+            android:textColor="@color/netral"
             android:textSize="36sp"
             app:layout_constraintHorizontal_bias="0.643"
             app:layout_constraintStart_toEndOf="@+id/jumlahKalori"
@@ -106,50 +111,30 @@
                 android:layout_height="wrap_content"
                 android:paddingBottom="12dp">
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/breakfastSection"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginTop="8dp"
-                    android:elevation="12dp"
-                    app:cardCornerRadius="25dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:id="@+id/breakfastImage"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_gravity="center"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/breakfast" />
-
-                </androidx.cardview.widget.CardView>
-
                 <TextView
                     android:id="@+id/textBreakfast"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="56dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="19dp"
                     android:fontFamily="@font/poppinsregular"
                     android:gravity="center"
-                    android:text="Makan Pagi"
+                    android:textColor="@color/netral"
+                    android:text="Makan pagi"
                     android:textFontWeight="400"
-                    android:textSize="24sp"
-                    app:layout_constraintStart_toStartOf="@+id/breakfastSection"
-                    app:layout_constraintTop_toTopOf="@+id/breakfastSection" />
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
                     android:id="@+id/buttonBreakfast"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
+                    android:layout_marginTop="19dp"
                     android:layout_marginEnd="8dp"
                     android:background="@drawable/ic_baseline_keyboard_arrow_down_24"
-                    app:layout_constraintBottom_toBottomOf="@+id/breakfastSection"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/breakfastSection"
+                    app:layout_constraintTop_toTopOf="parent"
                     tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -158,23 +143,48 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
                     android:paddingBottom="12dp"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textBreakfast">
+
+                    <TextView
+                        android:id="@+id/kaloripagi"
+                        android:layout_width="82dp"
+                        android:textSize="14dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/poppinsregular"
+                        android:text="Kalori"
+                        android:textColor="@color/sec500"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/totalKaloriBreakfast"
                         android:layout_width="82dp"
                         android:layout_height="25dp"
                         android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="2dp"
                         android:background="@drawable/hijau_prim_500"
                         android:fontFamily="@font/poppinsregular"
-                        android:text="780 kCal"
+                        android:text="780 Kcal"
                         android:textAlignment="center"
                         android:textColor="@color/white"
                         app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/kaloripagi" />
+
+                    <TextView
+                        android:id="@+id/proteinpagi"
+                        android:layout_width="82dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/poppinsregular"
+                        android:text="Protein"
+                        android:textColor="@color/sec500"
+                        app:layout_constraintStart_toEndOf="@+id/kaloripagi"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
@@ -182,13 +192,25 @@
                         android:layout_width="82dp"
                         android:layout_height="25dp"
                         android:layout_marginStart="10dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="2dp"
                         android:background="@drawable/hijau_prim_500_corner"
                         android:fontFamily="@font/poppinsregular"
-                        android:text="45 g"
+                        android:text="45 Gram"
                         android:textAlignment="center"
                         android:textColor="@color/primary"
                         app:layout_constraintStart_toEndOf="@+id/totalKaloriBreakfast"
+                        app:layout_constraintTop_toBottomOf="@+id/proteinpagi" />
+
+                    <TextView
+                        android:id="@+id/lemakpagi"
+                        android:layout_width="82dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/poppinsregular"
+                        android:text="Lemak"
+                        android:textColor="@color/sec500"
+                        app:layout_constraintStart_toEndOf="@+id/totalKandungan1Breakfast"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
@@ -196,13 +218,25 @@
                         android:layout_width="82dp"
                         android:layout_height="25dp"
                         android:layout_marginStart="10dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="2dp"
                         android:background="@drawable/hijau_prim_500_corner"
                         android:fontFamily="@font/poppinsregular"
-                        android:text="45 g"
+                        android:text="45 gram"
                         android:textAlignment="center"
                         android:textColor="@color/primary"
                         app:layout_constraintStart_toEndOf="@+id/totalKandungan1Breakfast"
+                        app:layout_constraintTop_toBottomOf="@+id/lemakpagi" />
+
+                    <TextView
+                        android:id="@+id/karbopagi"
+                        android:layout_width="82dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/poppinsregular"
+                        android:text="Lemak"
+                        android:textColor="@color/sec500"
+                        app:layout_constraintStart_toEndOf="@+id/totalKandungan2Breakfast"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
@@ -210,16 +244,16 @@
                         android:layout_width="82dp"
                         android:layout_height="25dp"
                         android:layout_marginStart="10dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="2dp"
                         android:layout_marginEnd="8dp"
                         android:background="@drawable/hijau_prim_500_corner"
                         android:fontFamily="@font/poppinsregular"
-                        android:text="45 g"
+                        android:text="45 gram"
                         android:textAlignment="center"
                         android:textColor="@color/primary"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/totalKandungan2Breakfast"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toBottomOf="@+id/karbopagi" />
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/addMenuBreakfast"
@@ -235,12 +269,12 @@
                         android:textColor="@color/white"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/viewKontrol"
+                        app:layout_constraintTop_toBottomOf="@+id/kontrolpagi"
                         app:layout_constraintVertical_bias="1.0"
                         tools:ignore="TouchTargetSizeCheck" />
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/viewKontrol"
+                        android:id="@+id/kontrolpagi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
@@ -271,50 +305,30 @@
                 android:layout_height="wrap_content"
                 android:paddingBottom="12dp">
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/lunchSection"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginTop="8dp"
-                    android:elevation="12dp"
-                    app:cardCornerRadius="25dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:id="@+id/lunchImage"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_gravity="center"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/lunch" />
-
-                </androidx.cardview.widget.CardView>
-
                 <TextView
                     android:id="@+id/textLunch"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="56dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="19dp"
                     android:fontFamily="@font/poppinsregular"
                     android:gravity="center"
-                    android:text="Makan Siang"
+                    android:text="Makan siang"
+                    android:textColor="@color/netral"
                     android:textFontWeight="400"
-                    android:textSize="24sp"
-                    app:layout_constraintStart_toStartOf="@+id/lunchSection"
-                    app:layout_constraintTop_toTopOf="@+id/lunchSection" />
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
                     android:id="@+id/buttonlunch"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
+                    android:layout_marginTop="19dp"
                     android:layout_marginEnd="8dp"
                     android:background="@drawable/ic_baseline_keyboard_arrow_down_24"
-                    app:layout_constraintBottom_toBottomOf="@+id/lunchSection"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/lunchSection"
+                    app:layout_constraintTop_toTopOf="parent"
                     tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -329,133 +343,120 @@
                     app:layout_constraintTop_toBottomOf="@+id/textLunch">
 
                     <TextView
-                        android:id="@+id/totalKalori"
+                        android:id="@+id/kalorisiang"
                         android:layout_width="82dp"
+                        android:textSize="14dp"
                         android:layout_height="25dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
+                        android:fontFamily="@font/poppinsregular"
+                        android:text="Kalori"
+                        android:textColor="@color/sec500"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/totalKalorisiang"
+                        android:layout_width="82dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="2dp"
                         android:background="@drawable/hijau_prim_500"
                         android:fontFamily="@font/poppinsregular"
-                        android:text="780 kCal"
+                        android:text="780 Kcal"
                         android:textAlignment="center"
                         android:textColor="@color/white"
                         app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/kalorisiang" />
+
+                    <TextView
+                        android:id="@+id/proteinsiang"
+                        android:layout_width="82dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/poppinsregular"
+                        android:text="Protein"
+                        android:textColor="@color/sec500"
+                        app:layout_constraintStart_toEndOf="@+id/kalorisiang"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/totalKandungan1"
+                        android:id="@+id/totalKandungan1siang"
                         android:layout_width="82dp"
                         android:layout_height="25dp"
                         android:layout_marginStart="10dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="2dp"
                         android:background="@drawable/hijau_prim_500_corner"
                         android:fontFamily="@font/poppinsregular"
-                        android:text="45 g"
+                        android:text="45 Gram"
                         android:textAlignment="center"
                         android:textColor="@color/primary"
-                        app:layout_constraintStart_toEndOf="@+id/totalKalori"
+                        app:layout_constraintStart_toEndOf="@+id/totalKalorisiang"
+                        app:layout_constraintTop_toBottomOf="@+id/proteinsiang" />
+
+                    <TextView
+                        android:id="@+id/lemaksiang"
+                        android:layout_width="82dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/poppinsregular"
+                        android:text="Lemak"
+                        android:textColor="@color/sec500"
+                        app:layout_constraintStart_toEndOf="@+id/totalKandungan1siang"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/totalKandungan2"
+                        android:id="@+id/totalKandungan2siang"
                         android:layout_width="82dp"
                         android:layout_height="25dp"
                         android:layout_marginStart="10dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="2dp"
                         android:background="@drawable/hijau_prim_500_corner"
                         android:fontFamily="@font/poppinsregular"
-                        android:text="45 g"
+                        android:text="45 gram"
                         android:textAlignment="center"
                         android:textColor="@color/primary"
-                        app:layout_constraintStart_toEndOf="@+id/totalKandungan1"
+                        app:layout_constraintStart_toEndOf="@+id/totalKandungan1siang"
+                        app:layout_constraintTop_toBottomOf="@+id/lemaksiang" />
+
+                    <TextView
+                        android:id="@+id/karbosiang"
+                        android:layout_width="82dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/poppinsregular"
+                        android:text="Lemak"
+                        android:textColor="@color/sec500"
+                        app:layout_constraintStart_toEndOf="@+id/totalKandungan2siang"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/totalKandungan3"
+                        android:id="@+id/totalKandungan3siang"
                         android:layout_width="82dp"
                         android:layout_height="25dp"
                         android:layout_marginStart="10dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="2dp"
                         android:layout_marginEnd="8dp"
                         android:background="@drawable/hijau_prim_500_corner"
                         android:fontFamily="@font/poppinsregular"
-                        android:text="45 g"
+                        android:text="45 gram"
                         android:textAlignment="center"
                         android:textColor="@color/primary"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/totalKandungan2"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintStart_toEndOf="@+id/totalKandungan2siang"
+                        app:layout_constraintTop_toBottomOf="@+id/karbosiang" />
 
-                    <TextView
-                        android:id="@+id/namaMakananTelur"
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/kontrolsiang"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
                         android:layout_marginTop="16dp"
-                        android:fontFamily="@font/poppinsregular"
-                        android:text="Telur Ceplok"
-                        android:textColor="@color/netral"
-                        android:textSize="14sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/totalKalori" />
-
-                    <TextView
-                        android:id="@+id/totalKaloriMakananTelur"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:fontFamily="@font/poppinsregular"
-                        android:text="780 kCal"
-                        android:textColor="@color/sec500"
-                        android:textSize="14sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/namaMakananTelur" />
-
-                    <TextView
-                        android:id="@+id/totalGiziMakananTelur1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="40dp"
-                        android:fontFamily="@font/poppinsregular"
-                        android:text="45 g"
-                        android:textColor="@color/sec500"
-                        android:textSize="14sp"
-                        app:layout_constraintStart_toEndOf="@+id/totalKaloriMakananTelur"
-                        app:layout_constraintTop_toBottomOf="@+id/namaMakananTelur" />
-
-                    <TextView
-                        android:id="@+id/totalGiziMakananTelur2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="40dp"
-                        android:fontFamily="@font/poppinsregular"
-                        android:text="45 g"
-                        android:textColor="@color/sec500"
-                        android:textSize="14sp"
-                        app:layout_constraintStart_toEndOf="@+id/totalGiziMakananTelur1"
-                        app:layout_constraintTop_toBottomOf="@+id/namaMakananTelur" />
-
-                    <TextView
-                        android:id="@+id/totalGiziMakananTelur3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="40dp"
-                        android:fontFamily="@font/poppinsregular"
-                        android:text="45 g"
-                        android:textColor="@color/sec500"
-                        android:textSize="14sp"
-                        app:layout_constraintStart_toEndOf="@+id/totalGiziMakananTelur2"
-                        app:layout_constraintTop_toBottomOf="@+id/namaMakananTelur" />
-
-                    <Button
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_marginStart="40dp"
-                        android:background="@drawable/ic_baseline_close_24"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.489"
-                        app:layout_constraintStart_toEndOf="@+id/totalGiziMakananTelur3"
-                        app:layout_constraintTop_toBottomOf="@+id/namaMakananTelur" />
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/totalKalorisiang" />
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/addMenuLunch"
@@ -471,7 +472,7 @@
                         android:textColor="@color/white"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/totalKaloriMakananTelur"
+                        app:layout_constraintTop_toBottomOf="@+id/kontrolsiang"
                         app:layout_constraintVertical_bias="0.0" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -488,7 +489,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="32dp"
+            android:layout_marginBottom="60dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -499,50 +500,30 @@
                 android:layout_height="wrap_content"
                 android:paddingBottom="12dp">
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/dinnerSection"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginTop="8dp"
-                    android:elevation="12dp"
-                    app:cardCornerRadius="25dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:id="@+id/dinnerImage"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_gravity="center"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/dinner" />
-
-                </androidx.cardview.widget.CardView>
-
                 <TextView
                     android:id="@+id/textDinner"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="56dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="19dp"
                     android:fontFamily="@font/poppinsregular"
                     android:gravity="center"
-                    android:text="Makan Malam"
+                    android:text="Makan malam"
+                    android:textColor="@color/netral"
                     android:textFontWeight="400"
-                    android:textSize="24sp"
-                    app:layout_constraintStart_toStartOf="@+id/dinnerSection"
-                    app:layout_constraintTop_toTopOf="@+id/dinnerSection" />
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
                     android:id="@+id/buttonDinner"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
+                    android:layout_marginTop="19dp"
                     android:layout_marginEnd="8dp"
                     android:background="@drawable/ic_baseline_keyboard_arrow_down_24"
-                    app:layout_constraintBottom_toBottomOf="@+id/dinnerSection"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/dinnerSection"
+                    app:layout_constraintTop_toTopOf="parent"
                     tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -551,139 +532,126 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
                     android:paddingBottom="12dp"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textDinner">
 
                     <TextView
-                        android:id="@+id/totalKaloriDinner"
+                        android:id="@+id/kalorimalam"
                         android:layout_width="82dp"
+                        android:textSize="14dp"
                         android:layout_height="25dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
+                        android:fontFamily="@font/poppinsregular"
+                        android:text="Kalori"
+                        android:textColor="@color/sec500"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/totalKalorimalam"
+                        android:layout_width="82dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="2dp"
                         android:background="@drawable/hijau_prim_500"
                         android:fontFamily="@font/poppinsregular"
-                        android:text="780 kCal"
+                        android:text="780 Kcal"
                         android:textAlignment="center"
                         android:textColor="@color/white"
                         app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/kalorimalam" />
+
+                    <TextView
+                        android:id="@+id/proteinmalam"
+                        android:layout_width="82dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/poppinsregular"
+                        android:text="Protein"
+                        android:textColor="@color/sec500"
+                        app:layout_constraintStart_toEndOf="@+id/kalorimalam"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/totalKandungan1Dinner"
+                        android:id="@+id/totalKandungan1malam"
                         android:layout_width="82dp"
                         android:layout_height="25dp"
                         android:layout_marginStart="10dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="2dp"
                         android:background="@drawable/hijau_prim_500_corner"
                         android:fontFamily="@font/poppinsregular"
-                        android:text="45 g"
+                        android:text="45 Gram"
                         android:textAlignment="center"
                         android:textColor="@color/primary"
-                        app:layout_constraintStart_toEndOf="@+id/totalKaloriDinner"
+                        app:layout_constraintStart_toEndOf="@+id/totalKalorimalam"
+                        app:layout_constraintTop_toBottomOf="@+id/proteinmalam" />
+
+                    <TextView
+                        android:id="@+id/lemakmalam"
+                        android:layout_width="82dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/poppinsregular"
+                        android:text="Lemak"
+                        android:textColor="@color/sec500"
+                        app:layout_constraintStart_toEndOf="@+id/totalKandungan1malam"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/totalKandungan2Dinner"
+                        android:id="@+id/totalKandungan2malam"
                         android:layout_width="82dp"
                         android:layout_height="25dp"
                         android:layout_marginStart="10dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="2dp"
                         android:background="@drawable/hijau_prim_500_corner"
                         android:fontFamily="@font/poppinsregular"
-                        android:text="45 g"
+                        android:text="45 gram"
                         android:textAlignment="center"
                         android:textColor="@color/primary"
-                        app:layout_constraintStart_toEndOf="@+id/totalKandungan1Dinner"
+                        app:layout_constraintStart_toEndOf="@+id/totalKandungan1malam"
+                        app:layout_constraintTop_toBottomOf="@+id/lemakmalam" />
+
+                    <TextView
+                        android:id="@+id/karbomalam"
+                        android:layout_width="82dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/poppinsregular"
+                        android:text="Lemak"
+                        android:textColor="@color/sec500"
+                        app:layout_constraintStart_toEndOf="@+id/totalKandungan2malam"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/totalKandungan3Dinner"
+                        android:id="@+id/totalKandungan3malam"
                         android:layout_width="82dp"
                         android:layout_height="25dp"
                         android:layout_marginStart="10dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="2dp"
                         android:layout_marginEnd="8dp"
                         android:background="@drawable/hijau_prim_500_corner"
                         android:fontFamily="@font/poppinsregular"
-                        android:text="45 g"
+                        android:text="45 gram"
                         android:textAlignment="center"
                         android:textColor="@color/primary"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/totalKandungan2Dinner"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintStart_toEndOf="@+id/totalKandungan2malam"
+                        app:layout_constraintTop_toBottomOf="@+id/karbomalam" />
 
-                    <TextView
-                        android:id="@+id/namaMakananTelurDinner"
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/kontrolmalam"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
                         android:layout_marginTop="16dp"
-                        android:fontFamily="@font/poppinsregular"
-                        android:text="Telur Ceplok"
-                        android:textColor="@color/netral"
-                        android:textSize="14sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/totalKaloriDinner" />
-
-                    <TextView
-                        android:id="@+id/totalKaloriMakananTelurDinner"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:fontFamily="@font/poppinsregular"
-                        android:text="780 kCal"
-                        android:textColor="@color/sec500"
-                        android:textSize="14sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/namaMakananTelurDinner" />
-
-                    <TextView
-                        android:id="@+id/totalGiziMakananTelur1Dinner"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="40dp"
-                        android:fontFamily="@font/poppinsregular"
-                        android:text="45 g"
-                        android:textColor="@color/sec500"
-                        android:textSize="14sp"
-                        app:layout_constraintStart_toEndOf="@+id/totalKaloriMakananTelurDinner"
-                        app:layout_constraintTop_toBottomOf="@+id/namaMakananTelurDinner" />
-
-                    <TextView
-                        android:id="@+id/totalGiziMakananTelur2Dinner"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="40dp"
-                        android:fontFamily="@font/poppinsregular"
-                        android:text="45 g"
-                        android:textColor="@color/sec500"
-                        android:textSize="14sp"
-                        app:layout_constraintStart_toEndOf="@+id/totalGiziMakananTelur1Dinner"
-                        app:layout_constraintTop_toBottomOf="@+id/namaMakananTelurDinner" />
-
-                    <TextView
-                        android:id="@+id/totalGiziMakananTelur3Dinner"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="40dp"
-                        android:fontFamily="@font/poppinsregular"
-                        android:text="45 g"
-                        android:textColor="@color/sec500"
-                        android:textSize="14sp"
-                        app:layout_constraintStart_toEndOf="@+id/totalGiziMakananTelur2Dinner"
-                        app:layout_constraintTop_toBottomOf="@+id/namaMakananTelurDinner" />
-
-                    <Button
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_marginStart="40dp"
-                        android:background="@drawable/ic_baseline_close_24"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.489"
-                        app:layout_constraintStart_toEndOf="@+id/totalGiziMakananTelur3Dinner"
-                        app:layout_constraintTop_toBottomOf="@+id/namaMakananTelurDinner" />
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/totalKalorimalam" />
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/addMenuDinner"
@@ -699,7 +667,7 @@
                         android:textColor="@color/white"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/totalKaloriMakananTelurDinner"
+                        app:layout_constraintTop_toBottomOf="@+id/kontrolmalam"
                         app:layout_constraintVertical_bias="0.0" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>

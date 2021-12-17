@@ -57,6 +57,7 @@
         android:layout_width="328dp"
         android:layout_height="52dp"
         android:layout_marginTop="48dp"
+        android:inputType="textPassword"
         android:background="@drawable/border2"
         android:drawableLeft="@drawable/logolock"
         android:fontFamily="@font/robotoreguler"

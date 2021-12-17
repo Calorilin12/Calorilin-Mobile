@@ -26,7 +26,7 @@ public class RincianMakanan extends AppCompatActivity {
 
         rincigambar = findViewById(R.id.gambarrinci);
         Glide.with(rincigambar)
-                .load("http://192.168.194.60:8000/recipe-detail-images/"+ resepitem.getRecipeImage()).into(rincigambar);
+                .load("https://api.calorilin.me/recipe-detail-images/"+ resepitem.getRecipeImage()).into(rincigambar);
 
         rincijudul = findViewById(R.id.judulrincimakanan);
         rincijudul.setText(resepitem.getName());

@@ -1,5 +1,6 @@
 package com.calorilin.calorilin_mobile.api;
 
+import com.calorilin.calorilin_mobile.model.dailyhealthy.Data;
 import com.calorilin.calorilin_mobile.model.disease.DiseaseItem;
 import com.calorilin.calorilin_mobile.model.favoriteget.FavMaterialItem;
 import com.calorilin.calorilin_mobile.model.foodmaterial.FoodMaterialItem;
@@ -8,7 +9,9 @@ import com.calorilin.calorilin_mobile.model.login.Login;
 import com.calorilin.calorilin_mobile.model.materialfavtimeshow.MaterialfavtimeshowItem;
 import com.calorilin.calorilin_mobile.model.recipes.RecipesItem;
 import com.calorilin.calorilin_mobile.model.register.Register;
+import com.calorilin.calorilin_mobile.model.totalfavorite.TotalNutrisiItem;
 import com.calorilin.calorilin_mobile.model.user.UserData;
+import com.calorilin.calorilin_mobile.model.userdetailspost.UserDetailPost;
 import com.calorilin.calorilin_mobile.model.userpost.UserEdit;
 
 import java.util.List;
@@ -79,14 +82,42 @@ public interface ApiInterface {
     @POST("users/{id}?_method=PUT")
     Call<UserEdit> usereditResponse(
             @Path("id") String id,
-            @Query("_method") String method,
             @Field("name") String name,
             @Field("email") String email,
             @Field("password") String password
     );
 
-    @GET("food-material-favorites-by-time-show/{id_user}?time_show=Pagi")
+    @FormUrlEncoded
+    @POST("user-details/{id}?_method=PUT")
+    Call<UserDetailPost> editdetailResponse(
+            @Header("Authorization") String token,
+            @Path("id") String id,
+            @Field("weight") int weight,
+            @Field("height") int height,
+            @Field("tension") String tension,
+            @Field("cholesterol") int cholesterol,
+            @Field("diabetes") int diabetes,
+            @Field("uric_acid") int uric_acid,
+            @Field("stomach_acid") int stomach_acid,
+            @Field("hyper_tension") int hyper_tension
+    );
+
+
+    @GET("food-material-favorites-by-time-show/{id_user}?")
     Call<List<MaterialfavtimeshowItem>> favShowTimeResponse(
+            @Header("Authorization") String token,
+            @Path("id_user") String idUser,
+            @Query("time_show") String timeShow
+    );
+
+    @GET("daily-healthy-activity/{id_user}")
+    Call<Data> healthyResponse(
+            @Header("Authorization") String token,
+            @Path("id_user") String idUser
+    );
+
+    @GET("food-material-favorites-get-total-nutrition/{id_user}?")
+    Call<TotalNutrisiItem> nutrisiResponse(
             @Header("Authorization") String token,
             @Path("id_user") String idUser,
             @Query("time_show") String timeShow

@@ -3,22 +3,45 @@ package com.calorilin.calorilin_mobile;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
+import com.calorilin.calorilin_mobile.api.ApiClient;
+import com.calorilin.calorilin_mobile.api.ApiInterface;
+import com.calorilin.calorilin_mobile.model.user.UserData;
+import com.calorilin.calorilin_mobile.model.userdetailspost.UserDetailPost;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class DataTambahan extends AppCompatActivity {
 
-    Button kolesterollabel, diabeteslabel, hipertensilabel, asamuratlabel, asamlambunglabel;
+    Button kolesterollabel, diabeteslabel, hipertensilabel, asamuratlabel, asamlambunglabel, simpantambahan;
     static boolean kolesterol = false, diabetes = false, hipertensi = false, asamurat = false, asamlambung = false;
-
+    EditText editberatbadan, edittinggibadan, edittensi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_tambahan);
+
+        SharedPreferences sp = getApplicationContext().getSharedPreferences("sharepre", Context.MODE_PRIVATE);
+        String token = sp.getString("tokens", "");
+        String id = sp.getString("id", "");
+
+        simpantambahan = findViewById(R.id.simpantambahan);
+        editberatbadan = findViewById(R.id.editberatbadan);
+        edittinggibadan = findViewById(R.id.edittinggibadan);
+        edittensi = findViewById(R.id.edittensi);
 
         kolesterollabel = findViewById(R.id.kolesterollabel);
         kolesterollabel.setOnClickListener(new View.OnClickListener() {
@@ -109,5 +132,44 @@ public class DataTambahan extends AppCompatActivity {
                 }
             }
         });
+
+        simpantambahan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int tinggibadan = Integer.valueOf(edittinggibadan.getText().toString());
+                int beratbadan = Integer.valueOf(editberatbadan.getText().toString());
+                String tensi = edittensi.getText().toString();
+
+                System.out.println("Test");
+
+                ApiInterface methods = ApiClient.getClient().create(ApiInterface.class);
+                Call<UserDetailPost> call = methods.editdetailResponse("Bearer " + token, id, beratbadan, tinggibadan, tensi, ubahBoolean(kolesterol)
+                        , ubahBoolean(diabetes), ubahBoolean(hipertensi), ubahBoolean(asamurat), ubahBoolean(asamlambung));
+                call.enqueue(new Callback<UserDetailPost>() {
+                    @Override
+                    public void onResponse(Call<UserDetailPost> call, Response<UserDetailPost> response) {
+                        if (response.isSuccessful()) {
+                            Toast.makeText(DataTambahan.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                        } else if (response.code() == 500) {
+
+                        }
+                    }
+                    @Override
+                    public void onFailure(Call<UserDetailPost> call, Throwable t) {
+                        Toast.makeText(DataTambahan.this, "Gagal" + t.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
+    }
+
+    public int ubahBoolean(boolean penyakit) {
+        int check;
+        if (penyakit) {
+            check = 1;
+        } else {
+            check = 0;
+        }
+        return check;
     }
 }

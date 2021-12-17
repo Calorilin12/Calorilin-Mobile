@@ -87,7 +87,7 @@
                 android:text="189 Cm"
                 android:textColor="@color/netral"
                 android:textFontWeight="400"
-                android:textSize="16sp"
+                android:textSize="16dp"
                 app:layout_constraintStart_toEndOf="@+id/iconTinggiBadan"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -133,8 +133,8 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardHasilIMT"
-                android:layout_width="94dp"
-                android:layout_height="28dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="96dp"
                 android:layout_marginTop="2dp"
                 app:cardBackgroundColor="@color/primary"
@@ -144,8 +144,9 @@
 
                 <TextView
                     android:id="@+id/hasilIMT"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
                     android:fontFamily="@font/poppinsregular"
                     android:gravity="center"
                     android:text="IDEAL"

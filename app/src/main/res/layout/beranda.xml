@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:fontFamily="@font/poppinsmedium"
-            android:text="Halo Stefanus Irgy"
+            android:text="Halo, "
             android:textColor="@color/netral"
             android:textSize="24dp"
             app:layout_constraintStart_toStartOf="parent"

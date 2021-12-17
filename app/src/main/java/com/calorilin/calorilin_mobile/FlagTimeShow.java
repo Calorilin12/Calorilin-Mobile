@@ -2,7 +2,7 @@ package com.calorilin.calorilin_mobile;
 
 public class FlagTimeShow {
 
-    static String timeshownow = "Default";
+    static public String timeshownow = "Default";
 
     public static String getTimeshownow() {
         return timeshownow;
