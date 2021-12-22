@@ -31,7 +31,7 @@ public class ProgramHarian extends AppCompatActivity {
     ConstraintLayout pushupcard, situpcard,laricard;
     TextView textProgram1,textProgram2,textProgram3,jumlahpolaminum,jumlahminum;
     Button btWork1,btWork2,btWork3;
-    ImageView minum1,minum2,minum3,minum4,minum5,minum6,minum7,minum8;
+    ImageView minum1,minum2,minum3,minum4,minum5,minum6,minum7,minum8,back;
     static boolean pushup=false,situp=false,lari=false;
     static boolean cekMinum1 = false,cekMinum2 = false,cekMinum3 = false,cekMinum4 = false,cekMinum5 = false,cekMinum6 = false,cekMinum7 = false,cekMinum8 = false;
     DataMinum dataMinum = new DataMinum();
@@ -66,6 +66,14 @@ public class ProgramHarian extends AppCompatActivity {
         minum6 = findViewById(R.id.minum6);
         minum7 = findViewById(R.id.minum7);
         minum8 = findViewById(R.id.minum8);
+
+        back = findViewById(R.id.backButtonIMT);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         jumlahminum.setText(String.valueOf(dataMinum.getBanyakMinum()));
 
@@ -355,5 +363,6 @@ public class ProgramHarian extends AppCompatActivity {
                 }
             }
         });
+
     }
 }

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.calorilin.calorilin_mobile.api.ApiClient;
@@ -19,6 +21,7 @@ import retrofit2.Response;
 public class PenggunaanAplikasi extends AppCompatActivity {
 
     TextView isipenggunaan;
+    Button back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +29,13 @@ public class PenggunaanAplikasi extends AppCompatActivity {
         setContentView(R.layout.activity_penggunaan_aplikasi);
 
         isipenggunaan = findViewById(R.id.isipenggunaan);
+        back = findViewById(R.id.backpenggunaan);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         SharedPreferences sp = getApplicationContext().getSharedPreferences("sharepre", Context.MODE_PRIVATE);
         String token = sp.getString("tokens", "");

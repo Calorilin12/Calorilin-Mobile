@@ -32,7 +32,7 @@ public class Daftar extends AppCompatActivity {
         setContentView(R.layout.activity_daftar);
 
         masuk = findViewById(R.id.masuksekarang);
-        back = findViewById(R.id.back);
+        back = findViewById(R.id.backpengaturan);
         daftar = findViewById(R.id.daftar2);
         emaildaftar = findViewById(R.id.emailMasuk);
         passdaftar = findViewById(R.id.passwordMasuk);

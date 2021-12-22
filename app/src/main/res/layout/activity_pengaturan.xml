@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".Pengaturan">
 
     <TextView
         android:id="@+id/laporanbug"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/poppinsregular"
         android:text="Laporan bug"
@@ -24,7 +25,7 @@
         android:id="@+id/kritiksaran"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="4dp"
         android:fontFamily="@font/poppinsregular"
         android:text="Kritik dan saran"
@@ -38,14 +39,14 @@
         android:id="@+id/tentangkami"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
+        android:clickable="true"
         android:fontFamily="@font/poppinsregular"
         android:text="Tentang Kami"
         android:textAllCaps="false"
         android:textColor="@color/sec500"
         android:textSize="14dp"
-        android:clickable="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pengaturantentang" />
 
@@ -53,26 +54,24 @@
         android:id="@+id/penggunaanaplikasi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="36dp"
+        android:clickable="true"
         android:fontFamily="@font/poppinsregular"
         android:text="penggunaan aplikasi"
         android:textAllCaps="false"
         android:textColor="@color/sec500"
         android:textSize="14dp"
-        android:clickable="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pengaturantentang" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/back"
+        android:id="@+id/backpengaturan"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/transparan"
         android:drawableLeft="@drawable/back"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.105"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
@@ -81,7 +80,6 @@
         android:id="@+id/judulpengaturan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
         android:layout_marginTop="32dp"
         android:fontFamily="@font/poppinsregular"
         android:text="Pengaturan"
@@ -89,13 +87,12 @@
         android:textColor="@color/black"
         android:textSize="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/back" />
+        app:layout_constraintTop_toBottomOf="@+id/backpengaturan" />
 
     <TextView
         android:id="@+id/pengaturanumum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
         android:layout_marginTop="36dp"
         android:fontFamily="@font/poppinsregular"
         android:text="Umum"
@@ -109,7 +106,6 @@
         android:id="@+id/pengaturantentang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppinsregular"
         android:text="Tentang"
@@ -123,7 +119,6 @@
         android:id="@+id/pengaturantentang2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/poppinsregular"
         android:text="Bantuan"
@@ -137,7 +132,7 @@
         android:id="@+id/akunpengaturan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/poppinsregular"
         android:text="Akun"
@@ -158,6 +153,8 @@
         android:textAllCaps="false"
         android:textColor="@color/sec500"
         android:textSize="14dp"
+        app:layout_constraintEnd_toStartOf="@+id/akunmenu"
+        app:layout_constraintHorizontal_bias="0.173"
         app:layout_constraintStart_toEndOf="@+id/akunpengaturan"
         app:layout_constraintTop_toBottomOf="@+id/pengaturanumum" />
 
@@ -165,10 +162,9 @@
         android:id="@+id/akunmenu"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
         android:background="@drawable/kanan"
-        app:layout_constraintStart_toEndOf="@+id/namapengaturan"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pengaturanumum"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 

@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,12 +24,21 @@ public class Pengaturan extends AppCompatActivity {
 
     Button editakun;
     TextView halouser,tentangkami,penggunaan;
+    Button back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pengaturan);
+
+        back = findViewById(R.id.backpengaturan);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         editakun = findViewById(R.id.akunmenu);
         editakun.setOnClickListener(new View.OnClickListener() {

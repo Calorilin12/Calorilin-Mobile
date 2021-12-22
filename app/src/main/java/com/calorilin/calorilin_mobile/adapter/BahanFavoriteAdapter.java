@@ -1,11 +1,13 @@
 package com.calorilin.calorilin_mobile.adapter;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,10 +15,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.calorilin.calorilin_mobile.R;
+import com.calorilin.calorilin_mobile.api.ApiClient;
+import com.calorilin.calorilin_mobile.api.ApiInterface;
+import com.calorilin.calorilin_mobile.model.hapusbahanfav.DelBahanFav;
 import com.calorilin.calorilin_mobile.model.materialfavtimeshow.MaterialfavtimeshowItem;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class BahanFavoriteAdapter extends RecyclerView.Adapter<BahanFavoriteAdapter.ViewHolder> {
     private List<MaterialfavtimeshowItem> data = new ArrayList<>();
@@ -51,6 +60,35 @@ public class BahanFavoriteAdapter extends RecyclerView.Adapter<BahanFavoriteAdap
 
         Glide.with(holder.gambarmakanan.getContext())
                 .load("https://api.calorilin.me/food-material-images/"+ foodMaterialsItem.getImage()).apply(new RequestOptions().override(200, 100)).into(holder.gambarmakanan);
+
+        holder.hapusbahan.setImageResource(R.drawable.ic_baseline_close_24);
+        holder.hapusbahan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences sp = context.getSharedPreferences("sharepre", Context.MODE_PRIVATE);
+                String token = sp.getString("tokens", "");
+
+                ApiInterface methods2 = ApiClient.getClient().create(ApiInterface.class);
+                Call<DelBahanFav> call2 = methods2.delbahanResponse("Bearer " + token, String.valueOf(foodMaterialsItem.getId()));
+
+                call2.enqueue(new Callback<DelBahanFav>() {
+                    @Override
+                    public void onResponse(Call<DelBahanFav> call2, Response<DelBahanFav> response) {
+                        if (response.isSuccessful()) {
+                            Toast.makeText(context, response.body().getMessage() , Toast.LENGTH_SHORT).show();
+                        } else if (response.code() == 500) {
+
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<DelBahanFav> call2, Throwable t) {
+
+                    }
+                });
+            }
+        });
+
     }
 
     @Override
@@ -71,12 +109,14 @@ public class BahanFavoriteAdapter extends RecyclerView.Adapter<BahanFavoriteAdap
         TextView namabahanfav;
         TextView kalori;
         ImageView gambarmakanan;
+        ImageView hapusbahan;
 
         ViewHolder(View itemView) {
             super(itemView);
             namabahanfav = itemView.findViewById(R.id.namabahanfavorite);
             kalori = itemView.findViewById(R.id.kalorifavorite);
             gambarmakanan = itemView.findViewById(R.id.gambarbahanfav);
+            hapusbahan = itemView.findViewById(R.id.btnhapusfav);
             itemView.setTag(itemView);
 
             itemView.setOnClickListener(view -> {

@@ -8,6 +8,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.calorilin.calorilin_mobile.adapter.LabelRekomAdapter;
@@ -31,6 +33,7 @@ public class RekomendasiMakananActivity extends AppCompatActivity implements Lab
     ArrayList<ObjekLabelRekomen> labelRekomen;
     ArrayList<RecipesItem> listDiabetes,listKolesterol,listHipertensi;
     RecyclerView recyclerView,daftarrekomendasimakanan;
+    ImageView back;
     String label = "Cholesterol";
     String token;
     SharedPreferences sp;
@@ -150,6 +153,13 @@ public class RekomendasiMakananActivity extends AppCompatActivity implements Lab
             public void onFailure(Call<List<DiseaseItem>> call, Throwable t) {
                 Log.e("test", "onFailure" + t.getMessage());
                 Toast.makeText(RekomendasiMakananActivity.this, "Gagal" + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+        back = findViewById(R.id.backRekomMakanan);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

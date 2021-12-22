@@ -146,7 +146,7 @@ public class FragmentKontrolKalori extends Fragment{
         tambahmenumalam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                flagTimeShow.setTimeshownow("Malam");
+                flagTimeShow.setTimeshownow("Sore");
                 Intent intent = new Intent(getActivity(), TambahMenu.class);
                 startActivity(intent);
             }
@@ -198,7 +198,7 @@ public class FragmentKontrolKalori extends Fragment{
         });
 
         ApiInterface methods3 = ApiClient.getClient().create(ApiInterface.class);
-        Call<List<MaterialfavtimeshowItem>> call3 = methods3.favShowTimeResponse("Bearer " + token,id,"Malam");
+        Call<List<MaterialfavtimeshowItem>> call3 = methods3.favShowTimeResponse("Bearer " + token,id,"Sore");
         call3.enqueue(new Callback<List<MaterialfavtimeshowItem>>() {
             @Override
             public void onResponse(Call<List<MaterialfavtimeshowItem>> call3, Response<List<MaterialfavtimeshowItem>> response) {
@@ -277,7 +277,7 @@ public class FragmentKontrolKalori extends Fragment{
         totalLemakMalam = view.findViewById(R.id.totalKandungan2malam);
         totalKarboMalam = view.findViewById(R.id.totalKandungan3malam);
         ApiInterface methods6 = ApiClient.getClient().create(ApiInterface.class);
-        Call<TotalNutrisiItem> call6 = methods5.nutrisiResponse("Bearer " + token,id,"Malam");
+        Call<TotalNutrisiItem> call6 = methods5.nutrisiResponse("Bearer " + token,id,"Sore");
         call6.enqueue(new Callback<TotalNutrisiItem>() {
             @Override
             public void onResponse(Call<TotalNutrisiItem> call6, Response<TotalNutrisiItem> response) {
