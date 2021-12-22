@@ -37,6 +37,10 @@ public class DiseaseItem implements Parcelable {
 	@SerializedName("updated_at")
 	private String updatedAt;
 
+
+	@SerializedName("short_description")
+	private String shortDescription;
+
 	@SerializedName("recipe_image")
 	private String recipeImage;
 
@@ -102,6 +106,10 @@ public class DiseaseItem implements Parcelable {
 
 	public int getHyperTension(){
 		return hyperTension;
+	}
+
+	public String getShortDescription() {
+		return shortDescription;
 	}
 
 	public void setTotalEater(int totalEater){

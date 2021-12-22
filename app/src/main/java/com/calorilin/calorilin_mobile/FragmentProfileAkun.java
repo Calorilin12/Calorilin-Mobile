@@ -29,7 +29,7 @@ public class FragmentProfileAkun extends Fragment {
 
     Button pengaturan,keluar;
     ImageView lengkapidata,fotoprofile;
-    TextView namaAkun;
+    TextView namaAkun,bergabung;
 
 
     @Nullable
@@ -66,6 +66,7 @@ public class FragmentProfileAkun extends Fragment {
 
         namaAkun = view.findViewById(R.id.namaAkun);
         fotoprofile = view.findViewById(R.id.fotoprofile);
+        bergabung = view.findViewById(R.id.bergabung);
 
         SharedPreferences sp = getActivity().getApplicationContext().getSharedPreferences("sharepre", Context.MODE_PRIVATE);
         String token = sp.getString("tokens", "");
@@ -80,8 +81,9 @@ public class FragmentProfileAkun extends Fragment {
                 if (response.isSuccessful()) {
                     Toast.makeText(requireContext(), "berhasil", Toast.LENGTH_SHORT).show();
                     namaAkun.setText(response.body().getName());
+                    bergabung.setText(response.body().getPhoneNumber());
                     Glide.with(fotoprofile)
-                            .load("https://api.calorilin.me/user-detail-images/"+ response.body().getImage()).into(fotoprofile);
+                            .load("https://api.calorilin.me/user-detail-images/"+ response.body().getImage()).circleCrop().into(fotoprofile);
                 } else if (response.code() == 500) {
 
                 }

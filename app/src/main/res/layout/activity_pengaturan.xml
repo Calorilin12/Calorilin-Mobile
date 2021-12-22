@@ -35,30 +35,32 @@
         app:layout_constraintTop_toBottomOf="@+id/pengaturantentang2" />
 
     <TextView
-        android:id="@+id/kebijakanprivasi"
+        android:id="@+id/tentangkami"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/poppinsregular"
-        android:text="Kebijakan privasi"
+        android:text="Tentang Kami"
         android:textAllCaps="false"
         android:textColor="@color/sec500"
         android:textSize="14dp"
+        android:clickable="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pengaturantentang" />
 
     <TextView
-        android:id="@+id/persyaratanpengguna"
+        android:id="@+id/penggunaanaplikasi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginTop="36dp"
         android:fontFamily="@font/poppinsregular"
-        android:text="persyaratan pengguna"
+        android:text="penggunaan aplikasi"
         android:textAllCaps="false"
         android:textColor="@color/sec500"
         android:textSize="14dp"
+        android:clickable="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pengaturantentang" />
 
@@ -129,7 +131,7 @@
         android:textColor="@color/primary"
         android:textSize="14dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/persyaratanpengguna" />
+        app:layout_constraintTop_toBottomOf="@+id/penggunaanaplikasi" />
 
     <TextView
         android:id="@+id/akunpengaturan"

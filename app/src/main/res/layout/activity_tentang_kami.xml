@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TentangKami"
+    android:padding="16dp">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/backtentang"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/transparan"
+        android:drawableLeft="@drawable/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/judulpenggunaanaplikasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:fontFamily="@font/poppinsregular"
+        android:text="Tentang Kami"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back" />
+
+    <TextView
+        android:id="@+id/isitentangkami"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:fontFamily="@font/poppinsregular"
+        android:text="Kesehatan tubuh manusia akan selalu berubah, dan penyebabnya selalu karena pola makan. karena itulah Calorilin ada.\n\nMenjadi platform dan karya anak bangsa.\nMemberi kemudahan pada pengguna dalam memngelola pola makan.\n\nSekarang adalah masa dimana era digital semakin berkembang.\nsegala aktivitas manusia semakin mudah karena teknologi.\n\nMari menjadi pelopor pola hidup sehat.\nBerkiblat pada nilai kesehatan makanan dan nilai kemudahan, mendorong setiap orang agar dapat hidup sehat.\n\nSemoga apa yang tersaji di Calorilin ikut memberi kemudahan dan manfaat bagi setiap orang yang menggunakannya.\n\nSalam kami,\n\nTim Calorilin"
+        android:textColor="@color/sec500"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/judulpenggunaanaplikasi" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

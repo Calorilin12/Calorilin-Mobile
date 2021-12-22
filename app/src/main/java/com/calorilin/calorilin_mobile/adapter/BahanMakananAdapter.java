@@ -78,6 +78,7 @@ public class BahanMakananAdapter extends RecyclerView.Adapter<BahanMakananAdapte
 
                 ApiInterface methods = ApiClient.getClient().create(ApiInterface.class);
                 Call<Materialfavpost> call = methods.foodmaterialfavoritesResponse(id, String.valueOf(bahanmakanan.getId()), "Bearer " + token, flagTimeShow.getTimeshownow());
+                System.out.println(flagTimeShow.getTimeshownow());
 
                 call.enqueue(new Callback<Materialfavpost>() {
                     @Override

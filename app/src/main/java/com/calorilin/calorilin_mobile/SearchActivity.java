@@ -39,7 +39,6 @@ public class SearchActivity extends AppCompatActivity {
 
         cari = findViewById(R.id.cari);
         listCari = new ArrayList<>();
-        CheckItem checkItem = new CheckItem(0);
 
         SharedPreferences sp = getApplicationContext().getSharedPreferences("sharepre", Context.MODE_PRIVATE);
         String token = sp.getString("tokens", "");

@@ -49,6 +49,7 @@ public class CariAdapter extends RecyclerView.Adapter<CariAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         RecipesItem resepitem = data.get(position);
         holder.namamakanancari.setText(resepitem.getName());
+        holder.diskripsi.setText(" ");
         Glide.with(holder.gambarmakanan.getContext())
                 .load("https://api.calorilin.me/recipe-detail-images/"+ resepitem.getRecipeImage()).apply(new RequestOptions().override(600, 200)).into(holder.gambarmakanan);
 
@@ -85,11 +86,13 @@ public class CariAdapter extends RecyclerView.Adapter<CariAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView namamakanancari;
         ImageView gambarmakanan;
+        TextView diskripsi;
 
         ViewHolder(View itemView) {
             super(itemView);
             namamakanancari = itemView.findViewById(R.id.namamakanancari);
             gambarmakanan = itemView.findViewById(R.id.fotogambarcari);
+            diskripsi = itemView.findViewById(R.id.diskripsi);
             itemView.setTag(itemView);
 
             itemView.setOnClickListener(view -> {

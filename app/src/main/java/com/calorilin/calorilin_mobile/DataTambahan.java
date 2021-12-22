@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.calorilin.calorilin_mobile.api.ApiClient;
 import com.calorilin.calorilin_mobile.api.ApiInterface;
+import com.calorilin.calorilin_mobile.model.dailyhealthy.Data;
 import com.calorilin.calorilin_mobile.model.user.UserData;
 import com.calorilin.calorilin_mobile.model.userdetailspost.UserDetailPost;
 
@@ -133,32 +134,87 @@ public class DataTambahan extends AppCompatActivity {
             }
         });
 
+        ApiInterface methods2 = ApiClient.getClient().create(ApiInterface.class);
+        Call<UserData> call2 = methods2.userResponse("Bearer " + token, id);
+
+        call2.enqueue(new Callback<UserData>() {
+            @Override
+            public void onResponse(Call<UserData> call2, Response<UserData> response) {
+                if (response.isSuccessful()) {
+                    editberatbadan.setHint(String.valueOf(response.body().getWeight()) + " Kg");
+                    edittinggibadan.setHint(String.valueOf(response.body().getHeight()) +" Cm");
+                    edittensi.setHint(response.body().getTension());
+
+                    if (response.body().getHyperTension() == 1) {
+                        hipertensilabel.setBackgroundResource(R.drawable.shapehijau);
+                        hipertensilabel.setTextColor(Color.WHITE);
+                        hipertensi = true;
+                    }
+                    if (response.body().getCholesterol() == 1) {
+                        kolesterollabel.setBackgroundResource(R.drawable.shapehijau);
+                        kolesterollabel.setTextColor(Color.WHITE);
+                        kolesterol = true;
+                    }
+                    if (response.body().getDiabetes() == 1) {
+                        diabeteslabel.setBackgroundResource(R.drawable.shapehijau);
+                        diabeteslabel.setTextColor(Color.WHITE);
+                        diabetes = true;
+                    }
+
+                    if (response.body().getUricAcid() == 1) {
+                        asamuratlabel.setBackgroundResource(R.drawable.shapehijau);
+                        asamuratlabel.setTextColor(Color.WHITE);
+                        asamurat = true;
+                    }
+                    if (response.body().getStomachAcid() == 1) {
+                        asamlambunglabel.setBackgroundResource(R.drawable.shapehijau);
+                        asamlambunglabel.setTextColor(Color.WHITE);
+                        asamlambung = true;
+                    }
+
+                } else if (response.code() == 500) {
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UserData> call2, Throwable t) {
+
+            }
+        });
+
+
         simpantambahan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int tinggibadan = Integer.valueOf(edittinggibadan.getText().toString());
-                int beratbadan = Integer.valueOf(editberatbadan.getText().toString());
-                String tensi = edittensi.getText().toString();
 
-                System.out.println("Test");
+                if (edittinggibadan.getText().toString().length() == 0 || editberatbadan.getText().toString().length() == 0 || edittensi.getText().toString().length() == 0) {
+                    Toast.makeText(DataTambahan.this, "Data tidak boleh kosong", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    int tinggibadan = Integer.valueOf(edittinggibadan.getText().toString());
+                    int beratbadan = Integer.valueOf(editberatbadan.getText().toString());
+                    String tensi = edittensi.getText().toString();
 
-                ApiInterface methods = ApiClient.getClient().create(ApiInterface.class);
-                Call<UserDetailPost> call = methods.editdetailResponse("Bearer " + token, id, beratbadan, tinggibadan, tensi, ubahBoolean(kolesterol)
-                        , ubahBoolean(diabetes), ubahBoolean(hipertensi), ubahBoolean(asamurat), ubahBoolean(asamlambung));
-                call.enqueue(new Callback<UserDetailPost>() {
-                    @Override
-                    public void onResponse(Call<UserDetailPost> call, Response<UserDetailPost> response) {
-                        if (response.isSuccessful()) {
-                            Toast.makeText(DataTambahan.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                        } else if (response.code() == 500) {
+                    ApiInterface methods = ApiClient.getClient().create(ApiInterface.class);
+                    Call<UserDetailPost> call = methods.editdetailResponse("Bearer " + token, id, beratbadan, tinggibadan, tensi, ubahBoolean(kolesterol)
+                            , ubahBoolean(diabetes), ubahBoolean(hipertensi), ubahBoolean(asamurat), ubahBoolean(asamlambung));
+                    call.enqueue(new Callback<UserDetailPost>() {
+                        @Override
+                        public void onResponse(Call<UserDetailPost> call, Response<UserDetailPost> response) {
+                            if (response.isSuccessful()) {
+                                Toast.makeText(DataTambahan.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                            } else if (response.code() == 500) {
 
+                            }
                         }
-                    }
-                    @Override
-                    public void onFailure(Call<UserDetailPost> call, Throwable t) {
-                        Toast.makeText(DataTambahan.this, "Gagal" + t.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
+
+                        @Override
+                        public void onFailure(Call<UserDetailPost> call, Throwable t) {
+                            Toast.makeText(DataTambahan.this, "Gagal" + t.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
             }
         });
     }

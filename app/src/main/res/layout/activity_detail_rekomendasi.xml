@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
-    tools:context=".RincianMakanan"
+    tools:context=".DetailRekomendasiActivity"
     xmlns:android="http://schemas.android.com/apk/res/android">
     xmlns:android="http://schemas.android.com/apk/res/android"
 
@@ -12,7 +12,7 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/gambarrinci"
+            android:id="@+id/gambarrekomendasi"
             android:layout_width="wrap_content"
             android:layout_height="275dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -22,17 +22,18 @@
             app:srcCompat="@drawable/rincianmakanan" />
 
         <ImageView
-            android:id="@+id/backdatatambahan"
+            android:id="@+id/backdatatambahanrekomendasi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:clickable="true"
             app:srcCompat="@drawable/back2" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/layoutrinci"
+            android:id="@+id/layoutrincirekomendasi"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="220dp"
@@ -42,7 +43,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/judulrincimakanan"
+                android:id="@+id/judulrincimakananrekomendasi"
                 android:layout_width="325dp"
                 android:layout_height="67dp"
                 android:layout_margin="22dp"
@@ -54,10 +55,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.383"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/layoutrinci" />
+                app:layout_constraintTop_toTopOf="@+id/layoutrincirekomendasi" />
 
             <ImageView
-                android:id="@+id/jam"
+                android:id="@+id/jamrekomendasi"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginTop="12dp"
@@ -65,10 +66,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.06"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/judulrincimakanan" />
+                app:layout_constraintTop_toBottomOf="@+id/judulrincimakananrekomendasi" />
 
             <TextView
-                android:id="@+id/waktupembuatan"
+                android:id="@+id/waktupembuatanrekomendasi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
@@ -78,8 +79,8 @@
                 android:textSize="14dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.02"
-                app:layout_constraintStart_toEndOf="@+id/jam"
-                app:layout_constraintTop_toBottomOf="@+id/judulrincimakanan" />
+                app:layout_constraintStart_toEndOf="@+id/jamrekomendasi"
+                app:layout_constraintTop_toBottomOf="@+id/judulrincimakananrekomendasi" />
             />
 
             <ImageView
@@ -90,11 +91,11 @@
                 android:background="@drawable/people"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.2"
-                app:layout_constraintStart_toEndOf="@id/waktupembuatan"
-                app:layout_constraintTop_toBottomOf="@+id/judulrincimakanan" />
+                app:layout_constraintStart_toEndOf="@id/waktupembuatanrekomendasi"
+                app:layout_constraintTop_toBottomOf="@+id/judulrincimakananrekomendasi" />
 
             <TextView
-                android:id="@+id/porsi"
+                android:id="@+id/porsirekomendasi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
@@ -105,21 +106,21 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.02"
                 app:layout_constraintStart_toEndOf="@+id/orangrekomendasi"
-                app:layout_constraintTop_toBottomOf="@+id/judulrincimakanan" />
+                app:layout_constraintTop_toBottomOf="@+id/judulrincimakananrekomendasi" />
 
             <ImageView
-                android:id="@+id/bukumenu"
+                android:id="@+id/bukumenurekomendasi"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/bukumenu"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.26"
-                app:layout_constraintStart_toEndOf="@id/porsi"
-                app:layout_constraintTop_toBottomOf="@+id/judulrincimakanan" />
+                app:layout_constraintStart_toEndOf="@id/porsirekomendasi"
+                app:layout_constraintTop_toBottomOf="@+id/judulrincimakananrekomendasi" />
 
             <TextView
-                android:id="@+id/kalori"
+                android:id="@+id/kalorirekomendasi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
@@ -129,11 +130,11 @@
                 android:textSize="14dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.02"
-                app:layout_constraintStart_toEndOf="@+id/bukumenu"
-                app:layout_constraintTop_toBottomOf="@+id/judulrincimakanan" />
+                app:layout_constraintStart_toEndOf="@+id/bukumenurekomendasi"
+                app:layout_constraintTop_toBottomOf="@+id/judulrincimakananrekomendasi" />
 
             <TextView
-                android:id="@+id/komposisi"
+                android:id="@+id/komposisirekomendasi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="149dp"
@@ -144,7 +145,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.05"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/layoutrinci" />
+                app:layout_constraintTop_toTopOf="@+id/layoutrincirekomendasi" />
 
             <ImageView
                 android:id="@+id/dot1rekomendasi"
@@ -155,10 +156,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.04"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/layoutrinci" />
+                app:layout_constraintTop_toTopOf="@+id/layoutrincirekomendasi" />
 
             <TextView
-                android:id="@+id/komposisidetail"
+                android:id="@+id/komposisidetailrekomendasi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="190dp"
@@ -170,10 +171,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.12"
                 app:layout_constraintStart_toEndOf="@+id/dot1rekomendasi"
-                app:layout_constraintTop_toTopOf="@+id/layoutrinci" />
+                app:layout_constraintTop_toTopOf="@+id/layoutrincirekomendasi" />
 
             <TextView
-                android:id="@+id/langkah2"
+                android:id="@+id/langkah2rekomendasi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -184,10 +185,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.05"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/komposisidetail" />
+                app:layout_constraintTop_toBottomOf="@+id/komposisidetailrekomendasi" />
 
             <TextView
-                android:id="@+id/langkah2detail"
+                android:id="@+id/langkah2detailrekomendasi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -211,7 +212,7 @@ Puding Jeruk siap disajikan."
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.08"
                 app:layout_constraintStart_toEndOf="@+id/dot1rekomendasi"
-                app:layout_constraintTop_toBottomOf="@+id/langkah2" />
+                app:layout_constraintTop_toBottomOf="@+id/langkah2rekomendasi" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -52,7 +52,6 @@ public class MasukActivity extends AppCompatActivity {
                 String masukEmail = email.getText().toString();
                 String masukPass = password.getText().toString();
 
-
                 ApiInterface methods = ApiClient.getClient().create(ApiInterface.class);
                 Call<Login> call = methods.loginResponse(masukEmail, masukPass);
 

@@ -1,6 +1,7 @@
 package com.calorilin.calorilin_mobile.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.calorilin.calorilin_mobile.CheckItem;
 import com.calorilin.calorilin_mobile.ObjekLabelRekomen;
 import com.calorilin.calorilin_mobile.R;
 import com.calorilin.calorilin_mobile.listenerpack.LabelRekomListener;
@@ -45,12 +47,23 @@ public class LabelRekomAdapter extends RecyclerView.Adapter<LabelRekomAdapter.Vi
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ObjekLabelRekomen labelR = data.get(position);
+        CheckItem checkItem = new CheckItem();
         holder.namalabelrekomen.setText(data.get(position).getLabelRekomen());
         holder.namalabelrekomen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 System.out.println(labelR.getLabelRekomen());
                 listener.onLabel(labelR.getLabelRekomen());
+                if(checkItem.isCheck()){
+                    holder.namalabelrekomen.setBackgroundResource(R.drawable.border4);
+                    holder.namalabelrekomen.setTextColor(Color.BLACK);
+                    checkItem.setCheck(false);
+                }
+                else {
+                    holder.namalabelrekomen.setBackgroundResource(R.drawable.shapehijau);
+                    holder.namalabelrekomen.setTextColor(Color.WHITE);
+                    checkItem.setCheck(true);
+                }
             }
         });
     }

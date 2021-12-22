@@ -25,9 +25,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/poppinsregular"
         android:text="Program Kesehatan Harian"
+        android:textColor="@color/black"
         android:textFontWeight="400"
         android:textSize="24dp"
         android:textStyle="bold"
@@ -37,7 +38,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardStatusIMT"
         android:layout_width="0dp"
-        android:layout_height="170dp"
+        android:layout_height="190dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
@@ -134,6 +135,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardHasilIMT"
                 android:layout_width="wrap_content"
+                android:padding="10dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="96dp"
                 android:layout_marginTop="2dp"
@@ -146,9 +148,10 @@
                     android:id="@+id/hasilIMT"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="5dp"
                     android:fontFamily="@font/poppinsregular"
                     android:gravity="center"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
                     android:text="IDEAL"
                     android:textColor="@color/white"
                     android:textFontWeight="500"
@@ -166,7 +169,7 @@
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
         app:cardCornerRadius="8dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -174,9 +177,11 @@
         app:layout_constraintTop_toBottomOf="@+id/cardStatusIMT">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pushupcard"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/hijau_prim_500">
+            android:background="@drawable/shapeputih"
+            android:clickable="true">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardiconWorkout1"
@@ -207,7 +212,7 @@
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/poppinsregular"
                 android:text="Program Harian"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textFontWeight="400"
                 android:textSize="14sp"
                 app:layout_constraintStart_toEndOf="@+id/cardiconWorkout1"
@@ -220,7 +225,7 @@
                 android:layout_marginStart="18dp"
                 android:fontFamily="@font/poppinsregular"
                 android:text="20 Push Up"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textFontWeight="400"
                 android:textSize="16sp"
                 app:layout_constraintStart_toEndOf="@+id/cardiconWorkout1"
@@ -231,14 +236,14 @@
                 android:layout_width="82dp"
                 android:layout_height="30dp"
                 android:layout_marginEnd="16dp"
-                android:background="@drawable/bulatputih"
+                android:background="@drawable/shapehijau20"
                 android:fontFamily="@font/poppinsregular"
-                android:text="DONE"
+                android:text="START"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textFontWeight="500"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                android:textFontWeight="500"
-                android:textAllCaps="false"
-                android:textColor="@color/primary"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -261,8 +266,10 @@
         app:layout_constraintTop_toBottomOf="@+id/workOut1">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:clickable="true"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:id="@+id/situpcard"
             android:background="@drawable/shapeputih">
 
             <androidx.cardview.widget.CardView
@@ -348,9 +355,11 @@
         app:layout_constraintTop_toBottomOf="@+id/workOut2">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/laricard"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/shapeputih">
+            android:background="@drawable/shapeputih"
+            android:clickable="true">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardiconWorkout3"
@@ -422,5 +431,137 @@
 
     </androidx.cardview.widget.CardView>
 
+    <TextView
+        android:id="@+id/polaminum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppinsregular"
+        android:text="Kontrol pola minum"
+        android:textColor="@color/black"
+        android:textFontWeight="400"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/workOut3" />
+
+    <TextView
+        android:id="@+id/jumlahpolaminum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/poppinsregular"
+        android:text="/8"
+        android:textColor="@color/primary"
+        android:textFontWeight="400"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/workOut3" />
+
+    <TextView
+        android:id="@+id/jumlahminum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="1dp"
+        android:fontFamily="@font/poppinsregular"
+        android:text="0"
+        android:textColor="@color/primary"
+        android:textFontWeight="400"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/jumlahpolaminum"
+        app:layout_constraintTop_toBottomOf="@+id/workOut3" />
+
+    <ImageView
+        android:id="@+id/minum1"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/gelasabu"
+        android:clickable="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/polaminum" />
+
+    <ImageView
+        android:id="@+id/minum2"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:clickable="true"
+        android:src="@drawable/gelasabu"
+        app:layout_constraintStart_toEndOf="@+id/minum1"
+        app:layout_constraintTop_toBottomOf="@+id/polaminum" />
+
+    <ImageView
+        android:id="@+id/minum3"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:clickable="true"
+        android:src="@drawable/gelasabu"
+        app:layout_constraintStart_toEndOf="@+id/minum2"
+        app:layout_constraintTop_toBottomOf="@+id/polaminum" />
+
+    <ImageView
+        android:id="@+id/minum4"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:clickable="true"
+        android:src="@drawable/gelasabu"
+        app:layout_constraintStart_toEndOf="@+id/minum3"
+        app:layout_constraintTop_toBottomOf="@+id/polaminum" />
+
+    <ImageView
+        android:id="@+id/minum5"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:clickable="true"
+        android:src="@drawable/gelasabu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/minum1" />
+
+    <ImageView
+        android:id="@+id/minum6"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:clickable="true"
+        android:src="@drawable/gelasabu"
+        app:layout_constraintStart_toEndOf="@+id/minum5"
+        app:layout_constraintTop_toBottomOf="@+id/minum1" />
+
+    <ImageView
+        android:id="@+id/minum7"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:clickable="true"
+        android:src="@drawable/gelasabu"
+        app:layout_constraintStart_toEndOf="@+id/minum6"
+        app:layout_constraintTop_toBottomOf="@+id/minum1" />
+
+    <ImageView
+        android:id="@+id/minum8"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:clickable="true"
+        android:src="@drawable/gelasabu"
+        app:layout_constraintStart_toEndOf="@+id/minum7"
+        app:layout_constraintTop_toBottomOf="@+id/minum1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

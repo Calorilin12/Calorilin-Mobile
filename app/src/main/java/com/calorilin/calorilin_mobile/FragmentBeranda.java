@@ -43,8 +43,9 @@ public class FragmentBeranda extends Fragment implements View.OnClickListener {
     ArrayList<ObjekKatagori> listkat;
     ArrayList<ObjekResepHari> listresephariini;
     TextView halouser;
-    EditText cari;
+    ImageView cari;
     ImageView rekomendasi, programharian;
+    static int checkData;
 
     @Nullable
     @Override
@@ -66,6 +67,9 @@ public class FragmentBeranda extends Fragment implements View.OnClickListener {
                     halouser.setText("Halo, " + response.body().getName());
                     DataPenyakit dataPenyakit = new DataPenyakit(response.body().getCholesterol(), response.body().getDiabetes(),
                             response.body().getHyperTension(),response.body().getUricAcid(),response.body().getStomachAcid());
+                    checkData = response.body().getCholesterol() + response.body().getDiabetes()+
+                            response.body().getHyperTension()+response.body().getUricAcid()+response.body().getStomachAcid();
+                    System.out.println(checkData);
                 } else if (response.code() == 500) {
 
                 }
@@ -150,7 +154,10 @@ public class FragmentBeranda extends Fragment implements View.OnClickListener {
         if (v == cari) {
             startActivity(new Intent(requireActivity(), SearchActivity.class));
         } else if (v == rekomendasi) {
-            startActivity(new Intent(requireActivity(), RekomendasiMakananActivity.class));
+            if (checkData != 0)
+                startActivity(new Intent(requireActivity(), RekomendasiMakananActivity.class));
+            else
+                startActivity(new Intent(requireActivity(), RekomendasiDataKosong.class));
         } else if (v == programharian) {
             startActivity(new Intent(requireActivity(), ProgramHarian.class));
         }

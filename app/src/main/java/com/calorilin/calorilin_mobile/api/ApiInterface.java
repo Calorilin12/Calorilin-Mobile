@@ -9,6 +9,7 @@ import com.calorilin.calorilin_mobile.model.login.Login;
 import com.calorilin.calorilin_mobile.model.materialfavtimeshow.MaterialfavtimeshowItem;
 import com.calorilin.calorilin_mobile.model.recipes.RecipesItem;
 import com.calorilin.calorilin_mobile.model.register.Register;
+import com.calorilin.calorilin_mobile.model.tentangkami.TentangkamiItem;
 import com.calorilin.calorilin_mobile.model.totalfavorite.TotalNutrisiItem;
 import com.calorilin.calorilin_mobile.model.user.UserData;
 import com.calorilin.calorilin_mobile.model.userdetailspost.UserDetailPost;
@@ -121,5 +122,9 @@ public interface ApiInterface {
             @Header("Authorization") String token,
             @Path("id_user") String idUser,
             @Query("time_show") String timeShow
+    );
+    @GET("tentang-kami")
+    Call<TentangkamiItem> tentangkamiResponse(
+            @Header("Authorization") String token
     );
 }

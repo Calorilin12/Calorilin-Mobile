@@ -50,7 +50,6 @@ public class TambahMenu extends AppCompatActivity {
             public void onResponse(Call<List<FoodMaterialItem>> call, Response<List<FoodMaterialItem>> response) {
                 if (response.isSuccessful()) {
                     List<FoodMaterialItem> resep = response.body();
-                    Toast.makeText(TambahMenu.this, "Berhasil", Toast.LENGTH_LONG).show();
 
                     BahanMakananAdapter adapter2 = new BahanMakananAdapter(getApplicationContext(), resep);
                     menubahanmakanan.setLayoutManager(new LinearLayoutManager(TambahMenu.this, LinearLayoutManager.VERTICAL, false));

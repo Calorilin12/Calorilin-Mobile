@@ -74,8 +74,8 @@
         android:fontFamily="@font/poppinslight"
         android:text="Klik Disini"
         android:textColor="@color/hijau"
-
         android:textSize="14dp"
+        android:clickable="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"

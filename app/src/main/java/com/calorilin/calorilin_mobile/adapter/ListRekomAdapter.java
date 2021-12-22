@@ -13,8 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.calorilin.calorilin_mobile.DetailRekomendasiActivity;
 import com.calorilin.calorilin_mobile.R;
-import com.calorilin.calorilin_mobile.RincianMakanan;
 import com.calorilin.calorilin_mobile.model.disease.DiseaseItem;
 
 import java.util.ArrayList;
@@ -49,18 +49,19 @@ public class ListRekomAdapter extends RecyclerView.Adapter<ListRekomAdapter.View
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         DiseaseItem resepitem = data.get(position);
         holder.namamakanancari.setText(resepitem.getName());
+        holder.deskripsi.setText(resepitem.getShortDescription());
         Glide.with(holder.gambarmakanan.getContext())
                 .load("https://api.calorilin.me/recipe-detail-images/"+ resepitem.getRecipeImage()).apply(new RequestOptions().override(600, 200)).into(holder.gambarmakanan);
 
-//        holder.gambarmakanan.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(context, RincianMakanan.class);
-//                intent.putExtra("rekomendasi", resepitem);
-//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//                context.startActivity(intent);
-//            }
-//        });
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, DetailRekomendasiActivity.class);
+                intent.putExtra("rekomendasi", resepitem);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -84,11 +85,13 @@ public class ListRekomAdapter extends RecyclerView.Adapter<ListRekomAdapter.View
     // stores and recycles views as they are scrolled off screen
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView namamakanancari;
+        TextView deskripsi;
         ImageView gambarmakanan;
 
         ViewHolder(View itemView) {
             super(itemView);
             namamakanancari = itemView.findViewById(R.id.namamakanancari);
+            deskripsi = itemView.findViewById(R.id.diskripsi);
             gambarmakanan = itemView.findViewById(R.id.fotogambarcari);
             itemView.setTag(itemView);
 

@@ -33,10 +33,10 @@
 
     <ImageButton
         android:id="@+id/fotoprofile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="92dp"
-        android:background="@drawable/foto1"
+        android:background="@drawable/user"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -47,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:fontFamily="@font/poppinsmedium"
+        android:fontFamily="@font/poppinsregular"
         android:text="Stefanus Irgy"
         android:textColor="@color/primary"
         android:textSize="18dp"
@@ -55,6 +55,20 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fotoprofile" />
+
+    <TextView
+        android:id="@+id/bergabung"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/poppinsregular"
+        android:text="nomer"
+        android:textColor="@color/sec500"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/namaAkun" />
 
     <ImageView
         android:id="@+id/lengkapidata"

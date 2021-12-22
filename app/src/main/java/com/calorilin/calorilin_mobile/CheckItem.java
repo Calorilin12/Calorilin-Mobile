@@ -1,16 +1,20 @@
 package com.calorilin.calorilin_mobile;
 
 public class CheckItem {
-    int check = 0;
+    static boolean check = false;
 
-    public CheckItem(int check) {
+    public CheckItem(boolean check) {
         this.check = check;
     }
     public CheckItem() {
 
     }
 
-    public int getCheck() {
+    public static void setCheck(boolean check) {
+        CheckItem.check = check;
+    }
+
+    public boolean isCheck() {
         return check;
     }
 }
