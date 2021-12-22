@@ -10,7 +10,9 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.calorilin.calorilin_mobile.adapter.CariAdapter;
@@ -30,6 +32,7 @@ public class SearchActivity extends AppCompatActivity {
     RecyclerView carimakanan;
     EditText cari;
     String key;
+    ImageView back;
     ArrayList<RecipesItem> listCari;
 
     @Override
@@ -90,6 +93,14 @@ public class SearchActivity extends AppCompatActivity {
             public void onFailure(Call<List<RecipesItem>> call, Throwable t) {
                 Log.e("test", "onFailure" + t.getMessage());
                 Toast.makeText(SearchActivity.this, "Gagal" + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        back = findViewById(R.id.img_back_search);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

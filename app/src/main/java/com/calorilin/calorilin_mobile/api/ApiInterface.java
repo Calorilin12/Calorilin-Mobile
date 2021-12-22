@@ -5,8 +5,10 @@ import com.calorilin.calorilin_mobile.model.disease.DiseaseItem;
 import com.calorilin.calorilin_mobile.model.favoriteget.FavMaterialItem;
 import com.calorilin.calorilin_mobile.model.foodmaterial.FoodMaterialItem;
 import com.calorilin.calorilin_mobile.model.foodmaterialfavpost.Materialfavpost;
+import com.calorilin.calorilin_mobile.model.hapusbahanfav.DelBahanFav;
 import com.calorilin.calorilin_mobile.model.login.Login;
 import com.calorilin.calorilin_mobile.model.materialfavtimeshow.MaterialfavtimeshowItem;
+import com.calorilin.calorilin_mobile.model.penggunaanapk.PenggunaanAppItem;
 import com.calorilin.calorilin_mobile.model.recipes.RecipesItem;
 import com.calorilin.calorilin_mobile.model.register.Register;
 import com.calorilin.calorilin_mobile.model.tentangkami.TentangkamiItem;
@@ -18,6 +20,7 @@ import com.calorilin.calorilin_mobile.model.userpost.UserEdit;
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -126,5 +129,15 @@ public interface ApiInterface {
     @GET("tentang-kami")
     Call<TentangkamiItem> tentangkamiResponse(
             @Header("Authorization") String token
+    );
+    @GET("penggunaan-aplikasi")
+    Call<PenggunaanAppItem> penggunaanappResponse(
+            @Header("Authorization") String token
+    );
+
+    @DELETE("food-material-favorites/{id}")
+    Call<DelBahanFav> delbahanResponse(
+            @Header("Authorization") String token,
+            @Path("id") String id
     );
 }

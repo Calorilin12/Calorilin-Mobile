@@ -1,12 +1,14 @@
 package com.calorilin.calorilin_mobile.adapter;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,10 +17,19 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.calorilin.calorilin_mobile.DataControlTotal;
 import com.calorilin.calorilin_mobile.R;
+import com.calorilin.calorilin_mobile.SearchActivity;
+import com.calorilin.calorilin_mobile.api.ApiClient;
+import com.calorilin.calorilin_mobile.api.ApiInterface;
+import com.calorilin.calorilin_mobile.model.hapusbahanfav.DelBahanFav;
 import com.calorilin.calorilin_mobile.model.materialfavtimeshow.MaterialfavtimeshowItem;
+import com.calorilin.calorilin_mobile.model.tentangkami.TentangkamiItem;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class BahanFavoritePagiAdapter extends RecyclerView.Adapter<BahanFavoritePagiAdapter.ViewHolder> {
     private List<MaterialfavtimeshowItem> data = new ArrayList<>();
@@ -27,13 +38,13 @@ public class BahanFavoritePagiAdapter extends RecyclerView.Adapter<BahanFavorite
     private Context context;
     DataControlTotal dataControlTotal = new DataControlTotal();
 
-    public BahanFavoritePagiAdapter(Context context, List<MaterialfavtimeshowItem> list){
+    public BahanFavoritePagiAdapter(Context context, List<MaterialfavtimeshowItem> list) {
         this.context = context;
         this.data = list;
         inflater = LayoutInflater.from(context);
     }
 
-    public void setData(List<MaterialfavtimeshowItem> items){
+    public void setData(List<MaterialfavtimeshowItem> items) {
         data.clear();
         data.addAll(items);
         notifyDataSetChanged();
@@ -50,15 +61,41 @@ public class BahanFavoritePagiAdapter extends RecyclerView.Adapter<BahanFavorite
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         MaterialfavtimeshowItem foodMaterialsItem = data.get(position);
         holder.namamakanankontrol.setText(foodMaterialsItem.getName());
-        holder.kalori.setText(String.valueOf(foodMaterialsItem.getCalory())+"Kcal");
-        holder.lemak.setText(String.valueOf(foodMaterialsItem.getFat())+"Kcal");
-        holder.protein.setText(String.valueOf(foodMaterialsItem.getProtein())+"Kcal");
-        holder.karbo.setText(String.valueOf(foodMaterialsItem.getCarbo())+"Kcal");
-        holder.karbo.setText(String.valueOf(foodMaterialsItem.getCarbo())+"Kcal");
+        holder.kalori.setText(String.valueOf(foodMaterialsItem.getCalory()) + "Kcal");
+        holder.lemak.setText(String.valueOf(foodMaterialsItem.getFat()) + "Kcal");
+        holder.protein.setText(String.valueOf(foodMaterialsItem.getProtein()) + "Kcal");
+        holder.karbo.setText(String.valueOf(foodMaterialsItem.getCarbo()) + "Kcal");
+        holder.karbo.setText(String.valueOf(foodMaterialsItem.getCarbo()) + "Kcal");
 
         dataControlTotal.tambahtotalPagi(foodMaterialsItem.getCalory());
 
-        holder.hapusbahan.setImageDrawable(Drawable.createFromPath("@drawable/ic_baseline_close_24"));
+        holder.hapusbahan.setImageResource(R.drawable.ic_baseline_close_24);
+        holder.hapusbahan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences sp = context.getSharedPreferences("sharepre", Context.MODE_PRIVATE);
+                String token = sp.getString("tokens", "");
+
+                ApiInterface methods2 = ApiClient.getClient().create(ApiInterface.class);
+                Call<DelBahanFav> call2 = methods2.delbahanResponse("Bearer " + token, String.valueOf(foodMaterialsItem.getId()));
+
+                call2.enqueue(new Callback<DelBahanFav>() {
+                    @Override
+                    public void onResponse(Call<DelBahanFav> call2, Response<DelBahanFav> response) {
+                        if (response.isSuccessful()) {
+                            Toast.makeText(context, response.body().getMessage() , Toast.LENGTH_SHORT).show();
+                        } else if (response.code() == 500) {
+
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<DelBahanFav> call2, Throwable t) {
+
+                    }
+                });
+            }
+        });
     }
 
     @Override
@@ -66,11 +103,11 @@ public class BahanFavoritePagiAdapter extends RecyclerView.Adapter<BahanFavorite
         return data.size();
     }
 
-    interface   RecycleKlik{
+    interface RecycleKlik {
         void onKlikItem(View view, int posisi);
     }
 
-    void setKlikListener(RecycleKlik recycleKlik){
+    void setKlikListener(RecycleKlik recycleKlik) {
         this.lister = recycleKlik;
     }
 
@@ -83,7 +120,6 @@ public class BahanFavoritePagiAdapter extends RecyclerView.Adapter<BahanFavorite
         TextView karbo;
         ImageView hapusbahan;
 
-        ImageView gambarmakanan;
 
         ViewHolder(View itemView) {
             super(itemView);
@@ -96,7 +132,7 @@ public class BahanFavoritePagiAdapter extends RecyclerView.Adapter<BahanFavorite
             itemView.setTag(itemView);
 
             itemView.setOnClickListener(view -> {
-                if(lister != null) lister.onKlikItem(view, getAdapterPosition());
+                if (lister != null) lister.onKlikItem(view, getAdapterPosition());
             });
         }
     }

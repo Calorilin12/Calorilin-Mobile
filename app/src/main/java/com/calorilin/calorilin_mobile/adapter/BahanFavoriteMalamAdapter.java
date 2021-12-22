@@ -1,22 +1,31 @@
 package com.calorilin.calorilin_mobile.adapter;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.calorilin.calorilin_mobile.DataControlTotal;
 import com.calorilin.calorilin_mobile.R;
+import com.calorilin.calorilin_mobile.api.ApiClient;
+import com.calorilin.calorilin_mobile.api.ApiInterface;
+import com.calorilin.calorilin_mobile.model.hapusbahanfav.DelBahanFav;
 import com.calorilin.calorilin_mobile.model.materialfavtimeshow.MaterialfavtimeshowItem;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class BahanFavoriteMalamAdapter extends RecyclerView.Adapter<BahanFavoriteMalamAdapter.ViewHolder> {
     private List<MaterialfavtimeshowItem> data = new ArrayList<>();
@@ -56,7 +65,33 @@ public class BahanFavoriteMalamAdapter extends RecyclerView.Adapter<BahanFavorit
 
         dataControlTotal.tambahtotalMalam(foodMaterialsItem.getCalory());
 
-        holder.hapusbahan.setImageDrawable(Drawable.createFromPath("@drawable/ic_baseline_close_24"));
+        holder.hapusbahan.setImageResource(R.drawable.ic_baseline_close_24);
+        holder.hapusbahan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences sp = context.getSharedPreferences("sharepre", Context.MODE_PRIVATE);
+                String token = sp.getString("tokens", "");
+
+                ApiInterface methods2 = ApiClient.getClient().create(ApiInterface.class);
+                Call<DelBahanFav> call2 = methods2.delbahanResponse("Bearer " + token, String.valueOf(foodMaterialsItem.getId()));
+
+                call2.enqueue(new Callback<DelBahanFav>() {
+                    @Override
+                    public void onResponse(Call<DelBahanFav> call2, Response<DelBahanFav> response) {
+                        if (response.isSuccessful()) {
+                            Toast.makeText(context, response.body().getMessage() , Toast.LENGTH_SHORT).show();
+                        } else if (response.code() == 500) {
+
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<DelBahanFav> call2, Throwable t) {
+
+                    }
+                });
+            }
+        });
     }
 
     @Override

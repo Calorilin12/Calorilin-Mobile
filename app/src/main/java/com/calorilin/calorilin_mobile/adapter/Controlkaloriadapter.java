@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -47,6 +48,7 @@ public class Controlkaloriadapter extends RecyclerView.Adapter<Controlkaloriadap
         holder.kontrol1.setText(data.get(position).getKontrol1());
         holder.kontrol2.setText(data.get(position).getKontrol2());
         holder.kontrol3.setText(data.get(position).getKontrol3());
+        holder.hapus.setImageResource(R.drawable.ic_baseline_close_24);
 
     }
 
@@ -70,6 +72,7 @@ public class Controlkaloriadapter extends RecyclerView.Adapter<Controlkaloriadap
         TextView kontrol1;
         TextView kontrol2;
         TextView kontrol3;
+        ImageView hapus;
 
         ViewHolder(View itemView) {
             super(itemView);
@@ -78,6 +81,7 @@ public class Controlkaloriadapter extends RecyclerView.Adapter<Controlkaloriadap
             kontrol1 = itemView.findViewById(R.id.kandunganmakanankontrol1);
             kontrol2 = itemView.findViewById(R.id.kandunganmakanankontrol2);
             kontrol3 = itemView.findViewById(R.id.kandunganmakanankontrol3);
+            hapus = itemView.findViewById(R.id.btnhapus);
 
             itemView.setTag(itemView);
 
