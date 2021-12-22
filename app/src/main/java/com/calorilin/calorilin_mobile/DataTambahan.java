@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -29,6 +30,7 @@ public class DataTambahan extends AppCompatActivity {
     Button kolesterollabel, diabeteslabel, hipertensilabel, asamuratlabel, asamlambunglabel, simpantambahan;
     static boolean kolesterol = false, diabetes = false, hipertensi = false, asamurat = false, asamlambung = false;
     EditText editberatbadan, edittinggibadan, edittensi;
+    ImageView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,13 @@ public class DataTambahan extends AppCompatActivity {
         editberatbadan = findViewById(R.id.editberatbadan);
         edittinggibadan = findViewById(R.id.edittinggibadan);
         edittensi = findViewById(R.id.edittensi);
+        back = findViewById(R.id.backdatatambahan);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         kolesterollabel = findViewById(R.id.kolesterollabel);
         kolesterollabel.setOnClickListener(new View.OnClickListener() {
@@ -214,6 +223,7 @@ public class DataTambahan extends AppCompatActivity {
                             Toast.makeText(DataTambahan.this, "Gagal" + t.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     });
+                    finish();
                 }
             }
         });

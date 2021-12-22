@@ -85,6 +85,7 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("users/{id}?_method=PUT")
     Call<UserEdit> usereditResponse(
+            @Header("Authorization") String token,
             @Path("id") String id,
             @Field("name") String name,
             @Field("email") String email,

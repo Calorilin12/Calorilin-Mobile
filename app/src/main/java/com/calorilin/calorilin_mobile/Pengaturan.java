@@ -40,6 +40,7 @@ public class Pengaturan extends AppCompatActivity {
             }
         });
 
+
         editakun = findViewById(R.id.akunmenu);
         editakun.setOnClickListener(new View.OnClickListener() {
             @Override

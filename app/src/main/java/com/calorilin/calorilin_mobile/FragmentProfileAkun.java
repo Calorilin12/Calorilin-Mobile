@@ -79,7 +79,6 @@ public class FragmentProfileAkun extends Fragment {
             @Override
             public void onResponse(Call<UserData> call2, Response<UserData> response) {
                 if (response.isSuccessful()) {
-                    Toast.makeText(requireContext(), "berhasil", Toast.LENGTH_SHORT).show();
                     namaAkun.setText(response.body().getName());
                     bergabung.setText(response.body().getPhoneNumber());
                     Glide.with(fotoprofile)
