@@ -1,4 +1,4 @@
-package com.example.calorilin.model.favorite;
+package com.calorilin.calorilin_mobile.model.favorite;
 
 import com.google.gson.annotations.SerializedName;
 
