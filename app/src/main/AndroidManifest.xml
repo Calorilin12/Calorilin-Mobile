@@ -14,6 +14,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Calorilin">
         <activity
+            android:name=".cariMinuman"
+            android:exported="false" />
+        <activity
+            android:name=".cariBuah"
+            android:exported="false" />
+        <activity
+            android:name=".cariSayur"
+            android:exported="false" />
+        <activity
+            android:name=".cariDaging"
+            android:exported="false" />
+        <activity
             android:name=".PenggunaanAplikasi"
             android:exported="false" />
         <activity

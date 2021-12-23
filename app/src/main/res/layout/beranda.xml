@@ -57,12 +57,47 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rekomendasi" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/katgori"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:id="@+id/daging"
+            android:layout_width="74dp"
+            android:layout_height="74dp"
+            android:background="@drawable/daging"
             android:layout_marginTop="5dp"
+            android:clickable="true"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/katagorimakanan" />
+
+        <ImageView
+            android:id="@+id/sayur"
+            android:layout_width="74dp"
+            android:layout_height="74dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/sayur"
+            android:clickable="true"
+            app:layout_constraintStart_toEndOf="@+id/daging"
+            app:layout_constraintTop_toBottomOf="@+id/katagorimakanan" />
+
+        <ImageView
+            android:id="@+id/buah"
+            android:layout_width="74dp"
+            android:layout_height="74dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/buah"
+            android:clickable="true"
+            app:layout_constraintStart_toEndOf="@+id/sayur"
+            app:layout_constraintTop_toBottomOf="@+id/katagorimakanan" />
+
+        <ImageView
+            android:id="@+id/minuman"
+            android:layout_width="74dp"
+            android:layout_height="74dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/minuman"
+            android:clickable="true"
+            app:layout_constraintStart_toEndOf="@+id/buah"
             app:layout_constraintTop_toBottomOf="@+id/katagorimakanan" />
 
         <TextView
@@ -75,7 +110,7 @@
             android:textColor="@color/netral"
             android:textSize="14dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/katgori" />
+            app:layout_constraintTop_toBottomOf="@+id/daging" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/makananhari"

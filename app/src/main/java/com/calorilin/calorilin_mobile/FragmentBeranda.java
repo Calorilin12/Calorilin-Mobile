@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,9 +22,6 @@ import com.calorilin.calorilin_mobile.adapter.KatgoriAdapter;
 import com.calorilin.calorilin_mobile.adapter.MakananHariAdapter;
 import com.calorilin.calorilin_mobile.api.ApiClient;
 import com.calorilin.calorilin_mobile.api.ApiInterface;
-import com.calorilin.calorilin_mobile.model.foodmaterialfavpost.Materialfavpost;
-import com.calorilin.calorilin_mobile.model.login.Login;
-import com.calorilin.calorilin_mobile.model.recipes.Recipes;
 import com.calorilin.calorilin_mobile.model.recipes.RecipesItem;
 import com.calorilin.calorilin_mobile.model.user.UserData;
 
@@ -44,6 +40,7 @@ public class FragmentBeranda extends Fragment implements View.OnClickListener {
     ArrayList<ObjekResepHari> listresephariini;
     TextView halouser;
     ImageView cari;
+    ImageView daging,sayur,buah,minuman;
     ImageView rekomendasi, programharian;
     static int checkData;
 
@@ -81,11 +78,16 @@ public class FragmentBeranda extends Fragment implements View.OnClickListener {
             }
         });
 
-        recyclerView = view.findViewById(R.id.katgori);
-        tambahkatagori();
-        KatgoriAdapter adapter = new KatgoriAdapter(getActivity().getApplicationContext(), listkat);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        recyclerView.setAdapter(adapter);
+        daging = view.findViewById(R.id.daging);
+        daging.setOnClickListener(this);
+        sayur = view.findViewById(R.id.sayur);
+        sayur.setOnClickListener(this);
+        buah = view.findViewById(R.id.buah);
+        buah.setOnClickListener(this);
+        minuman = view.findViewById(R.id.minuman);
+        minuman.setOnClickListener(this);
+
+
 
 //        resephariini = view.findViewById(R.id.makananhari);
 //        tambahresephariini();
@@ -160,6 +162,14 @@ public class FragmentBeranda extends Fragment implements View.OnClickListener {
                 startActivity(new Intent(requireActivity(), RekomendasiDataKosong.class));
         } else if (v == programharian) {
             startActivity(new Intent(requireActivity(), ProgramHarian.class));
+        }else if (v == daging) {
+            startActivity(new Intent(requireActivity(), cariDaging.class));
+        }else if (v == sayur) {
+            startActivity(new Intent(requireActivity(), cariSayur.class));
+        }else if (v == buah) {
+            startActivity(new Intent(requireActivity(), cariBuah.class));
+        }else if (v == minuman) {
+            startActivity(new Intent(requireActivity(), cariMinuman.class));
         }
     }
 }

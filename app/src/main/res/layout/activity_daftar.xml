@@ -5,11 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Daftar">
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="64dp"
         android:fontFamily="@font/poppinsregular"
         android:text="Halo,"
         android:textColor="@color/black"
@@ -136,19 +137,6 @@
         app:layout_constraintStart_toEndOf="@+id/belumDaftar"
         app:layout_constraintTop_toBottomOf="@+id/daftar2"
         tools:ignore="TouchTargetSizeCheck" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/backpengaturan"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/transparan"
-        android:drawableLeft="@drawable/back"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.105"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/textView"

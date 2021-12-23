@@ -32,7 +32,6 @@ public class Daftar extends AppCompatActivity {
         setContentView(R.layout.activity_daftar);
 
         masuk = findViewById(R.id.masuksekarang);
-        back = findViewById(R.id.backpengaturan);
         daftar = findViewById(R.id.daftar2);
         emaildaftar = findViewById(R.id.emailMasuk);
         passdaftar = findViewById(R.id.passwordMasuk);
@@ -45,12 +44,6 @@ public class Daftar extends AppCompatActivity {
             }
         });
 
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
 
         daftar.setOnClickListener(new View.OnClickListener() {
             @Override

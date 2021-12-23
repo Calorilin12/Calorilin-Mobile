@@ -42,12 +42,9 @@
         android:id="@+id/btnhapusfav"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:layout_marginTop="8dp"
-
+        android:layout_marginStart="24dp"
         android:clickable="true"
         android:src="@drawable/ic_baseline_close_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.157"
         app:layout_constraintStart_toEndOf="@+id/kalorifavorite"
         app:layout_constraintTop_toBottomOf="@+id/namabahanfavorite"
         app:tint="@color/black"
