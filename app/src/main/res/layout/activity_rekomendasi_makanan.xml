@@ -30,9 +30,9 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/labelmakanan"
-        android:layout_width="408dp"
+        android:layout_width="match_parent"
         android:layout_height="88dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,7 +40,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/daftarmakananrekomendasi"
-        android:layout_width="418dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"

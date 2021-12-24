@@ -30,8 +30,8 @@ public class ProgramHarian extends AppCompatActivity {
     TextView nilaiTinggiBadan,nilaiberatbadan,hasilimt,program1,program2,program3;
     ConstraintLayout pushupcard, situpcard,laricard;
     TextView textProgram1,textProgram2,textProgram3,jumlahpolaminum,jumlahminum;
-    Button btWork1,btWork2,btWork3;
-    ImageView minum1,minum2,minum3,minum4,minum5,minum6,minum7,minum8,back;
+    Button btWork1,btWork2,btWork3,back;
+    ImageView minum1,minum2,minum3,minum4,minum5,minum6,minum7,minum8;
     static boolean pushup=false,situp=false,lari=false;
     static boolean cekMinum1 = false,cekMinum2 = false,cekMinum3 = false,cekMinum4 = false,cekMinum5 = false,cekMinum6 = false,cekMinum7 = false,cekMinum8 = false;
     DataMinum dataMinum = new DataMinum();

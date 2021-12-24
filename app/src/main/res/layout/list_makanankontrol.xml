@@ -28,8 +28,8 @@
         android:paddingStart="6dp"
         android:paddingEnd="6dp"
         android:text="780 Kcal"
-        android:textSize="14dp"
         android:textColor="@color/abutua"
+        android:textSize="14dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/namamaknaankontrol" />
 
@@ -79,10 +79,10 @@
         android:id="@+id/btnhapus"
         android:layout_width="24dp"
         android:layout_height="24dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="12dp"
         android:clickable="true"
         android:src="@drawable/ic_baseline_close_24"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/kandunganmakanankontrol3"
         app:layout_constraintTop_toBottomOf="@+id/namamaknaankontrol"
         app:tint="@color/black"

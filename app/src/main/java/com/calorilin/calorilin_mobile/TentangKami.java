@@ -46,14 +46,9 @@ public class TentangKami extends AppCompatActivity {
         call2.enqueue(new Callback<TentangkamiItem>() {
             @Override
             public void onResponse(Call<TentangkamiItem> call2, Response<TentangkamiItem> response) {
-                if (response.isSuccessful()) {
                     System.out.println("TEst");
                     judul.setText(response.body().getJudul());
                     isi.setText(response.body().getTentangKami());
-
-                } else if (response.code() == 500) {
-
-                }
             }
 
             @Override
