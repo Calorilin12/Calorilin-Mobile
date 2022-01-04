@@ -50,12 +50,15 @@ public class FragmentKontrolKalori extends Fragment{
     double total1=25.3,total2=28,total3=90.3;
     ArrayList<ObjekKontrol> listkontrol;
     Button tambahmenusarapan,tambahmenusiang,tambahmenumalam;
+    View view;
     FlagTimeShow flagTimeShow = new FlagTimeShow();
+    FlagOpening opening = new FlagOpening();
+
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_control_calories, container, false);
+        view = inflater.inflate(R.layout.activity_control_calories, container, false);
 
         SharedPreferences sp = getActivity().getApplicationContext().getSharedPreferences("sharepre", Context.MODE_PRIVATE);
         String token = sp.getString("tokens", "");
@@ -160,7 +163,7 @@ public class FragmentKontrolKalori extends Fragment{
             public void onResponse(Call<List<MaterialfavtimeshowItem>> call2, Response<List<MaterialfavtimeshowItem>> response) {
                 if (response.isSuccessful()) {
                     List<MaterialfavtimeshowItem> bahanfav = response.body();
-                    BahanFavoritePagiAdapter adapter3 = new BahanFavoritePagiAdapter(getActivity().getApplicationContext(), bahanfav);
+                    BahanFavoritePagiAdapter adapter3 = new BahanFavoritePagiAdapter(view.getContext(), bahanfav);
                     bahanFavorite.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
                     bahanFavorite.setAdapter(adapter3);
                 } else if (response.code() == 500) {
@@ -182,7 +185,7 @@ public class FragmentKontrolKalori extends Fragment{
             public void onResponse(Call<List<MaterialfavtimeshowItem>> call, Response<List<MaterialfavtimeshowItem>> response) {
                 if (response.isSuccessful()) {
                     List<MaterialfavtimeshowItem> bahanfavsiang = response.body();
-                    BahanFavoriteSiangAdapter adapter2 = new BahanFavoriteSiangAdapter(getActivity().getApplicationContext(), bahanfavsiang);
+                    BahanFavoriteSiangAdapter adapter2 = new BahanFavoriteSiangAdapter(view.getContext(), bahanfavsiang);
                     kontrolsiang.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
                     kontrolsiang.setAdapter(adapter2);
                 } else if (response.code() == 500) {
@@ -204,7 +207,7 @@ public class FragmentKontrolKalori extends Fragment{
             public void onResponse(Call<List<MaterialfavtimeshowItem>> call3, Response<List<MaterialfavtimeshowItem>> response) {
                 if (response.isSuccessful()) {
                     List<MaterialfavtimeshowItem> bahanfavmalam = response.body();
-                    BahanFavoriteMalamAdapter adapter4 = new BahanFavoriteMalamAdapter(getActivity().getApplicationContext(), bahanfavmalam);
+                    BahanFavoriteMalamAdapter adapter4 = new BahanFavoriteMalamAdapter(view.getContext(), bahanfavmalam);
                     kontrolmalam.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
                     kontrolmalam.setAdapter(adapter4);
                 } else if (response.code() == 500) {
@@ -231,9 +234,9 @@ public class FragmentKontrolKalori extends Fragment{
                 if (response.isSuccessful()) {
                     total1 = response.body().getCalories();
                     totalCaloriPagi.setText(String.valueOf(response.body().getCalories()) + "Kcal");
-                    totalProteinPagi.setText(String.valueOf(response.body().getProtein()) + "Kcal");
-                    totalLemakPagi.setText(String.valueOf(response.body().getFat()) + "Kcal");
-                    totalKarboPagi.setText(String.valueOf(response.body().getCarbo()) + "Kcal");
+                    totalProteinPagi.setText(String.valueOf(response.body().getProtein()) + "Gram");
+                    totalLemakPagi.setText(String.valueOf(response.body().getFat()) + "Gram");
+                    totalKarboPagi.setText(String.valueOf(response.body().getCarbo()) + "Gram");
                 } else if (response.code() == 500) {
                     Toast.makeText(requireContext(), "Gagal", Toast.LENGTH_SHORT).show();
                 }
@@ -258,9 +261,9 @@ public class FragmentKontrolKalori extends Fragment{
                 if (response.isSuccessful()) {
                     total2 = response.body().getCalories();
                     totalCaloriSiang.setText(String.valueOf(response.body().getCalories()) + "Kcal");
-                    totalProteinSiang.setText(String.valueOf(response.body().getProtein()) + "Kcal");
-                    totalLemakSiang.setText(String.valueOf(response.body().getFat()) + "Kcal");
-                    totalKarboSiang.setText(String.valueOf(response.body().getCarbo()) + "Kcal");
+                    totalProteinSiang.setText(String.valueOf(response.body().getProtein()) + "Gram");
+                    totalLemakSiang.setText(String.valueOf(response.body().getFat()) + "Gram");
+                    totalKarboSiang.setText(String.valueOf(response.body().getCarbo()) + "Gram");
                 } else if (response.code() == 500) {
                     Toast.makeText(requireContext(), "Gagal", Toast.LENGTH_SHORT).show();
                 }
@@ -284,9 +287,9 @@ public class FragmentKontrolKalori extends Fragment{
                 if (response.isSuccessful()) {
                     total3 = total1 + total2 + response.body().getCalories();
                     totalCaloriMalam.setText(String.valueOf(response.body().getCalories()) + "Kcal");
-                    totalProteinMalam.setText(String.valueOf(response.body().getProtein()) + "Kcal");
-                    totalLemakMalam.setText(String.valueOf(response.body().getFat()) + "Kcal");
-                    totalKarboMalam.setText(String.valueOf(response.body().getCarbo()) + "Kcal");
+                    totalProteinMalam.setText(String.valueOf(response.body().getProtein()) + "Gram");
+                    totalLemakMalam.setText(String.valueOf(response.body().getFat()) + "Gram");
+                    totalKarboMalam.setText(String.valueOf(response.body().getCarbo()) + "Gram");
                     totalCalori.setText(String.valueOf(total3));
                 } else if (response.code() == 500) {
                     Toast.makeText(requireContext(), "Gagal", Toast.LENGTH_SHORT).show();
@@ -319,8 +322,14 @@ public class FragmentKontrolKalori extends Fragment{
         listkontrol.add(new ObjekKontrol("Telor Ceplok","780 Kcal","45 g","45 g", "45 g"));
         listkontrol.add(new ObjekKontrol("Telor Dadar","780 Kcal","45 g","45 g", "45 g"));
     }
-    public  void openDialog(){
-        TambahmenusarapanDialog tambahmenusarapanDialog = new TambahmenusarapanDialog();
-        tambahmenusarapanDialog.show(getActivity().getSupportFragmentManager(), "menu sarapan");
+
+    @Override
+    public void onResume() {
+        if (!opening.openingKontrol){
+            opening.setOpeningKontrol(true);
+            startActivity(new Intent(getActivity(), Halaman.class));
+            getActivity().finish();
+        }
+        super.onResume();
     }
 }

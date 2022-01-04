@@ -1,6 +1,8 @@
 package com.calorilin.calorilin_mobile.adapter;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
@@ -16,6 +18,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.calorilin.calorilin_mobile.DataControlTotal;
+import com.calorilin.calorilin_mobile.FlagFragment;
+import com.calorilin.calorilin_mobile.Halaman;
 import com.calorilin.calorilin_mobile.R;
 import com.calorilin.calorilin_mobile.SearchActivity;
 import com.calorilin.calorilin_mobile.api.ApiClient;
@@ -62,10 +66,9 @@ public class BahanFavoritePagiAdapter extends RecyclerView.Adapter<BahanFavorite
         MaterialfavtimeshowItem foodMaterialsItem = data.get(position);
         holder.namamakanankontrol.setText(foodMaterialsItem.getName());
         holder.kalori.setText(String.valueOf(foodMaterialsItem.getCalory()) + "Kcal");
-        holder.lemak.setText(String.valueOf(foodMaterialsItem.getFat()) + "Kcal");
-        holder.protein.setText(String.valueOf(foodMaterialsItem.getProtein()) + "Kcal");
-        holder.karbo.setText(String.valueOf(foodMaterialsItem.getCarbo()) + "Kcal");
-        holder.karbo.setText(String.valueOf(foodMaterialsItem.getCarbo()) + "Kcal");
+        holder.lemak.setText(String.valueOf(foodMaterialsItem.getFat()) + "g");
+        holder.protein.setText(String.valueOf(foodMaterialsItem.getProtein()) + "g");
+        holder.karbo.setText(String.valueOf(foodMaterialsItem.getCarbo()) + "g");
 
         dataControlTotal.tambahtotalPagi(foodMaterialsItem.getCalory());
 
@@ -84,6 +87,13 @@ public class BahanFavoritePagiAdapter extends RecyclerView.Adapter<BahanFavorite
                     public void onResponse(Call<DelBahanFav> call2, Response<DelBahanFav> response) {
                         if (response.isSuccessful()) {
                             Toast.makeText(context, response.body().getMessage() , Toast.LENGTH_SHORT).show();
+                            FlagFragment flagFragment = new FlagFragment();
+                            flagFragment.cekFragment = true;
+                            flagFragment.fragment3 = true;
+                            Intent intent = new Intent(context, Halaman.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            context.startActivity(intent);
+                            ((Activity)context).finish();
                         } else if (response.code() == 500) {
 
                         }

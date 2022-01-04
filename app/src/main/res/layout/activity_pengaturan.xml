@@ -17,6 +17,7 @@
         android:text="Laporan bug"
         android:textAllCaps="false"
         android:textColor="@color/sec500"
+        android:clickable="true"
         android:textSize="14dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/kritiksaran" />

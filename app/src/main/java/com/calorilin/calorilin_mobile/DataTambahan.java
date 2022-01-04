@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -31,6 +32,7 @@ public class DataTambahan extends AppCompatActivity {
     static boolean kolesterol = false, diabetes = false, hipertensi = false, asamurat = false, asamlambung = false;
     EditText editberatbadan, edittinggibadan, edittensi;
     ImageView back;
+    FlagOpening opening = new FlagOpening();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -223,6 +225,7 @@ public class DataTambahan extends AppCompatActivity {
                             Toast.makeText(DataTambahan.this, "Gagal" + t.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     });
+                    opening.setOpeningBeranda(false);
                     finish();
                 }
             }

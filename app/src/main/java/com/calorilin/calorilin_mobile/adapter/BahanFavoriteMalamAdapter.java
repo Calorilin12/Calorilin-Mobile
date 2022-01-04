@@ -1,6 +1,8 @@
 package com.calorilin.calorilin_mobile.adapter;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
@@ -14,6 +16,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.calorilin.calorilin_mobile.DataControlTotal;
+import com.calorilin.calorilin_mobile.FlagFragment;
+import com.calorilin.calorilin_mobile.Halaman;
 import com.calorilin.calorilin_mobile.R;
 import com.calorilin.calorilin_mobile.api.ApiClient;
 import com.calorilin.calorilin_mobile.api.ApiInterface;
@@ -58,10 +62,9 @@ public class BahanFavoriteMalamAdapter extends RecyclerView.Adapter<BahanFavorit
         MaterialfavtimeshowItem foodMaterialsItem = data.get(position);
         holder.namamakanankontrol.setText(foodMaterialsItem.getName());
         holder.kalori.setText(String.valueOf(foodMaterialsItem.getCalory())+"Kcal");
-        holder.lemak.setText(String.valueOf(foodMaterialsItem.getFat())+"Kcal");
-        holder.protein.setText(String.valueOf(foodMaterialsItem.getProtein())+"Kcal");
-        holder.karbo.setText(String.valueOf(foodMaterialsItem.getCarbo())+"Kcal");
-        holder.karbo.setText(String.valueOf(foodMaterialsItem.getCarbo())+"Kcal");
+        holder.lemak.setText(String.valueOf(foodMaterialsItem.getFat())+"g");
+        holder.protein.setText(String.valueOf(foodMaterialsItem.getProtein())+"g");
+        holder.karbo.setText(String.valueOf(foodMaterialsItem.getCarbo())+"g");
 
         dataControlTotal.tambahtotalMalam(foodMaterialsItem.getCalory());
 
@@ -80,6 +83,13 @@ public class BahanFavoriteMalamAdapter extends RecyclerView.Adapter<BahanFavorit
                     public void onResponse(Call<DelBahanFav> call2, Response<DelBahanFav> response) {
                         if (response.isSuccessful()) {
                             Toast.makeText(context, response.body().getMessage() , Toast.LENGTH_SHORT).show();
+                            FlagFragment flagFragment = new FlagFragment();
+                            flagFragment.cekFragment = true;
+                            flagFragment.fragment3 = true;
+                            Intent intent = new Intent(context, Halaman.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            context.startActivity(intent);
+                            ((Activity)context).finish();
                         } else if (response.code() == 500) {
 
                         }

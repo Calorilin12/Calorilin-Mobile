@@ -15,6 +15,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -43,6 +44,7 @@ public class FragmentBeranda extends Fragment implements View.OnClickListener {
     ImageView daging,sayur,buah,minuman;
     ImageView rekomendasi, programharian;
     static int checkData;
+    FlagOpening opening = new FlagOpening();
 
     @Nullable
     @Override
@@ -130,6 +132,16 @@ public class FragmentBeranda extends Fragment implements View.OnClickListener {
         programharian.setOnClickListener(this);
 
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        if (opening.openingBeranda == false) {
+            opening.setOpeningBeranda(true);
+            startActivity(new Intent(getActivity(), Halaman.class));
+            getActivity().finish();
+        }
+        super.onResume();
     }
 
     private void tambahresephariini() {

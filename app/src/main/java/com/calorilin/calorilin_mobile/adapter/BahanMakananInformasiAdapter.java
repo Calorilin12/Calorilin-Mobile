@@ -2,6 +2,7 @@ package com.calorilin.calorilin_mobile.adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,7 +21,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
+import com.calorilin.calorilin_mobile.FlagFragment;
+import com.calorilin.calorilin_mobile.Halaman;
+import com.calorilin.calorilin_mobile.MainActivity;
+import com.calorilin.calorilin_mobile.MasukActivity;
 import com.calorilin.calorilin_mobile.R;
+import com.calorilin.calorilin_mobile.RincianMakanan;
 import com.calorilin.calorilin_mobile.api.ApiClient;
 import com.calorilin.calorilin_mobile.api.ApiInterface;
 import com.calorilin.calorilin_mobile.model.foodmaterial.FoodMaterialItem;
@@ -30,6 +36,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Handler;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -120,6 +127,13 @@ public class BahanMakananInformasiAdapter extends RecyclerView.Adapter<BahanMaka
                                 if (response.isSuccessful()) {
                                     Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                                     bottomSheetDialog.dismiss();
+                                    FlagFragment flagFragment = new FlagFragment();
+                                    flagFragment.cekFragment = true;
+                                    flagFragment.fragment2 = true;
+                                    Intent intent = new Intent(context, Halaman.class);
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    context.startActivity(intent);
+                                    activity.finish();
                                 } else if (response.code() == 500) {
 
                                 }

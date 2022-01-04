@@ -9,17 +9,17 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".ControlCalories">
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
 
         <TextView
             android:id="@+id/judulKontrolKalori"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="58dp"
             android:fontFamily="@font/poppinsregular"
-            android:textColor="@color/netral"
             android:text="Kontrol Kalori"
+            android:textColor="@color/netral"
             android:textFontWeight="500"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -30,10 +30,9 @@
             android:id="@+id/kalimatTambahan1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:fontFamily="@font/poppinsregular"
-            android:textColor="@color/sec500"
             android:text="Tentukan jadwal"
+            android:textColor="@color/sec500"
             android:textFontWeight="300"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -43,10 +42,9 @@
             android:id="@+id/kalimatTambahan2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:fontFamily="@font/poppinsregular"
-            android:textColor="@color/sec500"
             android:text="makananmu saat ini"
+            android:textColor="@color/sec500"
             android:textFontWeight="300"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +56,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/poppinsregular"
-            android:text="3120"
+            android:text="0"
             android:textFontWeight="500"
             android:textColor="@color/netral"
             android:textSize="36sp"
@@ -99,9 +97,7 @@
             style="@style/CardView.Light"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
             android:layout_marginTop="24dp"
-            android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/kalimatKeterangan">
@@ -231,28 +227,26 @@
                         android:id="@+id/karbopagi"
                         android:layout_width="82dp"
                         android:layout_height="25dp"
-                        android:layout_marginStart="14dp"
+                        android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/poppinsregular"
                         android:text="Lemak"
                         android:textColor="@color/sec500"
-                        app:layout_constraintStart_toEndOf="@+id/totalKandungan2Breakfast"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/totalKaloriBreakfast" />
 
                     <TextView
                         android:id="@+id/totalKandungan3Breakfast"
                         android:layout_width="82dp"
                         android:layout_height="25dp"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginStart="8dp"
                         android:layout_marginTop="2dp"
-                        android:layout_marginEnd="8dp"
                         android:background="@drawable/hijau_prim_500_corner"
                         android:fontFamily="@font/poppinsregular"
                         android:text="45 gram"
                         android:textAlignment="center"
                         android:textColor="@color/primary"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/totalKandungan2Breakfast"
+                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/karbopagi" />
 
                     <androidx.appcompat.widget.AppCompatButton
@@ -275,12 +269,13 @@
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/kontrolpagi"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="8dp"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/totalKaloriBreakfast" />
+                        app:layout_constraintTop_toBottomOf="@+id/totalKandungan3Breakfast" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -293,9 +288,7 @@
             style="@style/CardView.Light"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/jadwalMakanPagi">
@@ -425,38 +418,36 @@
                         android:id="@+id/karbosiang"
                         android:layout_width="82dp"
                         android:layout_height="25dp"
-                        android:layout_marginStart="14dp"
+                        android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/poppinsregular"
                         android:text="Lemak"
                         android:textColor="@color/sec500"
-                        app:layout_constraintStart_toEndOf="@+id/totalKandungan2siang"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/totalKalorisiang" />
 
                     <TextView
                         android:id="@+id/totalKandungan3siang"
                         android:layout_width="82dp"
                         android:layout_height="25dp"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginStart="8dp"
                         android:layout_marginTop="2dp"
-                        android:layout_marginEnd="8dp"
                         android:background="@drawable/hijau_prim_500_corner"
                         android:fontFamily="@font/poppinsregular"
                         android:text="45 gram"
                         android:textAlignment="center"
                         android:textColor="@color/primary"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/totalKandungan2siang"
+                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/karbosiang" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/kontrolsiang"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="8dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/totalKalorisiang" />
+                        app:layout_constraintTop_toBottomOf="@+id/totalKandungan3siang" />
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/addMenuLunch"
@@ -486,9 +477,7 @@
             style="@style/CardView.Light"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
             android:layout_marginBottom="60dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -620,13 +609,13 @@
                         android:id="@+id/karbomalam"
                         android:layout_width="82dp"
                         android:layout_height="25dp"
-                        android:layout_marginStart="14dp"
+                        android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/poppinsregular"
                         android:text="Lemak"
                         android:textColor="@color/sec500"
-                        app:layout_constraintStart_toEndOf="@+id/totalKandungan2malam"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/totalKalorimalam" />
 
                     <TextView
                         android:id="@+id/totalKandungan3malam"
@@ -634,24 +623,22 @@
                         android:layout_height="25dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="2dp"
-                        android:layout_marginEnd="8dp"
                         android:background="@drawable/hijau_prim_500_corner"
                         android:fontFamily="@font/poppinsregular"
                         android:text="45 gram"
                         android:textAlignment="center"
                         android:textColor="@color/primary"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/totalKandungan2malam"
+                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/karbomalam" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/kontrolmalam"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="8dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/totalKalorimalam" />
+                        app:layout_constraintTop_toBottomOf="@+id/totalKandungan3malam" />
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/addMenuDinner"

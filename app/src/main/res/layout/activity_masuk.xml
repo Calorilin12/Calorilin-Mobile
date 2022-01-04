@@ -4,39 +4,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
     tools:context=".MasukActivity">
+
+    <ImageView
+        android:id="@+id/logoapp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/logofix2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/judulapp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppinsmedium"
+        android:letterSpacing="0.25"
+        android:text="Calorilin"
+        android:textColor="@color/netral"
+        android:textSize="14dp"
+        app:layout_constraintStart_toEndOf="@+id/logoapp"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="58dp"
         android:fontFamily="@font/poppinsregular"
-        android:text="Halo,"
+        android:text="Make your life is healthier"
         android:textColor="@color/black"
-        android:textSize="14dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.109"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="10dp"
+        app:layout_constraintStart_toStartOf="@+id/judulapp"
+        app:layout_constraintTop_toBottomOf="@+id/judulapp" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/poppinsregular"
-        android:text="Selamat bergabung..."
-        android:textColor="@color/black"
+        android:text="Masuk"
+        android:textColor="@color/black2"
         android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.276"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
         android:id="@+id/emailMasuk"
-        android:layout_width="328dp"
+        android:layout_width="match_parent"
         android:layout_height="52dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/border2"
@@ -45,16 +66,17 @@
         android:paddingStart="15dp"
         android:drawablePadding="10dp"
         android:hint="Masukkan email anda"
+        android:imeOptions="actionNext"
+        android:singleLine="true"
         android:textColor="@color/black"
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
         android:id="@+id/passwordMasuk"
-        android:layout_width="328dp"
+        android:layout_width="match_parent"
         android:layout_height="52dp"
         android:layout_marginTop="48dp"
         android:inputType="textPassword"
@@ -64,27 +86,27 @@
         android:paddingStart="15dp"
         android:drawablePadding="10dp"
         android:hint="Masukkan kata sandi anda"
+        android:imeOptions="actionNext"
+        android:singleLine="true"
         android:textColor="@color/black"
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailMasuk" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/masuk2"
-        android:layout_width="328dp"
-        android:layout_height="52dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/shapehijau20"
         android:fontFamily="@font/poppinsmedium"
         android:text="Masuk"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordMasuk"
-        app:layout_constraintVertical_bias="0.159" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordMasuk" />
 
     <TextView
         android:id="@+id/belumDaftar"
@@ -123,13 +145,11 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/poppinsregular"
         android:text="Email pengguna"
         android:textColor="@color/abutua"
         android:textSize="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.135"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -142,8 +162,6 @@
         android:text="Kata sandi pengguna"
         android:textColor="@color/abutua"
         android:textSize="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.151"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailMasuk" />
 

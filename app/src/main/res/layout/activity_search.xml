@@ -4,17 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
     tools:context=".SearchActivity">
 
     <ImageView
         android:id="@+id/img_back_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="48dp"
+        android:clickable="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:clickable="true"
         app:srcCompat="@drawable/ic_arrow" />
 
 
@@ -27,16 +28,14 @@
         android:text="Cari menu makanan"
         android:textColor="@color/netral"
         android:textSize="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.209"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/cari"
-        android:layout_width="343dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/border2"
         android:clickable="true"
         android:drawableStart="@drawable/cari"
@@ -53,8 +52,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/tampilcarimakanan"
-        android:layout_width="409dp"
-        android:layout_height="525dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

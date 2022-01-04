@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -41,6 +43,73 @@ public class Daftar extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),MasukActivity.class));
+                finish();
+            }
+        });
+
+        emaildaftar.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (!emaildaftar.getText().toString().trim().isEmpty()){
+                    emaildaftar.setBackgroundResource(R.drawable.border5);
+                }
+                else {
+                    emaildaftar.setBackgroundResource(R.drawable.border2);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        namadaftar.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (!namadaftar.getText().toString().trim().isEmpty()){
+                    namadaftar.setBackgroundResource(R.drawable.border5);
+                }
+                else {
+                    namadaftar.setBackgroundResource(R.drawable.border2);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        passdaftar.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (!passdaftar.getText().toString().trim().isEmpty()){
+                    passdaftar.setBackgroundResource(R.drawable.border5);
+                }
+                else {
+                    passdaftar.setBackgroundResource(R.drawable.border2);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
             }
         });
 
@@ -52,30 +121,38 @@ public class Daftar extends AppCompatActivity {
                 String newPass = passdaftar.getText().toString();
                 String newName = namadaftar.getText().toString();
 
-                ApiInterface methods = ApiClient.getClient().create(ApiInterface.class);
-                Call<Register> call = methods.registerResponse(newName,newEmail,newPass);
+                if (newEmail.length() == 0 || newPass.length() == 0 || newName.length() == 0){
+                    Toast.makeText(Daftar.this, "Data tidak boleh kosong", Toast.LENGTH_SHORT).show();
+                }
+                else if (newPass.length()<6){
+                    Toast.makeText(Daftar.this, "Password harus lebih dari 6 karakter", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    ApiInterface methods = ApiClient.getClient().create(ApiInterface.class);
+                    Call<Register> call = methods.registerResponse(newName, newEmail, newPass);
 
-                call.enqueue(new Callback<Register>() {
-                    @Override
-                    public void onResponse(Call<Register> call, Response<Register> response) {
-                        if (response.code() == 201) {
+                    call.enqueue(new Callback<Register>() {
+                        @Override
+                        public void onResponse(Call<Register> call, Response<Register> response) {
+                            if (response.code() == 201) {
 
-                            Log.e("Test", "onResponse: code: " + response.code());
+                                Log.e("Test", "onResponse: code: " + response.code());
 
-                            Toast.makeText(Daftar.this, "Berhasil daftar", Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(getApplicationContext(), MasukActivity.class));
-                        } else if (response.code() != 201) {
-                            Toast.makeText(Daftar.this, "Bodoh", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Daftar.this, "Berhasil daftar", Toast.LENGTH_LONG).show();
+                                startActivity(new Intent(getApplicationContext(), MasukActivity.class));
+                                finish();
+                            } else if (response.code() != 201) {
+
+                            }
                         }
 
-                    }
-
-                    @Override
-                    public void onFailure(Call<Register> call, Throwable t) {
-
-                        Log.e("test", "onFailure" + t.getMessage());
-                    }
-                });
+                        @Override
+                        public void onFailure(Call<Register> call, Throwable t) {
+                            Toast.makeText(Daftar.this, "Server sedang dalam perbaikan", Toast.LENGTH_LONG).show();
+                            Log.e("test", "onFailure" + t.getMessage());
+                        }
+                    });
+                }
             }
         });
     }

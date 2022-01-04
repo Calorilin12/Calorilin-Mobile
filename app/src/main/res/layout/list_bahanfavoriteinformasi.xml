@@ -2,52 +2,62 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="20dp">
+    android:orientation="vertical"
+    android:paddingBottom="5dp">
 
-    <ImageView
-        android:id="@+id/gambarbahanfav"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/makanan"
+        android:background="@drawable/menusec500"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.036"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/namabahanfavorite"
-        android:layout_width="103dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:text="Nama Makanan"
-        app:layout_constraintStart_toEndOf="@+id/gambarbahanfav"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/gambarbahanfav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/makanan"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.036"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/kalorifavorite"
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="10dp"
-        android:text="Kalori (Per Sajian) : 120"
-        app:layout_constraintStart_toEndOf="@+id/gambarbahanfav"
-        app:layout_constraintTop_toBottomOf="@+id/namabahanfavorite" />
+        <TextView
+            android:id="@+id/namabahanfavorite"
+            android:layout_width="103dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:text="Nama Makanan"
+            app:layout_constraintStart_toEndOf="@+id/gambarbahanfav"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/btnhapusfav"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="24dp"
-        android:clickable="true"
-        android:src="@drawable/ic_baseline_close_24"
-        app:layout_constraintStart_toEndOf="@+id/kalorifavorite"
-        app:layout_constraintTop_toBottomOf="@+id/namabahanfavorite"
-        app:tint="@color/black"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        <TextView
+            android:id="@+id/kalorifavorite"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginStart="24dp"
+            android:text="Kalori (Per Sajian) : 120"
+            app:layout_constraintStart_toEndOf="@+id/gambarbahanfav"
+            app:layout_constraintTop_toBottomOf="@+id/namabahanfavorite" />
 
+        <ImageView
+            android:id="@+id/btnhapusfav"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="240dp"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:src="@drawable/ic_baseline_close_24"
+            app:layout_constraintStart_toEndOf="@+id/gambarbahanfav"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/black"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

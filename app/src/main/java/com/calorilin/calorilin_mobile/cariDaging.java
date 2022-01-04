@@ -47,7 +47,7 @@ public class cariDaging extends AppCompatActivity {
         String token = sp.getString("tokens", "");
 
         ApiInterface methods = ApiClient.getClient().create(ApiInterface.class);
-        Call<List<RecipesItem>> call = methods.recipesResponse("Bearer " + token);
+        Call<List<RecipesItem>> call = methods.recipesCatagoryResponse("Bearer " + token, "Daging");
 
         call.enqueue(new Callback<List<RecipesItem>>() {
             @Override

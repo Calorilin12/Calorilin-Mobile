@@ -10,9 +10,15 @@
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/network_config"
         android:roundIcon="@mipmap/calorilin_icon"
-        android:screenOrientation="portrait"
+        android:screenOrientation="sensorPortrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.Calorilin">
+        <activity
+            android:name=".KritikSaran"
+            android:exported="false" />
+        <activity
+            android:name=".Reportbug"
+            android:exported="false" />
         <activity
             android:name=".cariMinuman"
             android:exported="false" />
@@ -45,9 +51,6 @@
             android:exported="true" />
         <activity
             android:name=".TambahMenu"
-            android:exported="true" />
-        <activity
-            android:name=".ControlCalories"
             android:exported="true" />
         <activity
             android:name=".CountCalories"

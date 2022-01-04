@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".KritikSaran">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/backbug"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/transparan"
+        android:drawableLeft="@drawable/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/judulkritiksaran"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppinsregular"
+        android:text="Kritik dan saran"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backbug" />
+
+    <EditText
+        android:id="@+id/etkritiksaran"
+        android:layout_width="match_parent"
+        android:layout_height="149dp"
+        android:layout_marginTop="16dp"
+        android:gravity="top"
+        android:fontFamily="@font/poppinsregular"
+        android:hint="Jelaskan dengan singkat apa yang terjadi\ndan bagaimana anda dapat membuat \nmasalah tersebut kembali "
+        android:textColor="@color/sec500"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/judulkritiksaran" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/simpankritiksaran"
+        android:layout_width="328dp"
+        android:layout_height="52dp"
+        android:background="@drawable/shapehijau20"
+        android:fontFamily="@font/poppinsmedium"
+        android:text="Simpan"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etkritiksaran" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

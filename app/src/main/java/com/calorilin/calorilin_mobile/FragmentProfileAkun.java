@@ -31,11 +31,14 @@ public class FragmentProfileAkun extends Fragment {
     ImageView lengkapidata,fotoprofile;
     TextView namaAkun,bergabung;
 
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.profileakun, container, false);
+
+        SharedPreferences sp = getActivity().getApplicationContext().getSharedPreferences("sharepre", Context.MODE_PRIVATE);
+        String token = sp.getString("tokens", "");
+        String id = sp.getString("id","");
 
         pengaturan = view.findViewById(R.id.pegaturanprofile);
         pengaturan.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +63,11 @@ public class FragmentProfileAkun extends Fragment {
         keluar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), MasukActivity.class);
+                startActivity(intent);
+                SharedPreferences.Editor editor = sp.edit();
+                editor.remove("tokens");
+                editor.apply();
                 getActivity().finish();
             }
         });
@@ -67,6 +75,35 @@ public class FragmentProfileAkun extends Fragment {
         namaAkun = view.findViewById(R.id.namaAkun);
         fotoprofile = view.findViewById(R.id.fotoprofile);
         bergabung = view.findViewById(R.id.bergabung);
+
+
+        ApiInterface methods2 = ApiClient.getClient().create(ApiInterface.class);
+        Call<UserData> call2 = methods2.userResponse("Bearer " + token, id);
+
+        call2.enqueue(new Callback<UserData>() {
+            @Override
+            public void onResponse(Call<UserData> call2, Response<UserData> response) {
+                if (response.isSuccessful()) {
+                    namaAkun.setText(response.body().getName());
+                    bergabung.setText(response.body().getPhoneNumber());
+                    Glide.with(fotoprofile)
+                            .load("https://api.calorilin.me/user-detail-images/"+ response.body().getImage()).circleCrop().into(fotoprofile);
+                } else if (response.code() == 500) {
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UserData> call2, Throwable t) {
+                Toast.makeText(requireContext(), "Gagal" + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        return view;
+    }
+
+    @Override
+    public void onResume() {
 
         SharedPreferences sp = getActivity().getApplicationContext().getSharedPreferences("sharepre", Context.MODE_PRIVATE);
         String token = sp.getString("tokens", "");
@@ -93,7 +130,6 @@ public class FragmentProfileAkun extends Fragment {
                 Toast.makeText(requireContext(), "Gagal" + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-
-        return view;
+        super.onResume();
     }
 }

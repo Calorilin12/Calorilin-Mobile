@@ -23,7 +23,7 @@ import retrofit2.Response;
 public class Pengaturan extends AppCompatActivity {
 
     Button editakun;
-    TextView halouser,tentangkami,penggunaan;
+    TextView halouser,tentangkami,penggunaan,reportbug,kritiksaran;
     Button back;
 
     @Override
@@ -87,5 +87,49 @@ public class Pengaturan extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),PenggunaanAplikasi.class));
             }
         });
+
+        reportbug = findViewById(R.id.laporanbug);
+        reportbug.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),Reportbug.class));
+            }
+        });
+
+        kritiksaran = findViewById(R.id.kritiksaran);
+        kritiksaran.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),KritikSaran.class));
+            }
+        });
+    }
+
+    @Override
+    protected void onResume() {
+        SharedPreferences sp = getApplicationContext().getSharedPreferences("sharepre", Context.MODE_PRIVATE);
+        String token = sp.getString("tokens", "");
+        String id = sp.getString("id", "");
+        halouser = findViewById(R.id.namapengaturan);
+
+        ApiInterface methods2 = ApiClient.getClient().create(ApiInterface.class);
+        Call<UserData> call2 = methods2.userResponse("Bearer " + token, id);
+
+        call2.enqueue(new Callback<UserData>() {
+            @Override
+            public void onResponse(Call<UserData> call2, Response<UserData> response) {
+                if (response.isSuccessful()) {
+                    halouser.setText(response.body().getName());
+                } else if (response.code() == 500) {
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UserData> call2, Throwable t) {
+
+            }
+        });
+        super.onResume();
     }
 }

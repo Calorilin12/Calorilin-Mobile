@@ -22,7 +22,9 @@ public class RekomendasiDataKosong extends AppCompatActivity {
         klikdisini.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), DataTambahan.class));
+                Intent tambahData = new Intent(getApplicationContext(), DataTambahan.class);
+                startActivityForResult(tambahData,0);
+                finish();
             }
         });
         backrekom2 = findViewById(R.id.backRekomMakanan2);

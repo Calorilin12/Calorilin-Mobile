@@ -11,6 +11,7 @@ import com.calorilin.calorilin_mobile.model.materialfavtimeshow.Materialfavtimes
 import com.calorilin.calorilin_mobile.model.penggunaanapk.PenggunaanAppItem;
 import com.calorilin.calorilin_mobile.model.recipes.RecipesItem;
 import com.calorilin.calorilin_mobile.model.register.Register;
+import com.calorilin.calorilin_mobile.model.reportbug.ReportBug;
 import com.calorilin.calorilin_mobile.model.tentangkami.TentangkamiItem;
 import com.calorilin.calorilin_mobile.model.totalfavorite.TotalNutrisiItem;
 import com.calorilin.calorilin_mobile.model.user.UserData;
@@ -20,6 +21,7 @@ import com.calorilin.calorilin_mobile.model.userpost.UserEdit;
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.Response;
 import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -48,6 +50,12 @@ public interface ApiInterface {
     @GET("recipes")
     Call<List<RecipesItem>> recipesResponse(
             @Header("Authorization") String token
+    );
+
+    @GET("recipes-find-by-category")
+    Call<List<RecipesItem>> recipesCatagoryResponse(
+            @Header("Authorization") String token,
+            @Query("category") String category
     );
 
     @GET("recipes-find-by-disease")
@@ -107,7 +115,6 @@ public interface ApiInterface {
             @Field("hyper_tension") int hyper_tension
     );
 
-
     @GET("food-material-favorites-by-time-show/{id_user}?")
     Call<List<MaterialfavtimeshowItem>> favShowTimeResponse(
             @Header("Authorization") String token,
@@ -134,6 +141,14 @@ public interface ApiInterface {
     @GET("penggunaan-aplikasi")
     Call<PenggunaanAppItem> penggunaanappResponse(
             @Header("Authorization") String token
+    );
+
+    @FormUrlEncoded
+    @POST("report-bug/{id_user}")
+    Call<ReportBug> reportBugResponse(
+            @Path("id_user") String idUser,
+            @Header("Authorization") String token,
+            @Field("report_bug") String report_bug
     );
 
     @DELETE("food-material-favorites/{id}")

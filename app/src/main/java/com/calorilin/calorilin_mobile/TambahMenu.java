@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
@@ -25,7 +26,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class TambahMenu extends AppCompatActivity {
+public class TambahMenu extends AppCompatActivity implements BahanMakananAdapter.YourAdapterInteraction{
     EditText caribahan;
     RecyclerView menubahanmakanan;
     FlagTimeShow flagTimeShow = new FlagTimeShow();
@@ -51,7 +52,7 @@ public class TambahMenu extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     List<FoodMaterialItem> resep = response.body();
 
-                    BahanMakananAdapter adapter2 = new BahanMakananAdapter(getApplicationContext(), resep);
+                    BahanMakananAdapter adapter2 = new BahanMakananAdapter(getApplicationContext(), resep, TambahMenu.this);
                     menubahanmakanan.setLayoutManager(new LinearLayoutManager(TambahMenu.this, LinearLayoutManager.VERTICAL, false));
 
                     caribahan.addTextChangedListener(new TextWatcher() {
@@ -89,5 +90,10 @@ public class TambahMenu extends AppCompatActivity {
                 Toast.makeText(TambahMenu.this, "Gagal" + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    public void onClickCountryCode() {
+        finish();
     }
 }

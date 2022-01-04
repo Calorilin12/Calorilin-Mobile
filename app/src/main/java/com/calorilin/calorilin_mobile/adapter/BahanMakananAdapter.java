@@ -2,7 +2,6 @@ package com.calorilin.calorilin_mobile.adapter;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,16 +16,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
+import com.calorilin.calorilin_mobile.FlagFragment;
+import com.calorilin.calorilin_mobile.FlagOpening;
 import com.calorilin.calorilin_mobile.FlagTimeShow;
-import com.calorilin.calorilin_mobile.FragmentKontrolKalori;
 import com.calorilin.calorilin_mobile.R;
-import com.calorilin.calorilin_mobile.RincianMakanan;
-import com.calorilin.calorilin_mobile.TambahmenusarapanDialog;
 import com.calorilin.calorilin_mobile.api.ApiClient;
 import com.calorilin.calorilin_mobile.api.ApiInterface;
 import com.calorilin.calorilin_mobile.model.foodmaterial.FoodMaterialItem;
 import com.calorilin.calorilin_mobile.model.foodmaterialfavpost.Materialfavpost;
-import com.calorilin.calorilin_mobile.model.recipes.RecipesItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,11 +38,14 @@ public class BahanMakananAdapter extends RecyclerView.Adapter<BahanMakananAdapte
     private LayoutInflater inflater;
     private Context context;
     FlagTimeShow flagTimeShow = new FlagTimeShow();
+    Activity activity;
+    FlagOpening opening = new FlagOpening();
 
-    public BahanMakananAdapter(Context context, List<FoodMaterialItem> list){
+    public BahanMakananAdapter(Context context, List<FoodMaterialItem> list,Activity activity){
         this.context = context;
         this.data = list;
         inflater = LayoutInflater.from(context);
+        this.activity = activity;
     }
 
     public void setData(List<FoodMaterialItem> items){
@@ -85,6 +85,11 @@ public class BahanMakananAdapter extends RecyclerView.Adapter<BahanMakananAdapte
                     public void onResponse(Call<Materialfavpost> call, Response<Materialfavpost> response) {
                         if (response.isSuccessful()) {
                             Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                            FlagFragment flagFragment = new FlagFragment();
+                            flagFragment.cekFragment = true;
+                            flagFragment.fragment3 = true;
+                            opening.setOpeningKontrol(false);
+                            activity.finish();
                         } else if (response.code() == 500) {
 
                         }
@@ -97,6 +102,9 @@ public class BahanMakananAdapter extends RecyclerView.Adapter<BahanMakananAdapte
                 });
             }
         });
+    }
+    public interface YourAdapterInteraction {
+        void onClickCountryCode();
     }
 
     @Override

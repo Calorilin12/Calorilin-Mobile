@@ -114,7 +114,6 @@ public class ProgramHarian extends AppCompatActivity {
             @Override
             public void onResponse(Call<Data> call2, Response<Data> response) {
                 if (response.isSuccessful()) {
-                    Toast.makeText(ProgramHarian.this, "berhasil", Toast.LENGTH_SHORT).show();
                     nilaiTinggiBadan.setText(String.valueOf(response.body().getHeight()) + " Cm");
                     nilaiberatbadan.setText(String.valueOf(response.body().getWeight()) + " Kg");
                     program1.setText(String.valueOf(response.body().getPushUp()) + " Push Up");
@@ -158,6 +157,33 @@ public class ProgramHarian extends AppCompatActivity {
                 }
             }
         });
+
+        btWork1.setOnClickListener(new View.OnClickListener() {
+            Drawable background = pushupcard.getBackground();
+
+            @Override
+            public void onClick(View v) {
+                if (!pushup){
+                    pushupcard.setBackgroundResource(R.drawable.shapehijau);
+                    program1.setTextColor(Color.WHITE);
+                    textProgram1.setTextColor(Color.WHITE);
+                    btWork1.setBackgroundResource(R.drawable.bulatputih);
+                    btWork1.setText("Done");
+                    btWork1.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.primary));
+                    pushup = true;
+                }
+                else{
+                    pushupcard.setBackgroundResource(R.drawable.shapeputih);
+                    program1.setTextColor(Color.BLACK);
+                    textProgram1.setTextColor(Color.BLACK);
+                    btWork1.setText("Start");
+                    btWork1.setBackgroundResource(R.drawable.shapehijau20);
+                    btWork1.setTextColor(Color.WHITE);
+                    pushup = false;
+                }
+            }
+        });
+
         situpcard.setOnClickListener(new View.OnClickListener() {
             Drawable background = situpcard.getBackground();
 
@@ -183,7 +209,60 @@ public class ProgramHarian extends AppCompatActivity {
                 }
             }
         });
+
+        btWork2.setOnClickListener(new View.OnClickListener() {
+            Drawable background = situpcard.getBackground();
+
+            @Override
+            public void onClick(View v) {
+                if (!situp){
+                    situpcard.setBackgroundResource(R.drawable.shapehijau);
+                    program2.setTextColor(Color.WHITE);
+                    textProgram2.setTextColor(Color.WHITE);
+                    btWork2.setBackgroundResource(R.drawable.bulatputih);
+                    btWork2.setText("Done");
+                    btWork2.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.primary));
+                    situp = true;
+                }
+                else{
+                    situpcard.setBackgroundResource(R.drawable.shapeputih);
+                    program2.setTextColor(Color.BLACK);
+                    textProgram2.setTextColor(Color.BLACK);
+                    btWork2.setText("Start");
+                    btWork2.setBackgroundResource(R.drawable.shapehijau20);
+                    btWork2.setTextColor(Color.WHITE);
+                    situp = false;
+                }
+            }
+        });
+
         laricard.setOnClickListener(new View.OnClickListener() {
+            Drawable background = laricard.getBackground();
+
+            @Override
+            public void onClick(View v) {
+                if (!lari){
+                    laricard.setBackgroundResource(R.drawable.shapehijau);
+                    program3.setTextColor(Color.WHITE);
+                    textProgram3.setTextColor(Color.WHITE);
+                    btWork3.setBackgroundResource(R.drawable.bulatputih);
+                    btWork3.setText("Done");
+                    btWork3.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.primary));
+                    lari = true;
+                }
+                else{
+                    laricard.setBackgroundResource(R.drawable.shapeputih);
+                    program3.setTextColor(Color.BLACK);
+                    textProgram3.setTextColor(Color.BLACK);
+                    btWork3.setText("Start");
+                    btWork3.setBackgroundResource(R.drawable.shapehijau20);
+                    btWork3.setTextColor(Color.WHITE);
+                    lari = false;
+                }
+            }
+        });
+
+        btWork3.setOnClickListener(new View.OnClickListener() {
             Drawable background = laricard.getBackground();
 
             @Override

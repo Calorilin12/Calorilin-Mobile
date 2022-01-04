@@ -46,7 +46,7 @@ public class cariBuah extends AppCompatActivity {
         String token = sp.getString("tokens", "");
 
         ApiInterface methods = ApiClient.getClient().create(ApiInterface.class);
-        Call<List<RecipesItem>> call = methods.recipesResponse("Bearer " + token);
+        Call<List<RecipesItem>> call = methods.recipesCatagoryResponse("Bearer " + token, "Buah");
 
         call.enqueue(new Callback<List<RecipesItem>>() {
             @Override

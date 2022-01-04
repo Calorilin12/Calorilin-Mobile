@@ -61,7 +61,6 @@ public class FragmentHitungKalori extends Fragment implements BahanMakananInform
             public void onResponse(Call<List<FoodMaterialItem>> call, Response<List<FoodMaterialItem>> response) {
                 if (response.isSuccessful()) {
                     List<FoodMaterialItem> resep = response.body();
-                    Toast.makeText(requireContext(), "Berhasil", Toast.LENGTH_LONG).show();
 
                     BahanMakananInformasiAdapter adapter2 = new BahanMakananInformasiAdapter(getActivity().getApplicationContext(), resep, requireActivity());
                     menubahanmakanan.setLayoutManager(new LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false));
@@ -112,8 +111,7 @@ public class FragmentHitungKalori extends Fragment implements BahanMakananInform
             public void onResponse(Call<List<MaterialfavtimeshowItem>> call2, Response<List<MaterialfavtimeshowItem>> response) {
                 if (response.isSuccessful()) {
                     List<MaterialfavtimeshowItem> bahanfav = response.body();
-                    Toast.makeText(requireContext(), "Berhasil bahan", Toast.LENGTH_LONG).show();
-                    BahanFavoriteAdapter adapter3 = new BahanFavoriteAdapter(getActivity().getApplicationContext(), bahanfav);
+                    BahanFavoriteAdapter adapter3 = new BahanFavoriteAdapter(getActivity().getApplicationContext(), bahanfav, requireActivity());
                     bahanFavorite.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
                     bahanFavorite.setAdapter(adapter3);
                 } else if (response.code() == 500) {

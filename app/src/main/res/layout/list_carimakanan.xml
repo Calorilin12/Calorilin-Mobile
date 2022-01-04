@@ -2,45 +2,52 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="20dp">
+    android:orientation="vertical"
+    android:paddingBottom="10dp">
 
-    <ImageView
-        android:id="@+id/fotogambarcari"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/makanan"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/menusec500"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.036"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/namamakanancari"
-        android:layout_width="161dp"
-        android:layout_height="21dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/poppinsregular"
-        android:text="Nama Makanan"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toEndOf="@+id/fotogambarcari"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/fotogambarcari"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/makanan"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/diskripsi"
-        android:layout_width="204dp"
-        android:layout_height="73dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="7dp"
-        android:fontFamily="@font/poppinsregular"
-        android:text="DeskripsiMakanan"
-        android:textSize="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/fotogambarcari"
-        app:layout_constraintTop_toBottomOf="@+id/namamakanancari" />
+        <TextView
+            android:id="@+id/namamakanancari"
+            android:layout_width="161dp"
+            android:layout_height="21dp"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/poppinsregular"
+            android:text="Nama Makanan"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/fotogambarcari"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/diskripsi"
+            android:layout_width="204dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="7dp"
+            android:fontFamily="@font/poppinsregular"
+            android:text="DeskripsiMakanan"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/fotogambarcari"
+            app:layout_constraintTop_toBottomOf="@+id/namamakanancari" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
