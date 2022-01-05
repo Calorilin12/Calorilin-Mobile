@@ -30,6 +30,7 @@ import com.calorilin.calorilin_mobile.api.ApiInterface;
 import com.calorilin.calorilin_mobile.model.materialfavtimeshow.MaterialfavtimeshowItem;
 import com.calorilin.calorilin_mobile.model.totalfavorite.TotalNutrisiItem;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,6 +54,7 @@ public class FragmentKontrolKalori extends Fragment{
     View view;
     FlagTimeShow flagTimeShow = new FlagTimeShow();
     FlagOpening opening = new FlagOpening();
+    FlagGoneKontrol goneKontrol = new FlagGoneKontrol();
 
 
     @Nullable
@@ -85,6 +87,16 @@ public class FragmentKontrolKalori extends Fragment{
         arrowBtnDinner = view.findViewById(R.id.buttonDinner);
         cardViewDinner = view.findViewById(R.id.jadwalMakanMalam);
 
+        if (!goneKontrol.isGonePagi()){
+            expandableViewBreakfast.setVisibility(View.VISIBLE);
+        }
+        if (!goneKontrol.isGoneSiang()){
+            expandableViewLunch.setVisibility(View.VISIBLE);
+        }
+        if (!goneKontrol.isGoneMalam()){
+            expandableViewDinner.setVisibility(View.VISIBLE);
+        }
+
         arrowBtnBreakfast.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,10 +104,12 @@ public class FragmentKontrolKalori extends Fragment{
                     TransitionManager.beginDelayedTransition(cardViewBreakfast, new AutoTransition());
                     expandableViewBreakfast.setVisibility(View.VISIBLE);
                     arrowBtnBreakfast.setBackgroundResource(R.drawable.ic_baseline_keyboard_arrow_up_24);
+                    goneKontrol.setGonePagi(false);
                 } else {
                     TransitionManager.beginDelayedTransition(cardViewBreakfast, new AutoTransition());
                     expandableViewBreakfast.setVisibility(View.GONE);
                     arrowBtnBreakfast.setBackgroundResource(R.drawable.ic_baseline_keyboard_arrow_down_24);
+                    goneKontrol.setGonePagi(true);
                 }
             }
         });
@@ -106,10 +120,12 @@ public class FragmentKontrolKalori extends Fragment{
                     TransitionManager.beginDelayedTransition(cardViewLunch, new AutoTransition());
                     expandableViewLunch.setVisibility(View.VISIBLE);
                     arrowBtnLunch.setBackgroundResource(R.drawable.ic_baseline_keyboard_arrow_up_24);
+                    goneKontrol.setGoneSiang(false);
                 } else {
                     TransitionManager.beginDelayedTransition(cardViewLunch, new AutoTransition());
                     expandableViewLunch.setVisibility(View.GONE);
                     arrowBtnLunch.setBackgroundResource(R.drawable.ic_baseline_keyboard_arrow_down_24);
+                    goneKontrol.setGoneSiang(true);
                 }
             }
         });
@@ -120,10 +136,12 @@ public class FragmentKontrolKalori extends Fragment{
                     TransitionManager.beginDelayedTransition(cardViewDinner, new AutoTransition());
                     expandableViewDinner.setVisibility(View.VISIBLE);
                     arrowBtnDinner.setBackgroundResource(R.drawable.ic_baseline_keyboard_arrow_up_24);
+                    goneKontrol.setGoneMalam(false);
                 } else {
                     TransitionManager.beginDelayedTransition(cardViewDinner, new AutoTransition());
                     expandableViewDinner.setVisibility(View.GONE);
                     arrowBtnDinner.setBackgroundResource(R.drawable.ic_baseline_keyboard_arrow_down_24);
+                    goneKontrol.setGoneMalam(true);
                 }
             }
         });
@@ -232,11 +250,12 @@ public class FragmentKontrolKalori extends Fragment{
             @Override
             public void onResponse(Call<TotalNutrisiItem> call4, Response<TotalNutrisiItem> response) {
                 if (response.isSuccessful()) {
+                    DecimalFormat df = new DecimalFormat("#.##");
                     total1 = response.body().getCalories();
-                    totalCaloriPagi.setText(String.valueOf(response.body().getCalories()) + "Kcal");
-                    totalProteinPagi.setText(String.valueOf(response.body().getProtein()) + "Gram");
-                    totalLemakPagi.setText(String.valueOf(response.body().getFat()) + "Gram");
-                    totalKarboPagi.setText(String.valueOf(response.body().getCarbo()) + "Gram");
+                    totalCaloriPagi.setText(String.valueOf(df.format(response.body().getCalories())) + "Kcal");
+                    totalProteinPagi.setText(String.valueOf(df.format(response.body().getProtein())) + "Gram");
+                    totalLemakPagi.setText(String.valueOf(df.format(response.body().getFat())) + "Gram");
+                    totalKarboPagi.setText(String.valueOf(df.format(response.body().getCarbo())) + "Gram");
                 } else if (response.code() == 500) {
                     Toast.makeText(requireContext(), "Gagal", Toast.LENGTH_SHORT).show();
                 }
@@ -259,11 +278,12 @@ public class FragmentKontrolKalori extends Fragment{
             @Override
             public void onResponse(Call<TotalNutrisiItem> call5, Response<TotalNutrisiItem> response) {
                 if (response.isSuccessful()) {
+                    DecimalFormat df = new DecimalFormat("#.##");
                     total2 = response.body().getCalories();
-                    totalCaloriSiang.setText(String.valueOf(response.body().getCalories()) + "Kcal");
-                    totalProteinSiang.setText(String.valueOf(response.body().getProtein()) + "Gram");
-                    totalLemakSiang.setText(String.valueOf(response.body().getFat()) + "Gram");
-                    totalKarboSiang.setText(String.valueOf(response.body().getCarbo()) + "Gram");
+                    totalCaloriSiang.setText(String.valueOf(df.format(response.body().getCalories())) + "Kcal");
+                    totalProteinSiang.setText(String.valueOf(df.format(response.body().getProtein())) + "Gram");
+                    totalLemakSiang.setText(String.valueOf(df.format(response.body().getFat())) + "Gram");
+                    totalKarboSiang.setText(String.valueOf(df.format(response.body().getCarbo())) + "Gram");
                 } else if (response.code() == 500) {
                     Toast.makeText(requireContext(), "Gagal", Toast.LENGTH_SHORT).show();
                 }
@@ -286,10 +306,11 @@ public class FragmentKontrolKalori extends Fragment{
             public void onResponse(Call<TotalNutrisiItem> call6, Response<TotalNutrisiItem> response) {
                 if (response.isSuccessful()) {
                     total3 = total1 + total2 + response.body().getCalories();
-                    totalCaloriMalam.setText(String.valueOf(response.body().getCalories()) + "Kcal");
-                    totalProteinMalam.setText(String.valueOf(response.body().getProtein()) + "Gram");
-                    totalLemakMalam.setText(String.valueOf(response.body().getFat()) + "Gram");
-                    totalKarboMalam.setText(String.valueOf(response.body().getCarbo()) + "Gram");
+                    DecimalFormat df = new DecimalFormat("#.##");
+                    totalCaloriMalam.setText(String.valueOf(df.format(response.body().getCalories())) + "Kcal");
+                    totalProteinMalam.setText(String.valueOf(df.format(response.body().getProtein())) + "Gram");
+                    totalLemakMalam.setText(String.valueOf(df.format(response.body().getFat())) + "Gram");
+                    totalKarboMalam.setText(String.valueOf(df.format(response.body().getCarbo())) + "Gram");
                     totalCalori.setText(String.valueOf(total3));
                 } else if (response.code() == 500) {
                     Toast.makeText(requireContext(), "Gagal", Toast.LENGTH_SHORT).show();
@@ -302,18 +323,6 @@ public class FragmentKontrolKalori extends Fragment{
                 Toast.makeText(requireContext(), "Gagal : " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-
-//        totalCalori = view.findViewById(R.id.jumlahKalori);
-//        totalCalori.setText(String.valueOf(dataControlTotal.getTotalkalori()));
-//
-//        totalCaloriPagi = view.findViewById(R.id.totalKaloriBreakfast);
-//        totalCaloriPagi.setText(String.valueOf(dataControlTotal.getTotalkaloripagi()) + " Kcal");
-//
-//        totalCaloriSiang = view.findViewById(R.id.totalKalorisiang);
-//        totalCaloriSiang.setText(String.valueOf(dataControlTotal.getTotalkalorisiang()) + " Kcal");
-//
-//        totalCaloriMalam = view.findViewById(R.id.totalKalorimalam);
-//        totalCaloriMalam.setText(String.valueOf(dataControlTotal.getTotalkalorimalam()) + " Kcal");
 
         return view;
     }

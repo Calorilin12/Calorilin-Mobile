@@ -5,6 +5,7 @@ import static java.lang.String.valueOf;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,7 +14,7 @@ import com.calorilin.calorilin_mobile.model.recipes.RecipesItem;
 
 public class RincianMakanan extends AppCompatActivity {
 
-    ImageView rincigambar;
+    ImageView rincigambar,back;
     TextView rincijudul, rincidurasi, rinciporsi, rincikalori;
     TextView rincikomposisi,rincilangkah2;
 
@@ -21,6 +22,14 @@ public class RincianMakanan extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rincian_makanan);
+
+        back = findViewById(R.id.backrincimakanan);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         RecipesItem resepitem = getIntent().getParcelableExtra("resepmakanan");
 

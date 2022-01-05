@@ -29,25 +29,76 @@
 
         <TextView
             android:id="@+id/namamakanancari"
-            android:layout_width="161dp"
-            android:layout_height="21dp"
+            android:layout_width="158dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
+            android:layout_marginTop="4dp"
             android:fontFamily="@font/poppinsregular"
+            android:maxLines="2"
             android:text="Nama Makanan"
             android:textColor="@color/black"
             app:layout_constraintStart_toEndOf="@+id/fotogambarcari"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/diskripsi"
+            android:id="@+id/pembuat"
             android:layout_width="204dp"
-            android:layout_height="38dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="2dp"
             android:fontFamily="@font/poppinsregular"
-            android:text="DeskripsiMakanan"
+            android:maxLines="1"
+            android:text="by Pura Kitchen"
+            android:textColor="@color/sec500"
             android:textSize="12dp"
             app:layout_constraintStart_toEndOf="@+id/fotogambarcari"
             app:layout_constraintTop_toBottomOf="@+id/namamakanancari" />
+
+        <ImageView
+            android:id="@+id/logobintangcari"
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/bintang"
+            app:layout_constraintStart_toEndOf="@+id/fotogambarcari"
+            app:layout_constraintTop_toBottomOf="@+id/pembuat" />
+
+        <TextView
+            android:id="@+id/mudahcari"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppinslight"
+            android:text="Mudah"
+            android:textColor="@color/sec500"
+            android:textSize="10dp"
+            app:layout_constraintStart_toEndOf="@+id/logobintangcari"
+            app:layout_constraintTop_toBottomOf="@+id/pembuat" />
+
+        <ImageView
+            android:id="@+id/logokalendercari"
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/kalender"
+            app:layout_constraintStart_toEndOf="@+id/mudahcari"
+            app:layout_constraintTop_toBottomOf="@+id/pembuat" />
+
+        <TextView
+            android:id="@+id/tanggalresepcari"
+            android:layout_width="59dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppinslight"
+            android:text="20 Mei 2021"
+            android:textColor="@color/sec500"
+            android:textSize="10dp"
+            app:layout_constraintStart_toEndOf="@+id/logokalendercari"
+            app:layout_constraintTop_toBottomOf="@+id/pembuat" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

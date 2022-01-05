@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="7dp">
+    android:paddingEnd="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -25,9 +25,10 @@
         <TextView
             android:id="@+id/namamakanan"
             android:layout_width="158dp"
-            android:layout_height="25dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/poppinsmedium"
+            android:maxLines="1"
             android:text="Nasi Ayam Panggang"
             android:textColor="@color/netral"
             android:textSize="14dp"

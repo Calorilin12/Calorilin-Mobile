@@ -3,6 +3,7 @@ package com.calorilin.calorilin_mobile;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,7 +13,7 @@ import com.calorilin.calorilin_mobile.model.recipes.RecipesItem;
 
 public class DetailRekomendasiActivity extends AppCompatActivity {
 
-    ImageView rincigambar;
+    ImageView rincigambar,back;
     TextView rincijudul, rincidurasi, rinciporsi, rincikalori;
     TextView rincikomposisi,rincilangkah2;
 
@@ -20,6 +21,14 @@ public class DetailRekomendasiActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_rekomendasi);
+
+        back = findViewById(R.id.backdetailrekom);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         DiseaseItem resepitem = getIntent().getParcelableExtra("rekomendasi");
 

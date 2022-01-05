@@ -20,6 +20,7 @@ import com.calorilin.calorilin_mobile.model.userpost.UserEdit;
 
 import java.util.List;
 
+import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.http.DELETE;
@@ -27,7 +28,9 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -113,6 +116,13 @@ public interface ApiInterface {
             @Field("uric_acid") int uric_acid,
             @Field("stomach_acid") int stomach_acid,
             @Field("hyper_tension") int hyper_tension
+    );
+    @Multipart
+    @POST("user-details-image/{id}?_method=PUT")
+    Call<UserDetailPost> editGambarResponse(
+            @Header("Authorization") String token,
+            @Path("id") String id,
+            @Part MultipartBody.Part image
     );
 
     @GET("food-material-favorites-by-time-show/{id_user}?")

@@ -468,6 +468,16 @@
             app:layout_constraintEnd_toStartOf="@+id/jumlahpolaminum"
             app:layout_constraintTop_toBottomOf="@+id/workOut3" />
 
+        <TextView
+            android:id="@+id/tengah"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/jumlahminum" />
+
         <ImageView
             android:id="@+id/minum1"
             android:layout_width="74dp"
@@ -482,10 +492,11 @@
             android:id="@+id/minum2"
             android:layout_width="74dp"
             android:layout_height="74dp"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
             android:clickable="true"
             android:src="@drawable/gelasabu"
+            app:layout_constraintEnd_toStartOf="@+id/tengah"
+            app:layout_constraintHorizontal_bias="0.67"
             app:layout_constraintStart_toEndOf="@+id/minum1"
             app:layout_constraintTop_toBottomOf="@+id/polaminum" />
 
@@ -493,22 +504,22 @@
             android:id="@+id/minum3"
             android:layout_width="74dp"
             android:layout_height="74dp"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
             android:clickable="true"
             android:src="@drawable/gelasabu"
-            app:layout_constraintStart_toEndOf="@+id/minum2"
+            app:layout_constraintEnd_toStartOf="@+id/minum4"
+            app:layout_constraintHorizontal_bias="0.33"
+            app:layout_constraintStart_toEndOf="@+id/tengah"
             app:layout_constraintTop_toBottomOf="@+id/polaminum" />
 
         <ImageView
             android:id="@+id/minum4"
             android:layout_width="74dp"
             android:layout_height="74dp"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
             android:clickable="true"
             android:src="@drawable/gelasabu"
-            app:layout_constraintStart_toEndOf="@+id/minum3"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/polaminum" />
 
         <ImageView
@@ -525,10 +536,11 @@
             android:id="@+id/minum6"
             android:layout_width="74dp"
             android:layout_height="74dp"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
             android:clickable="true"
             android:src="@drawable/gelasabu"
+            app:layout_constraintEnd_toStartOf="@+id/tengah"
+            app:layout_constraintHorizontal_bias="0.67"
             app:layout_constraintStart_toEndOf="@+id/minum5"
             app:layout_constraintTop_toBottomOf="@+id/minum1" />
 
@@ -536,22 +548,22 @@
             android:id="@+id/minum7"
             android:layout_width="74dp"
             android:layout_height="74dp"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
             android:clickable="true"
             android:src="@drawable/gelasabu"
-            app:layout_constraintStart_toEndOf="@+id/minum6"
+            app:layout_constraintEnd_toStartOf="@+id/minum8"
+            app:layout_constraintHorizontal_bias="0.33"
+            app:layout_constraintStart_toEndOf="@+id/tengah"
             app:layout_constraintTop_toBottomOf="@+id/minum1" />
 
         <ImageView
             android:id="@+id/minum8"
             android:layout_width="74dp"
             android:layout_height="74dp"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
             android:clickable="true"
             android:src="@drawable/gelasabu"
-            app:layout_constraintStart_toEndOf="@+id/minum7"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/minum1" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

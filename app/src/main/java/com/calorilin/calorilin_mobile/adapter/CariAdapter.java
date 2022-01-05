@@ -49,11 +49,13 @@ public class CariAdapter extends RecyclerView.Adapter<CariAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         RecipesItem resepitem = data.get(position);
         holder.namamakanancari.setText(resepitem.getName());
-        holder.diskripsi.setText(" ");
+        holder.diskripsi.setText(resepitem.getMadeBy());
+        holder.kesulitan.setText(resepitem.getLevelOfDifficult());
+        holder.waktu.setText(resepitem.getUpdatedAt());
         Glide.with(holder.gambarmakanan.getContext())
                 .load("https://api.calorilin.me/recipe-detail-images/"+ resepitem.getRecipeImage()).apply(new RequestOptions().override(600, 200)).into(holder.gambarmakanan);
 
-        holder.gambarmakanan.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, RincianMakanan.class);
@@ -87,12 +89,16 @@ public class CariAdapter extends RecyclerView.Adapter<CariAdapter.ViewHolder> {
         TextView namamakanancari;
         ImageView gambarmakanan;
         TextView diskripsi;
+        TextView kesulitan;
+        TextView waktu;
 
         ViewHolder(View itemView) {
             super(itemView);
             namamakanancari = itemView.findViewById(R.id.namamakanancari);
             gambarmakanan = itemView.findViewById(R.id.fotogambarcari);
-            diskripsi = itemView.findViewById(R.id.diskripsi);
+            diskripsi = itemView.findViewById(R.id.pembuat);
+            kesulitan = itemView.findViewById(R.id.mudahcari);
+            waktu = itemView.findViewById(R.id.tanggalresepcari);
             itemView.setTag(itemView);
 
             itemView.setOnClickListener(view -> {

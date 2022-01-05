@@ -3,6 +3,8 @@
     package="com.calorilin.calorilin_mobile">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -72,7 +74,8 @@
             android:exported="true" />
         <activity
             android:name=".Halaman"
-            android:exported="true" />
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".Daftar"
             android:exported="true" />

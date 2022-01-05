@@ -43,7 +43,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/judul_Halam_Edit_Akun"
-            app:srcCompat="@drawable/user" />
+            android:background="@drawable/user" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_edit_photo"
@@ -52,6 +52,9 @@
             android:background="@drawable/transparan"
             android:drawableEnd="@drawable/ic_edit"
             android:text="Edit foto"
+            android:fontFamily="@font/poppinsregular"
+            android:textSize="12dp"
+            android:textColor="@color/sec500"
             android:textAllCaps="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

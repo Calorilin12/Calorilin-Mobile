@@ -71,10 +71,11 @@
             android:id="@+id/sayur"
             android:layout_width="74dp"
             android:layout_height="74dp"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/sayur"
             android:clickable="true"
+            app:layout_constraintEnd_toStartOf="@+id/tengah"
+            app:layout_constraintHorizontal_bias="0.67"
             app:layout_constraintStart_toEndOf="@+id/daging"
             app:layout_constraintTop_toBottomOf="@+id/katagorimakanan" />
 
@@ -82,22 +83,32 @@
             android:id="@+id/buah"
             android:layout_width="74dp"
             android:layout_height="74dp"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/buah"
             android:clickable="true"
-            app:layout_constraintStart_toEndOf="@+id/sayur"
+            app:layout_constraintEnd_toStartOf="@+id/minuman"
+            app:layout_constraintHorizontal_bias="0.33"
+            app:layout_constraintStart_toEndOf="@+id/tengah"
             app:layout_constraintTop_toBottomOf="@+id/katagorimakanan" />
 
         <ImageView
             android:id="@+id/minuman"
             android:layout_width="74dp"
             android:layout_height="74dp"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/minuman"
             android:clickable="true"
-            app:layout_constraintStart_toEndOf="@+id/buah"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/katagorimakanan" />
+
+        <TextView
+            android:id="@+id/tengah"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/katagorimakanan" />
 
         <TextView

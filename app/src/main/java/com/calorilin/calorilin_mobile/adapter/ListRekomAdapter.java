@@ -41,7 +41,7 @@ public class ListRekomAdapter extends RecyclerView.Adapter<ListRekomAdapter.View
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.list_carimakanan, null);
+        View view = inflater.inflate(R.layout.list_rekommakanan, null);
         return new ViewHolder(view);
     }
 
@@ -90,9 +90,9 @@ public class ListRekomAdapter extends RecyclerView.Adapter<ListRekomAdapter.View
 
         ViewHolder(View itemView) {
             super(itemView);
-            namamakanancari = itemView.findViewById(R.id.namamakanancari);
+            namamakanancari = itemView.findViewById(R.id.namamakananrekom);
             deskripsi = itemView.findViewById(R.id.diskripsi);
-            gambarmakanan = itemView.findViewById(R.id.fotogambarcari);
+            gambarmakanan = itemView.findViewById(R.id.fotogambarrekom);
             itemView.setTag(itemView);
 
             itemView.setOnClickListener(view -> {

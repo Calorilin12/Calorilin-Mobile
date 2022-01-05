@@ -19,6 +19,9 @@
         <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.26614583333333336" />
         <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/drawable/netral_500.xml" value="0.26614583333333336" />
         <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/drawable/round_corners.xml" value="0.26614583333333336" />
+        <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/drawable/shapehijau.xml" value="0.26614583333333336" />
+        <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/drawable/shapehijau20.xml" value="0.26614583333333336" />
+        <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/drawable/shapemerah.xml" value="0.26614583333333336" />
         <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/drawable/shapeputih.xml" value="0.26614583333333336" />
         <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/drawable/transparan.xml" value="0.26614583333333336" />
         <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/drawable/transparanbawah.xml" value="0.26614583333333336" />
@@ -29,7 +32,7 @@
         <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/activity_control_calories.xml" value="0.176" />
         <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/activity_count_calories.xml" value="0.25" />
         <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/activity_daftar.xml" value="0.264" />
-        <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/activity_data_tambahan.xml" value="0.176" />
+        <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/activity_data_tambahan.xml" value="0.2" />
         <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/activity_detail_rekomendasi.xml" value="0.24456521739130435" />
         <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/activity_edit_profile.xml" value="0.23324275362318841" />
         <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/activity_editprofile.xml" value="0.4" />
@@ -40,7 +43,7 @@
         <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/activity_masuk.xml" value="0.264" />
         <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/activity_pengaturan.xml" value="0.72" />
         <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/activity_penggunaan_aplikasi.xml" value="0.25" />
-        <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/activity_program_harian.xml" value="0.264" />
+        <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/activity_program_harian.xml" value="0.4" />
         <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/activity_rekomendasi_data_kosong.xml" value="0.4" />
         <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/activity_rekomendasi_makanan.xml" value="0.23641304347826086" />
         <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/activity_report_bug.xml" value="0.264" />
@@ -48,16 +51,17 @@
         <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/activity_search.xml" value="0.25" />
         <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/activity_tambah_menu.xml" value="0.24094202898550723" />
         <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/activity_tentang_kami.xml" value="0.136" />
-        <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/beranda.xml" value="0.152" />
+        <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/beranda.xml" value="0.4" />
         <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/detail_bahan_makanan.xml" value="0.4" />
         <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/list_bahanfavoriteinformasi.xml" value="0.4101969872537659" />
         <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/list_bahanmakanan.xml" value="0.4" />
-        <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/list_carimakanan.xml" value="0.264" />
+        <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/list_carimakanan.xml" value="0.4" />
         <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/list_catagori.xml" value="0.536" />
         <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/list_labelrekomen.xml" value="0.72" />
         <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/list_makananhariini.xml" value="0.6" />
         <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/list_makanankontrol.xml" value="0.536" />
-        <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/profileakun.xml" value="0.176" />
+        <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/list_rekommakanan.xml" value="0.24954710144927536" />
+        <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/profileakun.xml" value="0.4" />
         <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/sarapan_tambahmenudialog.xml" value="0.25" />
         <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/layout/tambahmenu_dialog.xml" value="0.25" />
         <entry key="..\:/Devices/Project Android/Calorilin-Mobile/Calorilin-Mobile/app/src/main/res/menu/menubawah.xml" value="0.25" />

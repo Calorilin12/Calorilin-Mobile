@@ -26,13 +26,13 @@ public class MakananHariAdapter extends RecyclerView.Adapter<MakananHariAdapter.
     private LayoutInflater inflater;
     private Context context;
 
-    public MakananHariAdapter(Context context, List<RecipesItem> list){
+    public MakananHariAdapter(Context context, List<RecipesItem> list) {
         this.context = context;
         this.data = list;
         inflater = LayoutInflater.from(context);
     }
 
-    public void setData(List<RecipesItem> items){
+    public void setData(List<RecipesItem> items) {
         data.clear();
         data.addAll(items);
         notifyDataSetChanged();
@@ -54,7 +54,7 @@ public class MakananHariAdapter extends RecyclerView.Adapter<MakananHariAdapter.
         holder.level.setText(resepitem.getLevelOfDifficult());
 
         Glide.with(holder.gambarmakanan.getContext())
-                .load("https://api.calorilin.me/recipe-detail-images/"+ resepitem.getRecipeImage()).apply(new RequestOptions().override(600, 200)).into(holder.gambarmakanan);
+                .load("https://api.calorilin.me/recipe-detail-images/" + resepitem.getRecipeImage()).apply(new RequestOptions().override(600, 200)).into(holder.gambarmakanan);
 
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -70,14 +70,17 @@ public class MakananHariAdapter extends RecyclerView.Adapter<MakananHariAdapter.
 
     @Override
     public int getItemCount() {
-        return data.size();
+        if (data.size() > 7) {
+            return 7;
+        } else
+            return data.size();
     }
 
-    interface   RecycleKlik{
+    interface RecycleKlik {
         void onKlikItem(View view, int posisi);
     }
 
-    void setKlikListener(RecycleKlik recycleKlik){
+    void setKlikListener(RecycleKlik recycleKlik) {
         this.lister = recycleKlik;
     }
 
@@ -99,7 +102,7 @@ public class MakananHariAdapter extends RecyclerView.Adapter<MakananHariAdapter.
             itemView.setTag(itemView);
 
             itemView.setOnClickListener(view -> {
-                if(lister != null) lister.onKlikItem(view, getAdapterPosition());
+                if (lister != null) lister.onKlikItem(view, getAdapterPosition());
             });
         }
     }

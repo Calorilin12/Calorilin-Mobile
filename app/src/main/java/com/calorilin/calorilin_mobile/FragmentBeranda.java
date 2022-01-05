@@ -28,6 +28,7 @@ import com.calorilin.calorilin_mobile.model.user.UserData;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import retrofit2.Call;
@@ -110,6 +111,7 @@ public class FragmentBeranda extends Fragment implements View.OnClickListener {
             public void onResponse(Call<List<RecipesItem>> call, Response<List<RecipesItem>> response) {
                 if (response.isSuccessful()) {
                     List<RecipesItem> resep = response.body();
+                    Collections.reverse(resep);
                     Log.e("Test", "onResponse: code: " + response.code());
                     System.out.println("berhasil");
                     resephariini = view.findViewById(R.id.makananhari);
