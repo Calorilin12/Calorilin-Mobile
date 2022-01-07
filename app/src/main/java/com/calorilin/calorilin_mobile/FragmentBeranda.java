@@ -46,11 +46,12 @@ public class FragmentBeranda extends Fragment implements View.OnClickListener {
     ImageView rekomendasi, programharian;
     static int checkData;
     FlagOpening opening = new FlagOpening();
+    View view;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.beranda, container, false);
+        view = inflater.inflate(R.layout.beranda, container, false);
 
         SharedPreferences sp = getActivity().getApplicationContext().getSharedPreferences("sharepre", Context.MODE_PRIVATE);
         String token = sp.getString("tokens", "");
@@ -115,7 +116,7 @@ public class FragmentBeranda extends Fragment implements View.OnClickListener {
                     Log.e("Test", "onResponse: code: " + response.code());
                     System.out.println("berhasil");
                     resephariini = view.findViewById(R.id.makananhari);
-                    MakananHariAdapter adapter2 = new MakananHariAdapter(getActivity().getApplicationContext(), resep);
+                    MakananHariAdapter adapter2 = new MakananHariAdapter(view.getContext(), resep);
                     resephariini.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
                     resephariini.setAdapter(adapter2);
                 } else if (response.code() == 500) {

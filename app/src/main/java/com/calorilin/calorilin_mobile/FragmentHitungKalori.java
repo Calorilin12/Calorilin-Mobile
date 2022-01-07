@@ -1,5 +1,6 @@
 package com.calorilin.calorilin_mobile;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -40,11 +41,15 @@ public class FragmentHitungKalori extends Fragment implements BahanMakananInform
     RecyclerView menubahanmakanan;
     RecyclerView bahanFavorite;
     BahanMakananInformasiAdapter.OnClickBahanFavorit listener;
+    View view;
+    Activity activity;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_count_calories, container, false);
+        view = inflater.inflate(R.layout.activity_count_calories, container, false);
+
+        activity = requireActivity();
 
         SharedPreferences sp = getActivity().getApplicationContext().getSharedPreferences("sharepre", Context.MODE_PRIVATE);
         String token = sp.getString("tokens", "");
@@ -62,8 +67,8 @@ public class FragmentHitungKalori extends Fragment implements BahanMakananInform
                 if (response.isSuccessful()) {
                     List<FoodMaterialItem> resep = response.body();
 
-                    BahanMakananInformasiAdapter adapter2 = new BahanMakananInformasiAdapter(getActivity().getApplicationContext(), resep, requireActivity());
-                    menubahanmakanan.setLayoutManager(new LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false));
+                    BahanMakananInformasiAdapter adapter2 = new BahanMakananInformasiAdapter(view.getContext(), resep, activity);
+                    menubahanmakanan.setLayoutManager(new LinearLayoutManager(view.getContext(), LinearLayoutManager.VERTICAL, false));
 
                     caribahan.addTextChangedListener(new TextWatcher() {
                         @Override
@@ -90,14 +95,12 @@ public class FragmentHitungKalori extends Fragment implements BahanMakananInform
                     });
 
                 } else if (response.code() == 500) {
-                    Toast.makeText(requireContext(), "Gagal", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<List<FoodMaterialItem>> call, Throwable t) {
                 Log.e("test", "onFailure" + t.getMessage());
-                Toast.makeText(requireContext(), "Gagal" + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -111,31 +114,20 @@ public class FragmentHitungKalori extends Fragment implements BahanMakananInform
             public void onResponse(Call<List<MaterialfavtimeshowItem>> call2, Response<List<MaterialfavtimeshowItem>> response) {
                 if (response.isSuccessful()) {
                     List<MaterialfavtimeshowItem> bahanfav = response.body();
-                    BahanFavoriteAdapter adapter3 = new BahanFavoriteAdapter(getActivity().getApplicationContext(), bahanfav, requireActivity());
-                    bahanFavorite.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+                    BahanFavoriteAdapter adapter3 = new BahanFavoriteAdapter(view.getContext(), bahanfav, activity);
+                    bahanFavorite.setLayoutManager(new LinearLayoutManager(view.getContext(), LinearLayoutManager.VERTICAL, false));
                     bahanFavorite.setAdapter(adapter3);
                 } else if (response.code() == 500) {
-                    Toast.makeText(requireContext(), "Gagal", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<List<MaterialfavtimeshowItem>> call2, Throwable t) {
                 Log.e("test", "onFailure" + t.getMessage());
-                Toast.makeText(requireContext(), "Gagal : " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 
         return view;
-    }
-    public void showBottomSheetDialog() {
-
-        final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
-        bottomSheetDialog.setContentView(R.layout.detail_bahan_makanan);
-
-        TextView namabahanfavorit = bottomSheetDialog.findViewById(R.id.judulBahanMakananfav);
-
-        bottomSheetDialog.show();
     }
 
     @Override
