@@ -41,7 +41,7 @@ public class FragmentBeranda extends Fragment implements View.OnClickListener {
     ArrayList<ObjekKatagori> listkat;
     ArrayList<ObjekResepHari> listresephariini;
     TextView halouser;
-    ImageView cari;
+    TextView cari;
     ImageView daging,sayur,buah,minuman;
     ImageView rekomendasi, programharian;
     static int checkData;

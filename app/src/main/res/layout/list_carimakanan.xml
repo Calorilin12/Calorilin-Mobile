@@ -29,7 +29,7 @@
 
         <TextView
             android:id="@+id/namamakanancari"
-            android:layout_width="158dp"
+            android:layout_width="166dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:layout_marginTop="4dp"
@@ -61,6 +61,7 @@
             android:layout_marginStart="12dp"
             android:layout_marginTop="8dp"
             android:src="@drawable/bintang"
+            android:background="@drawable/bulatputih2"
             app:layout_constraintStart_toEndOf="@+id/fotogambarcari"
             app:layout_constraintTop_toBottomOf="@+id/pembuat" />
 
@@ -68,7 +69,7 @@
             android:id="@+id/mudahcari"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/poppinslight"
             android:text="Mudah"
@@ -81,9 +82,11 @@
             android:id="@+id/logokalendercari"
             android:layout_width="13dp"
             android:layout_height="13dp"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
             android:src="@drawable/kalender"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/mudahcari"
             app:layout_constraintTop_toBottomOf="@+id/pembuat" />
 
@@ -91,7 +94,7 @@
             android:id="@+id/tanggalresepcari"
             android:layout_width="59dp"
             android:layout_height="16dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/poppinslight"
             android:text="20 Mei 2021"

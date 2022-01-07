@@ -79,14 +79,16 @@
             android:id="@+id/lengkapidata"
             android:layout_width="match_parent"
             android:layout_height="224dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/lengkapidata"
             android:clickable="true"
             android:focusable="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bergabung"
-            app:srcCompat="@drawable/lengkapidata" />
+            app:layout_constraintTop_toBottomOf="@+id/bergabung" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/keluar"
@@ -95,7 +97,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="70dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="32dp"
             android:background="@drawable/shapemerah"
             android:fontFamily="@font/poppinsmedium"
             android:text="Keluar"
@@ -106,8 +108,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lengkapidata"
-            app:layout_constraintVertical_bias="1.0" />
-
+            app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

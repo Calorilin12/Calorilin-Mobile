@@ -54,6 +54,7 @@ public class TambahMenu extends AppCompatActivity implements BahanMakananAdapter
 
                     BahanMakananAdapter adapter2 = new BahanMakananAdapter(getApplicationContext(), resep, TambahMenu.this);
                     menubahanmakanan.setLayoutManager(new LinearLayoutManager(TambahMenu.this, LinearLayoutManager.VERTICAL, false));
+                    menubahanmakanan.setAdapter(adapter2);
 
                     caribahan.addTextChangedListener(new TextWatcher() {
                         @Override

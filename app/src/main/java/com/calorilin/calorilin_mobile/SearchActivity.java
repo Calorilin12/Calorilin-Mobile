@@ -54,7 +54,6 @@ public class SearchActivity extends AppCompatActivity {
             public void onResponse(Call<List<RecipesItem>> call, Response<List<RecipesItem>> response) {
                 if (response.isSuccessful()) {
                     List<RecipesItem> resep = response.body();
-                    Toast.makeText(SearchActivity.this, "Berhasil", Toast.LENGTH_LONG).show();
                     carimakanan = findViewById(R.id.tampilcarimakanan);
 
                     CariAdapter adapter2 = new CariAdapter(getApplicationContext(), resep);

@@ -136,8 +136,6 @@ public class Daftar extends AppCompatActivity {
                         public void onResponse(Call<Register> call, Response<Register> response) {
                             if (response.code() == 201) {
 
-                                Log.e("Test", "onResponse: code: " + response.code());
-
                                 Toast.makeText(Daftar.this, "Berhasil daftar", Toast.LENGTH_LONG).show();
                                 startActivity(new Intent(getApplicationContext(), MasukActivity.class));
                                 finish();
@@ -148,7 +146,7 @@ public class Daftar extends AppCompatActivity {
 
                         @Override
                         public void onFailure(Call<Register> call, Throwable t) {
-                            Toast.makeText(Daftar.this, "Server sedang dalam perbaikan", Toast.LENGTH_LONG).show();
+                            Toast.makeText(Daftar.this, "Gagal", Toast.LENGTH_LONG).show();
                             Log.e("test", "onFailure" + t.getMessage());
                         }
                     });
